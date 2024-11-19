@@ -1,24 +1,34 @@
 import { Component } from '@angular/core';
-import { HeaderUtils, CityData } from './header.utils';
+import { GetCityService } from '../service/getcity.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [],
+  providers: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+ private debounceTimeout!: any;
+  private searchDelay = 150; // ms
 
-  // Delay fetchCities(), évite bug d'affichage lors de frappe trop rapide
-  private debounceTimeout!: any;
-  callFetchCities() {
+  constructor(private getCityService: GetCityService) {}
+
+  fetchCitiesOnInputChange(): void {
     clearTimeout(this.debounceTimeout);
 
-    this.debounceTimeout = setTimeout(() => {
-      HeaderUtils.fetchCities((document.getElementById("city_input") as HTMLInputElement)?.value);
-    }, 150); // <- valeur en ms du delay
+    this.debounceTimeout = window.setTimeout(() => {
+      const searchInput = document.getElementById('city_input') as HTMLInputElement;
+      if (searchInput?.value) {
+        this.getCityService.fetchCities(searchInput.value).subscribe({
+          next: (cities: any) => console.log('Villes trouvées :', cities),
+          error: (err: any) => console.error('Erreur :', err),
+        });
+      }
+    }, this.searchDelay);
   }
+
 
   // searchCompanies() {
   //   fetchCompaniesData();
