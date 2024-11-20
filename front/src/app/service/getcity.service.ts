@@ -4,9 +4,9 @@ import { catchError, map, Observable, throwError } from "rxjs";
 
 export interface CityData {
     name: string;
-    department: string;
-    depNumber: number;
     code: number;
+    department: string;
+    departmentNumber: number;
 }
 
 @Injectable({
@@ -18,11 +18,7 @@ export class GetCityService {
     constructor(private httpClient: HttpClient) {}
 
     fetchCities(cityName: string): Observable<CityData[]>{
-        console.log(cityName);
         return this.formatCityData(cityName);
-
-        // let cities: string[] = getCitiesNames(cityName);
-        // return displayCitySuggestions(cities);
     }
 
     private formatCityData(cityName: string): Observable<CityData[]> {
@@ -30,9 +26,9 @@ export class GetCityService {
             map(rawData =>
                 rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
                     name: city.nom,
+                    code: city.code,
                     department: city.departement.nom,
                     departmentNumber: city.departement.code,
-                    code: city.code,
                 }))
             )
         );

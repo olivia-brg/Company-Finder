@@ -14,14 +14,14 @@ export class HeaderComponent {
 
   constructor (private headerUtils: HeaderUtils) {}
 
-  fetchCitiesOnInputChange() {
-    
-    this.headerUtils.fetchCitiesData()
-    console.log();
-    
-    ;
-  }
+  citiesDataArray: CityData[] | Error = [];
 
+  fetchCitySuggestionsOnInput() {
+    this.headerUtils.fetchCitiesData();
+    this.headerUtils.displayCitiesSuggestions();
+    
+  }
+  
 
   // searchCompanies() {
   //   fetchCompaniesData();
