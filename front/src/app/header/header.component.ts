@@ -15,14 +15,14 @@ export class HeaderComponent {
     private getCityService: GetCityService,
   ) {}
 
-  citiesDataArray: CityData[] | Error = [];
 
+  
   private debounceTimeout!: any;
   private searchDelay = 150; // ms
+  selectedCities: CityData[] = [];
   citiesSuggestedArray: CityData[] = [];
 
   fetchCitySuggestionsOnInput() {
-
 
     clearTimeout(this.debounceTimeout);
 
@@ -32,7 +32,6 @@ export class HeaderComponent {
       this.getCityService.fetchCities(searchInput.value).subscribe({
         next: (cities: CityData[]) => {
           this.citiesSuggestedArray = [...cities];
-
         },
         error: (err: Error) => console.error('Erreur :', err),
       });
@@ -41,6 +40,8 @@ export class HeaderComponent {
   }
 
   // TODO :
+  // debounceTimeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs)
+
   // gerer le click sur une ville proposée pour ajouter a la liste des villes select
   // afficher la liste des villes select
   // gerer le click sur une ville select pour la supprimer
