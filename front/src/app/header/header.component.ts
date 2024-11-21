@@ -39,10 +39,17 @@ export class HeaderComponent {
         error: (err: Error) => console.error('Erreur :', err),
       });
     }, this.searchDelay);
-
   }
 
-  searchCompanies() {    
+  selectCity(city: CityData) {
+    if (this.selectedCities.includes(city)) {
+      this.selectedCities = this.selectedCities.filter(selectedCity => selectedCity !== city);
+    } else {
+      this.selectedCities.push(city);
+    }
+  }
+
+  searchCompanies() {
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {

@@ -5,7 +5,7 @@
 @if (citiesSuggestedArray.length) {
 
     @for (city of citiesSuggestedArray; track $index) {
-        <li (click)="selectedCities.push(city)">{{city.name}} | {{city.department}}, {{city.departmentNumber}}</li>
+        <li (click)="selectCity(city)">{{city.name}} | {{city.department}}, {{city.departmentNumber}}</li>
     }
 
 }
