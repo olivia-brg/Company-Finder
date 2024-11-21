@@ -23,6 +23,7 @@ export class HeaderComponent {
   private searchDelay = 150; // ms
   selectedCities: CityData[] = [];
   citiesSuggestedArray: CityData[] = [];
+  companies: any[] = [];
 
   fetchCitySuggestionsOnInput() {
 
@@ -43,7 +44,13 @@ export class HeaderComponent {
 
   searchCompanies() {    
     const citiesCodes = this.selectedCities.map(city => city.code);
-    this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes);
+    this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
+      next: (companiesData) => {
+        this.companies = companiesData;
+        console.log('Données récupérées :', companiesData);
+      },
+      error: (err) => console.error('Erreur lors de la récupération des données :', err),
+    });
   }
 
   // TODO :
