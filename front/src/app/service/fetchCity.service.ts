@@ -13,7 +13,7 @@ export interface CityData {
     providedIn: 'root',
 })
 
-export class GetCityService {
+export class FetchCityService {
 
     constructor(private httpClient: HttpClient) {}
 

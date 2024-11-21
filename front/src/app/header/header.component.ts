@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CityData, GetCityService } from '../service/getcity.service';
+import { CityData, FetchCityService } from '../service/fetchCity.service';
+import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +13,12 @@ import { CityData, GetCityService } from '../service/getcity.service';
 export class HeaderComponent {
 
   constructor(
-    private getCityService: GetCityService,
-  ) {}
+    private fetchCityService: FetchCityService,
+    private fetchCompaniesDataService: FetchCompaniesDataService,
+  ) { }
 
 
-  
+
   private debounceTimeout!: any;
   private searchDelay = 150; // ms
   selectedCities: CityData[] = [];
@@ -29,7 +31,7 @@ export class HeaderComponent {
     this.debounceTimeout = window.setTimeout(() => {
       const searchInput = document.getElementById('city_input') as HTMLInputElement;
 
-      this.getCityService.fetchCities(searchInput.value).subscribe({
+      this.fetchCityService.fetchCities(searchInput.value).subscribe({
         next: (cities: CityData[]) => {
           this.citiesSuggestedArray = [...cities];
         },
@@ -39,12 +41,13 @@ export class HeaderComponent {
 
   }
 
-  // TODO :
-  // debounceTimeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs)
+  searchCompanies() {    
+    const citiesCodes = this.selectedCities.map(city => city.code);
+    this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes);
+  }
 
-  // gerer le click sur une ville proposée pour ajouter a la liste des villes select
-  // afficher la liste des villes select
-  // gerer le click sur une ville select pour la supprimer
+  // TODO :
+  // timeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs)
 
   // searchCompanies() {
   //   fetchCompaniesData();

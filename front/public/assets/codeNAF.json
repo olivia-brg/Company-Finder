@@ -1,0 +1,3880 @@
+{
+  "Agiculture, sylviculture et pêche": {
+    "Culture et production animale, chasse et services annexes": [
+      {
+        "id": 1,
+        "activity": "Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses",
+        "naf": "01.11Z"
+      },
+      {
+        "id": 2,
+        "activity": "Culture du riz",
+        "naf": "01.12Z"
+      },
+      {
+        "id": 3,
+        "activity": "Culture de légumes, de melons, de racines et de tubercules",
+        "naf": "01.13Z"
+      },
+      {
+        "id": 4,
+        "activity": "Culture de la canne à sucre",
+        "naf": "01.14Z"
+      },
+      {
+        "id": 5,
+        "activity": "Culture du tabac",
+        "naf": "01.15Z"
+      },
+      {
+        "id": 6,
+        "activity": "Culture de plantes à fibres",
+        "naf": "01.16Z"
+      },
+      {
+        "id": 7,
+        "activity": "Autres cultures non permanentes",
+        "naf": "01.19Z"
+      },
+      {
+        "id": 8,
+        "activity": "Culture de la vigne",
+        "naf": "01.21Z"
+      },
+      {
+        "id": 9,
+        "activity": "Culture de fruits tropicaux et subtropicaux",
+        "naf": "01.22Z"
+      },
+      {
+        "id": 10,
+        "activity": "Culture d'agrumes",
+        "naf": "01.23Z"
+      },
+      {
+        "id": 11,
+        "activity": "Culture de fruits à pépins et à noyau",
+        "naf": "01.24Z"
+      },
+      {
+        "id": 12,
+        "activity": "Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque",
+        "naf": "01.25Z"
+      },
+      {
+        "id": 13,
+        "activity": "Culture de fruits oléagineux",
+        "naf": "01.26Z"
+      },
+      {
+        "id": 14,
+        "activity": "Culture de plantes à boissons",
+        "naf": "01.27Z"
+      },
+      {
+        "id": 15,
+        "activity": "Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques",
+        "naf": "01.28Z"
+      },
+      {
+        "id": 16,
+        "activity": "Autres cultures permanentes",
+        "naf": "01.29Z"
+      },
+      {
+        "id": 17,
+        "activity": "Reproduction de plantes",
+        "naf": "01.30Z"
+      },
+      {
+        "id": 18,
+        "activity": "Élevage de vaches laitières",
+        "naf": "01.41Z"
+      },
+      {
+        "id": 19,
+        "activity": "Élevage d'autres bovins et de buffles",
+        "naf": "01.42Z"
+      },
+      {
+        "id": 20,
+        "activity": "Élevage de chevaux et d'autres équidés",
+        "naf": "01.43Z"
+      },
+      {
+        "id": 21,
+        "activity": "Élevage de chameaux et d'autres camélidés",
+        "naf": "01.44Z"
+      },
+      {
+        "id": 22,
+        "activity": "Élevage d'ovins et de caprins",
+        "naf": "01.45Z"
+      },
+      {
+        "id": 23,
+        "activity": "Élevage de porcins",
+        "naf": "01.46Z"
+      },
+      {
+        "id": 24,
+        "activity": "Élevage de volailles",
+        "naf": "01.47Z"
+      },
+      {
+        "id": 25,
+        "activity": "Élevage d'autres animaux",
+        "naf": "01.49Z"
+      },
+      {
+        "id": 26,
+        "activity": "Culture et élevage associés",
+        "naf": "01.50Z"
+      },
+      {
+        "id": 27,
+        "activity": "Activités de soutien aux cultures",
+        "naf": "01.61Z"
+      },
+      {
+        "id": 28,
+        "activity": "Activités de soutien à la production animale",
+        "naf": "01.62Z"
+      },
+      {
+        "id": 29,
+        "activity": "Traitement primaire des récoltes",
+        "naf": "01.63Z"
+      },
+      {
+        "id": 30,
+        "activity": "Traitement des semences",
+        "naf": "01.64Z"
+      },
+      {
+        "id": 31,
+        "activity": "Chasse, piégeage et services annexes",
+        "naf": "01.70Z"
+      }
+    ],
+    "Sylviculture et exploitation forestière": [
+      {
+        "id": 32,
+        "activity": "Sylviculture et autres activités forestières",
+        "naf": "02.10Z"
+      },
+      {
+        "id": 33,
+        "activity": "Exploitation forestière",
+        "naf": "02.20Z"
+      },
+      {
+        "id": 34,
+        "activity": "Récolte de produits forestiers non ligneux poussant à l'état sauvage",
+        "naf": "02.30Z"
+      },
+      {
+        "id": 35,
+        "activity": "Services de soutien à l'exploitation forestière",
+        "naf": "02.40Z"
+      }
+    ],
+    "Pêche et aquaculture": [
+      {
+        "id": 36,
+        "activity": "Pêche en mer",
+        "naf": "03.11Z"
+      },
+      {
+        "id": 37,
+        "activity": "Pêche en eau douce",
+        "naf": "03.12Z"
+      },
+      {
+        "id": 38,
+        "activity": "Aquaculture en mer",
+        "naf": "03.21Z"
+      },
+      {
+        "id": 39,
+        "activity": "Aquaculture en eau douce",
+        "naf": "03.22Z"
+      }
+    ]
+  },
+  "Industries extractives": {
+    "Extraction de houille et de lignite": [
+      {
+        "id": 40,
+        "activity": "Extraction de houille",
+        "naf": "05.10Z"
+      },
+      {
+        "id": 41,
+        "activity": "Extraction de lignite",
+        "naf": "05.20Z"
+      }
+    ],
+    "Extraction d'hydrocarbures": [
+      {
+        "id": 42,
+        "activity": "Extraction de pétrole brut",
+        "naf": "06.10Z"
+      },
+      {
+        "id": 43,
+        "activity": "Extraction de gaz naturel",
+        "naf": "06.20Z"
+      }
+    ],
+    "Extraction de minerais métalliques": [
+      {
+        "id": 44,
+        "activity": "Extraction de minerais de fer",
+        "naf": "07.10Z"
+      },
+      {
+        "id": 45,
+        "activity": "Extraction de minerais d'uranium et de thorium",
+        "naf": "07.21Z"
+      },
+      {
+        "id": 46,
+        "activity": "Extraction d'autres minerais de métaux non ferreux",
+        "naf": "07.29Z"
+      }
+    ],
+    "Autres industries extractives": [
+      {
+        "id": 47,
+        "activity": "Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise",
+        "naf": "08.11Z"
+      },
+      {
+        "id": 48,
+        "activity": "Exploitation de gravières et sablières, extraction d’argiles et de kaolin",
+        "naf": "08.12Z"
+      },
+      {
+        "id": 49,
+        "activity": "Extraction des minéraux chimiques et d'engrais minéraux",
+        "naf": "08.91Z"
+      },
+      {
+        "id": 50,
+        "activity": "Extraction de tourbe",
+        "naf": "08.92Z"
+      },
+      {
+        "id": 51,
+        "activity": "Production de sel",
+        "naf": "08.93Z"
+      },
+      {
+        "id": 52,
+        "activity": "Autres activités extractives n.c.a.",
+        "naf": "08.99Z"
+      }
+    ],
+    "Services de soutien aux industrie extractives": [
+      {
+        "id": 53,
+        "activity": "Activités de soutien à l'extraction d'hydrocarbures",
+        "naf": "09.10Z"
+      },
+      {
+        "id": 54,
+        "activity": "Activités de soutien aux autres industries extractives",
+        "naf": "09.90Z"
+      }
+    ]
+  },
+  "Industrie manufacturières": {
+    "Industries alimentaires": [
+      {
+        "id": 55,
+        "activity": "Transformation et conservation de la viande de boucherie",
+        "naf": "10.11Z"
+      },
+      {
+        "id": 56,
+        "activity": "Transformation et conservation de la viande de volaille",
+        "naf": "10.12Z"
+      },
+      {
+        "id": 57,
+        "activity": "Préparation industrielle de produits à base de viande",
+        "naf": "10.13A"
+      },
+      {
+        "id": 58,
+        "activity": "Charcuterie",
+        "naf": "10.13B"
+      },
+      {
+        "id": 59,
+        "activity": "Transformation et conservation de poisson, de crustacés et de mollusques",
+        "naf": "10.20Z"
+      },
+      {
+        "id": 60,
+        "activity": "Transformation et conservation de pommes de terre",
+        "naf": "10.31Z"
+      },
+      {
+        "id": 61,
+        "activity": "Préparation de jus de fruits et légumes",
+        "naf": "10.32Z"
+      },
+      {
+        "id": 62,
+        "activity": "Autre transformation et conservation de légumes",
+        "naf": "10.39A"
+      },
+      {
+        "id": 63,
+        "activity": "Transformation et conservation de fruits",
+        "naf": "10.39B"
+      },
+      {
+        "id": 64,
+        "activity": "Fabrication d'huiles et graisses brutes",
+        "naf": "10.41A"
+      },
+      {
+        "id": 65,
+        "activity": "Fabrication d'huiles et graisses raffinées",
+        "naf": "10.41B"
+      },
+      {
+        "id": 66,
+        "activity": "Fabrication de margarine et graisses comestibles similaires",
+        "naf": "10.42Z"
+      },
+      {
+        "id": 67,
+        "activity": "Fabrication de lait liquide et de produits frais",
+        "naf": "10.51A"
+      },
+      {
+        "id": 68,
+        "activity": "Fabrication de beurre",
+        "naf": "10.51B"
+      },
+      {
+        "id": 69,
+        "activity": "Fabrication de fromage",
+        "naf": "10.51C"
+      },
+      {
+        "id": 70,
+        "activity": "Fabrication d'autres produits laitiers",
+        "naf": "10.51D"
+      },
+      {
+        "id": 71,
+        "activity": "Fabrication de glaces et sorbets",
+        "naf": "10.52Z"
+      },
+      {
+        "id": 72,
+        "activity": "Meunerie",
+        "naf": "10.61A"
+      },
+      {
+        "id": 73,
+        "activity": "Autres activités du travail des grains",
+        "naf": "10.61B"
+      },
+      {
+        "id": 74,
+        "activity": "Fabrication de produits amylacés",
+        "naf": "10.62Z"
+      },
+      {
+        "id": 75,
+        "activity": "Fabrication industrielle de pain et de pâtisserie fraîche",
+        "naf": "10.71A"
+      },
+      {
+        "id": 76,
+        "activity": "Cuisson de produits de boulangerie",
+        "naf": "10.71B"
+      },
+      {
+        "id": 77,
+        "activity": "Boulangerie et boulangerie-pâtisserie",
+        "naf": "10.71C"
+      },
+      {
+        "id": 78,
+        "activity": "Pâtisserie",
+        "naf": "10.71D"
+      },
+      {
+        "id": 79,
+        "activity": "Fabrication de biscuits, biscottes et pâtisseries de conservation",
+        "naf": "10.72Z"
+      },
+      {
+        "id": 80,
+        "activity": "Fabrication de pâtes alimentaires",
+        "naf": "10.73Z"
+      },
+      {
+        "id": 81,
+        "activity": "Fabrication de sucre",
+        "naf": "10.81Z"
+      },
+      {
+        "id": 82,
+        "activity": "Fabrication de cacao, chocolat et de produits de confiserie",
+        "naf": "10.82Z"
+      },
+      {
+        "id": 83,
+        "activity": "Transformation du thé et du café",
+        "naf": "10.83Z"
+      },
+      {
+        "id": 84,
+        "activity": "Fabrication de condiments et assaisonnements",
+        "naf": "10.84Z"
+      },
+      {
+        "id": 85,
+        "activity": "Fabrication de plats préparés",
+        "naf": "10.85Z"
+      },
+      {
+        "id": 86,
+        "activity": "Fabrication d'aliments homogénéisés et diététiques",
+        "naf": "10.86Z"
+      },
+      {
+        "id": 87,
+        "activity": "Fabrication d'autres produits alimentaires n.c.a.",
+        "naf": "10.89Z"
+      },
+      {
+        "id": 88,
+        "activity": "Fabrication d'aliments pour animaux de ferme",
+        "naf": "10.91Z"
+      },
+      {
+        "id": 89,
+        "activity": "Fabrication d'aliments pour animaux de compagnie",
+        "naf": "10.92Z"
+      }
+    ],
+    "Fabrication de boissons": [
+      {
+        "id": 90,
+        "activity": "Production de boissons alcooliques distillées",
+        "naf": "11.01Z"
+      },
+      {
+        "id": 91,
+        "activity": "Fabrication de vins effervescents",
+        "naf": "11.02A"
+      },
+      {
+        "id": 92,
+        "activity": "Vinification",
+        "naf": "11.02B"
+      },
+      {
+        "id": 93,
+        "activity": "Fabrication de cidre et de vins de fruits",
+        "naf": "11.03Z"
+      },
+      {
+        "id": 94,
+        "activity": "Production d'autres boissons fermentées non distillées",
+        "naf": "11.04Z"
+      },
+      {
+        "id": 95,
+        "activity": "Fabrication de bière",
+        "naf": "11.05Z"
+      },
+      {
+        "id": 96,
+        "activity": "Fabrication de malt",
+        "naf": "11.06Z"
+      },
+      {
+        "id": 97,
+        "activity": "Industrie des eaux de table",
+        "naf": "11.07A"
+      },
+      {
+        "id": 98,
+        "activity": "Production de boissons rafraîchissantes",
+        "naf": "11.07B"
+      }
+    ],
+    "Fabrication de produits à base de tabac": [
+      {
+        "id": 99,
+        "activity": "Fabrication de produits à base de tabac",
+        "naf": "12.00Z"
+      }
+    ],
+    "Fabrication de textiles": [
+      {
+        "id": 100,
+        "activity": "Préparation de fibres textiles et filature",
+        "naf": "13.10Z"
+      },
+      {
+        "id": 101,
+        "activity": "Tissage",
+        "naf": "13.20Z"
+      },
+      {
+        "id": 102,
+        "activity": "Ennoblissement textile",
+        "naf": "13.30Z"
+      },
+      {
+        "id": 103,
+        "activity": "Fabrication d'étoffes à mailles",
+        "naf": "13.91Z"
+      },
+      {
+        "id": 104,
+        "activity": "Fabrication d'articles textiles, sauf habillement",
+        "naf": "13.92Z"
+      },
+      {
+        "id": 105,
+        "activity": "Fabrication de tapis et moquettes",
+        "naf": "13.93Z"
+      },
+      {
+        "id": 106,
+        "activity": "Fabrication de ficelles, cordes et filets",
+        "naf": "13.94Z"
+      },
+      {
+        "id": 107,
+        "activity": "Fabrication de non-tissés, sauf habillement",
+        "naf": "13.95Z"
+      },
+      {
+        "id": 108,
+        "activity": "Fabrication d'autres textiles techniques et industriels",
+        "naf": "13.96Z"
+      },
+      {
+        "id": 109,
+        "activity": "Fabrication d'autres textiles n.c.a.",
+        "naf": "13.99Z"
+      }
+    ],
+    "Industrie de l'habillement": [
+      {
+        "id": 110,
+        "activity": "Fabrication de vêtements en cuir",
+        "naf": "14.11Z"
+      },
+      {
+        "id": 111,
+        "activity": "Fabrication de vêtements de travail",
+        "naf": "14.12Z"
+      },
+      {
+        "id": 112,
+        "activity": "Fabrication de vêtements de dessus",
+        "naf": "14.13Z"
+      },
+      {
+        "id": 113,
+        "activity": "Fabrication de vêtements de dessous",
+        "naf": "14.14Z"
+      },
+      {
+        "id": 114,
+        "activity": "Fabrication d'autres vêtements et accessoires",
+        "naf": "14.19Z"
+      },
+      {
+        "id": 115,
+        "activity": "Fabrication d'articles en fourrure",
+        "naf": "14.20Z"
+      },
+      {
+        "id": 116,
+        "activity": "Fabrication d'articles chaussants à mailles",
+        "naf": "14.31Z"
+      },
+      {
+        "id": 117,
+        "activity": "Fabrication d'autres articles à mailles",
+        "naf": "14.39Z"
+      }
+    ],
+    "Industrie du cuir et de la chaussure": [
+      {
+        "id": 118,
+        "activity": "Apprêt et tannage des cuirs / Préparation et teinture des fourrures",
+        "naf": "15.11Z"
+      },
+      {
+        "id": 119,
+        "activity": "Fabrication d'articles de voyage, de maroquinerie et de sellerie",
+        "naf": "15.12Z"
+      },
+      {
+        "id": 120,
+        "activity": "Fabrication de chaussures",
+        "naf": "15.20Z"
+      }
+    ],
+    "Travail du bois et fabrication d'articles en bois et en liège, à l'exeption des meubles / Fabrication d'articles en vannerie et sparterie": [
+      {
+        "id": 121,
+        "activity": "Sciage et rabotage du bois, hors imprégnation",
+        "naf": "16.10A"
+      },
+      {
+        "id": 122,
+        "activity": "Imprégnation du bois",
+        "naf": "16.10B"
+      },
+      {
+        "id": 123,
+        "activity": "Fabrication de placage et de panneaux de bois",
+        "naf": "16.21Z"
+      },
+      {
+        "id": 124,
+        "activity": "Fabrication de parquets assemblés",
+        "naf": "16.22Z"
+      },
+      {
+        "id": 125,
+        "activity": "Fabrication de charpentes et d'autres menuiseries",
+        "naf": "16.23Z"
+      },
+      {
+        "id": 126,
+        "activity": "Fabrication d'emballages en bois",
+        "naf": "16.24Z"
+      },
+      {
+        "id": 127,
+        "activity": "Fabrication d'objets divers en bois / Fabrication d'objets en liège, vannerie et sparterie",
+        "naf": "16.29Z"
+      }
+    ],
+    "Industrie du papier et du carton": [
+      {
+        "id": 128,
+        "activity": "Fabrication de pâte à papier",
+        "naf": "17.11Z"
+      },
+      {
+        "id": 129,
+        "activity": "Fabrication de papier et de carton",
+        "naf": "17.12Z"
+      },
+      {
+        "id": 130,
+        "activity": "Fabrication de carton ondulé",
+        "naf": "17.21A"
+      },
+      {
+        "id": 131,
+        "activity": "Fabrication de cartonnages",
+        "naf": "17.21B"
+      },
+      {
+        "id": 132,
+        "activity": "Fabrication d'emballages en papier",
+        "naf": "17.21C"
+      },
+      {
+        "id": 133,
+        "activity": "Fabrication d'articles en papier à usage sanitaire ou domestique",
+        "naf": "17.22Z"
+      },
+      {
+        "id": 134,
+        "activity": "Fabrication d'articles de papeterie",
+        "naf": "17.23Z"
+      },
+      {
+        "id": 135,
+        "activity": "Fabrication de papiers peints",
+        "naf": "17.24Z"
+      },
+      {
+        "id": 136,
+        "activity": "Fabrication d'autres articles en papier ou en carton",
+        "naf": "17.29Z"
+      }
+    ],
+    "Imprimerie et reproduction d'enregistrements": [
+      {
+        "id": 137,
+        "activity": "Imprimerie de journaux",
+        "naf": "18.11Z"
+      },
+      {
+        "id": 138,
+        "activity": "Autre imprimerie (labeur)",
+        "naf": "18.12Z"
+      },
+      {
+        "id": 139,
+        "activity": "Activités de pré-presse",
+        "naf": "18.13Z"
+      },
+      {
+        "id": 140,
+        "activity": "Reliure et activités connexes",
+        "naf": "18.14Z"
+      },
+      {
+        "id": 141,
+        "activity": "Reproduction d'enregistrements",
+        "naf": "18.20Z"
+      }
+    ],
+    "Cokéfaction et raffinage": [
+      {
+        "id": 142,
+        "activity": "Cokéfaction",
+        "naf": "19.10Z"
+      },
+      {
+        "id": 143,
+        "activity": "Raffinage du pétrole",
+        "naf": "19.20Z"
+      }
+    ],
+    "Industrie chimique": [
+      {
+        "id": 144,
+        "activity": "Fabrication de gaz industriels",
+        "naf": "20.11Z"
+      },
+      {
+        "id": 145,
+        "activity": "Fabrication de colorants et de pigments",
+        "naf": "20.12Z"
+      },
+      {
+        "id": 146,
+        "activity": "Enrichissement et  retraitement de matières nucléaires",
+        "naf": "20.13A"
+      },
+      {
+        "id": 147,
+        "activity": "Fabrication d'autres produits chimiques inorganiques de base n.c.a.",
+        "naf": "20.13B"
+      },
+      {
+        "id": 148,
+        "activity": "Fabrication d'autres produits chimiques organiques de base",
+        "naf": "20.14Z"
+      },
+      {
+        "id": 149,
+        "activity": "Fabrication de produits azotés et d'engrais",
+        "naf": "20.15Z"
+      },
+      {
+        "id": 150,
+        "activity": "Fabrication de matières plastiques de base",
+        "naf": "20.16Z"
+      },
+      {
+        "id": 151,
+        "activity": "Fabrication de caoutchouc synthétique",
+        "naf": "20.17Z"
+      },
+      {
+        "id": 152,
+        "activity": "Fabrication de pesticides et d’autres produits agrochimiques",
+        "naf": "20.20Z"
+      },
+      {
+        "id": 153,
+        "activity": "Fabrication de peintures, vernis, encres et mastics",
+        "naf": "20.30Z"
+      },
+      {
+        "id": 154,
+        "activity": "Fabrication de savons, détergents et produits d'entretien",
+        "naf": "20.41Z"
+      },
+      {
+        "id": 155,
+        "activity": "Fabrication de parfums et de produits pour la toilette",
+        "naf": "20.42Z"
+      },
+      {
+        "id": 156,
+        "activity": "Fabrication de produits explosifs",
+        "naf": "20.51Z"
+      },
+      {
+        "id": 157,
+        "activity": "Fabrication de colles",
+        "naf": "20.52Z"
+      },
+      {
+        "id": 158,
+        "activity": "Fabrication d'huiles essentielles",
+        "naf": "20.53Z"
+      },
+      {
+        "id": 159,
+        "activity": "Fabrication d'autres produits chimiques n.c.a.",
+        "naf": "20.59Z"
+      },
+      {
+        "id": 160,
+        "activity": "Fabrication de fibres artificielles ou synthétiques",
+        "naf": "20.60Z"
+      }
+    ],
+    "Industrie pharmaceutique": [
+      {
+        "id": 161,
+        "activity": "Fabrication de produits pharmaceutiques de base",
+        "naf": "21.10Z"
+      },
+      {
+        "id": 162,
+        "activity": "Fabrication de préparations pharmaceutiques",
+        "naf": "21.20Z"
+      }
+    ],
+    "Fabrication de produit en caoutchouc et en plastique": [
+      {
+        "id": 163,
+        "activity": "Fabrication et rechapage de pneumatiques",
+        "naf": "22.11Z"
+      },
+      {
+        "id": 164,
+        "activity": "Fabrication d'autres articles en caoutchouc",
+        "naf": "22.19Z"
+      },
+      {
+        "id": 165,
+        "activity": "Fabrication de plaques, feuilles, tubes et profilés en matières plastiques",
+        "naf": "22.21Z"
+      },
+      {
+        "id": 166,
+        "activity": "Fabrication d'emballages en matières plastiques",
+        "naf": "22.22Z"
+      },
+      {
+        "id": 167,
+        "activity": "Fabrication d'éléments en matières plastiques pour la construction",
+        "naf": "22.23Z"
+      },
+      {
+        "id": 168,
+        "activity": "Fabrication de pièces techniques à base de matières plastiques",
+        "naf": "22.29A"
+      },
+      {
+        "id": 169,
+        "activity": "Fabrication de produits de consommation courante en matières plastiques",
+        "naf": "22.29B"
+      }
+    ],
+    "Fabrication d'autres produits minéraux non métalliques": [
+      {
+        "id": 170,
+        "activity": "Fabrication de verre plat",
+        "naf": "23.11Z"
+      },
+      {
+        "id": 171,
+        "activity": "Façonnage et transformation du verre plat",
+        "naf": "23.12Z"
+      },
+      {
+        "id": 172,
+        "activity": "Fabrication de verre creux",
+        "naf": "23.13Z"
+      },
+      {
+        "id": 173,
+        "activity": "Fabrication de fibres de verre",
+        "naf": "23.14Z"
+      },
+      {
+        "id": 174,
+        "activity": "Fabrication et façonnage d'autres articles en verre, y compris verre technique",
+        "naf": "23.19Z"
+      },
+      {
+        "id": 175,
+        "activity": "Fabrication de produits réfractaires",
+        "naf": "23.20Z"
+      },
+      {
+        "id": 176,
+        "activity": "Fabrication de carreaux en céramique",
+        "naf": "23.31Z"
+      },
+      {
+        "id": 177,
+        "activity": "Fabrication de briques, tuiles et produits de construction, en terre cuite",
+        "naf": "23.32Z"
+      },
+      {
+        "id": 178,
+        "activity": "Fabrication d'articles céramiques à usage domestique ou ornemental",
+        "naf": "23.41Z"
+      },
+      {
+        "id": 179,
+        "activity": "Fabrication d'appareils sanitaires en céramique",
+        "naf": "23.42Z"
+      },
+      {
+        "id": 180,
+        "activity": "Fabrication d'isolateurs et pièces isolantes en céramique",
+        "naf": "23.43Z"
+      },
+      {
+        "id": 181,
+        "activity": "Fabrication d'autres produits céramiques à usage technique",
+        "naf": "23.44Z"
+      },
+      {
+        "id": 182,
+        "activity": "Fabrication d'autres produits céramiques",
+        "naf": "23.49Z"
+      },
+      {
+        "id": 183,
+        "activity": "Fabrication de ciment",
+        "naf": "23.51Z"
+      },
+      {
+        "id": 184,
+        "activity": "Fabrication de chaux et plâtre",
+        "naf": "23.52Z"
+      },
+      {
+        "id": 185,
+        "activity": "Fabrication d'éléments en béton pour la construction",
+        "naf": "23.61Z"
+      },
+      {
+        "id": 186,
+        "activity": "Fabrication d'éléments en plâtre pour la construction",
+        "naf": "23.62Z"
+      },
+      {
+        "id": 187,
+        "activity": "Fabrication de béton prêt à l'emploi",
+        "naf": "23.63Z"
+      },
+      {
+        "id": 188,
+        "activity": "Fabrication de mortiers et bétons secs",
+        "naf": "23.64Z"
+      },
+      {
+        "id": 189,
+        "activity": "Fabrication d'ouvrages en fibre-ciment",
+        "naf": "23.65Z"
+      },
+      {
+        "id": 190,
+        "activity": "Fabrication d'autres ouvrages en béton, en ciment ou en plâtre",
+        "naf": "23.69Z"
+      },
+      {
+        "id": 191,
+        "activity": "Taille, façonnage et finissage de pierres",
+        "naf": "23.70Z"
+      },
+      {
+        "id": 192,
+        "activity": "Fabrication de produits abrasifs",
+        "naf": "23.91Z"
+      },
+      {
+        "id": 193,
+        "activity": "Fabrication d'autres produits minéraux non métalliques n.c.a.",
+        "naf": "23.99Z"
+      }
+    ],
+    "Métallurgie": [
+      {
+        "id": 194,
+        "activity": "Sidérurgie",
+        "naf": "24.10Z"
+      },
+      {
+        "id": 195,
+        "activity": "Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier",
+        "naf": "24.20Z"
+      },
+      {
+        "id": 196,
+        "activity": "Étirage à froid de barres",
+        "naf": "24.31Z"
+      },
+      {
+        "id": 197,
+        "activity": "Laminage à froid de feuillards",
+        "naf": "24.32Z"
+      },
+      {
+        "id": 198,
+        "activity": "Profilage à froid par formage ou pliage",
+        "naf": "24.33Z"
+      },
+      {
+        "id": 199,
+        "activity": "Tréfilage à froid",
+        "naf": "24.34Z"
+      },
+      {
+        "id": 200,
+        "activity": "Production de métaux précieux",
+        "naf": "24.41Z"
+      },
+      {
+        "id": 201,
+        "activity": "Métallurgie de l'aluminium",
+        "naf": "24.42Z"
+      },
+      {
+        "id": 202,
+        "activity": "Métallurgie du plomb, du zinc ou de l'étain",
+        "naf": "24.43Z"
+      },
+      {
+        "id": 203,
+        "activity": "Métallurgie du cuivre",
+        "naf": "24.44Z"
+      },
+      {
+        "id": 204,
+        "activity": "Métallurgie des autres métaux non ferreux",
+        "naf": "24.45Z"
+      },
+      {
+        "id": 205,
+        "activity": "Élaboration et transformation de matières nucléaires",
+        "naf": "24.46Z"
+      },
+      {
+        "id": 206,
+        "activity": "Fonderie de fonte",
+        "naf": "24.51Z"
+      },
+      {
+        "id": 207,
+        "activity": "Fonderie d'acier",
+        "naf": "24.52Z"
+      },
+      {
+        "id": 208,
+        "activity": "Fonderie de métaux légers",
+        "naf": "24.53Z"
+      },
+      {
+        "id": 209,
+        "activity": "Fonderie d'autres métaux non ferreux",
+        "naf": "24.54Z"
+      }
+    ],
+    "Fabrication de produits métalliques, à l'exception des machines et des équipements": [
+      {
+        "id": 210,
+        "activity": "Fabrication de structures métalliques et de parties de structures",
+        "naf": "25.11Z"
+      },
+      {
+        "id": 211,
+        "activity": "Fabrication de portes et fenêtres en métal",
+        "naf": "25.12Z"
+      },
+      {
+        "id": 212,
+        "activity": "Fabrication de radiateurs et de chaudières pour le chauffage central",
+        "naf": "25.21Z"
+      },
+      {
+        "id": 213,
+        "activity": "Fabrication d'autres réservoirs, citernes et conteneurs métalliques",
+        "naf": "25.29Z"
+      },
+      {
+        "id": 214,
+        "activity": "Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central",
+        "naf": "25.30Z"
+      },
+      {
+        "id": 215,
+        "activity": "Fabrication d'armes et de munitions",
+        "naf": "25.40Z"
+      },
+      {
+        "id": 216,
+        "activity": "Forge, estampage, matriçage / Métallurgie des poudres",
+        "naf": "25.50A"
+      },
+      {
+        "id": 217,
+        "activity": "Découpage, emboutissage",
+        "naf": "25.50B"
+      },
+      {
+        "id": 218,
+        "activity": "Traitement et revêtement des métaux",
+        "naf": "25.61Z"
+      },
+      {
+        "id": 219,
+        "activity": "Décolletage",
+        "naf": "25.62A"
+      },
+      {
+        "id": 220,
+        "activity": "Mécanique industrielle",
+        "naf": "25.62B"
+      },
+      {
+        "id": 221,
+        "activity": "Fabrication de coutellerie",
+        "naf": "25.71Z"
+      },
+      {
+        "id": 222,
+        "activity": "Fabrication de serrures et de ferrures",
+        "naf": "25.72Z"
+      },
+      {
+        "id": 223,
+        "activity": "Fabrication de moules et modèles",
+        "naf": "25.73A"
+      },
+      {
+        "id": 224,
+        "activity": "Fabrication d'autres outillages",
+        "naf": "25.73B"
+      },
+      {
+        "id": 225,
+        "activity": "Fabrication de fûts et emballages métalliques similaires",
+        "naf": "25.91Z"
+      },
+      {
+        "id": 226,
+        "activity": "Fabrication d'emballages métalliques légers",
+        "naf": "25.92Z"
+      },
+      {
+        "id": 227,
+        "activity": "Fabrication d'articles en fils métalliques, de chaînes et de ressorts",
+        "naf": "25.93Z"
+      },
+      {
+        "id": 228,
+        "activity": "Fabrication de vis et de boulons",
+        "naf": "25.94Z"
+      },
+      {
+        "id": 229,
+        "activity": "Fabrication d'articles métalliques ménagers",
+        "naf": "25.99A"
+      },
+      {
+        "id": 230,
+        "activity": "Fabrication d'autres articles métalliques",
+        "naf": "25.99B"
+      }
+    ],
+    "Fabrication de produits informatiques, électronique et optiques": [
+      {
+        "id": 231,
+        "activity": "Fabrication de composants électroniques",
+        "naf": "26.11Z"
+      },
+      {
+        "id": 232,
+        "activity": "Fabrication de cartes électroniques assemblées",
+        "naf": "26.12Z"
+      },
+      {
+        "id": 233,
+        "activity": "Fabrication d'ordinateurs et d'équipements périphériques",
+        "naf": "26.20Z"
+      },
+      {
+        "id": 234,
+        "activity": "Fabrication d'équipements de communication",
+        "naf": "26.30Z"
+      },
+      {
+        "id": 235,
+        "activity": "Fabrication de produits électroniques grand public",
+        "naf": "26.40Z"
+      },
+      {
+        "id": 236,
+        "activity": "Fabrication d'équipements d'aide à la navigation",
+        "naf": "26.51A"
+      },
+      {
+        "id": 237,
+        "activity": "Fabrication d'instrumentation scientifique et technique",
+        "naf": "26.51B"
+      },
+      {
+        "id": 238,
+        "activity": "Horlogerie",
+        "naf": "26.52Z"
+      },
+      {
+        "id": 239,
+        "activity": "Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques",
+        "naf": "26.60Z"
+      },
+      {
+        "id": 240,
+        "activity": "Fabrication de matériels optique et photographique",
+        "naf": "26.70Z"
+      },
+      {
+        "id": 241,
+        "activity": "Fabrication de supports magnétiques et optiques",
+        "naf": "26.80Z"
+      }
+    ],
+    "Fabrication d'équipements électriques": [
+      {
+        "id": 242,
+        "activity": "Fabrication de moteurs, génératrices et transformateurs électriques",
+        "naf": "27.11Z"
+      },
+      {
+        "id": 243,
+        "activity": "Fabrication de matériel de distribution et de commande électrique",
+        "naf": "27.12Z"
+      },
+      {
+        "id": 244,
+        "activity": "Fabrication de piles et d'accumulateurs électriques",
+        "naf": "27.20Z"
+      },
+      {
+        "id": 245,
+        "activity": "Fabrication de câbles de fibres optiques",
+        "naf": "27.31Z"
+      },
+      {
+        "id": 246,
+        "activity": "Fabrication d'autres fils et câbles électroniques ou électriques",
+        "naf": "27.32Z"
+      },
+      {
+        "id": 247,
+        "activity": "Fabrication de matériel d'installation électrique",
+        "naf": "27.33Z"
+      },
+      {
+        "id": 248,
+        "activity": "Fabrication d'appareils d'éclairage électrique",
+        "naf": "27.40Z"
+      },
+      {
+        "id": 249,
+        "activity": "Fabrication d'appareils électroménagers",
+        "naf": "27.51Z"
+      },
+      {
+        "id": 250,
+        "activity": "Fabrication d'appareils ménagers non électriques",
+        "naf": "27.52Z"
+      },
+      {
+        "id": 251,
+        "activity": "Fabrication d'autres matériels électriques",
+        "naf": "27.90Z"
+      }
+    ],
+    "Fabrication de machines et équipements N.C.A": [
+      {
+        "id": 252,
+        "activity": "Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules",
+        "naf": "28.11Z"
+      },
+      {
+        "id": 253,
+        "activity": "Fabrication d'équipements hydrauliques et pneumatiques",
+        "naf": "28.12Z"
+      },
+      {
+        "id": 254,
+        "activity": "Fabrication d'autres pompes et compresseurs",
+        "naf": "28.13Z"
+      },
+      {
+        "id": 255,
+        "activity": "Fabrication d'autres articles de robinetterie",
+        "naf": "28.14Z"
+      },
+      {
+        "id": 256,
+        "activity": "Fabrication d'engrenages et d'organes mécaniques de transmission",
+        "naf": "28.15Z"
+      },
+      {
+        "id": 257,
+        "activity": "Fabrication de fours et brûleurs",
+        "naf": "28.21Z"
+      },
+      {
+        "id": 258,
+        "activity": "Fabrication de matériel de levage et de manutention",
+        "naf": "28.22Z"
+      },
+      {
+        "id": 259,
+        "activity": "Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques)",
+        "naf": "28.23Z"
+      },
+      {
+        "id": 260,
+        "activity": "Fabrication d'outillage portatif à moteur incorporé",
+        "naf": "28.24Z"
+      },
+      {
+        "id": 261,
+        "activity": "Fabrication d'équipements aérauliques et frigorifiques industriels",
+        "naf": "28.25Z"
+      },
+      {
+        "id": 262,
+        "activity": "Fabrication d'équipements d'emballage, de conditionnement et de pesage",
+        "naf": "28.29A"
+      },
+      {
+        "id": 263,
+        "activity": "Fabrication d'autres machines d'usage général",
+        "naf": "28.29B"
+      },
+      {
+        "id": 264,
+        "activity": "Fabrication de machines agricoles et forestières",
+        "naf": "28.30Z"
+      },
+      {
+        "id": 265,
+        "activity": "Fabrication de machines-outils pour le travail des métaux",
+        "naf": "28.41Z"
+      },
+      {
+        "id": 266,
+        "activity": "Fabrication d'autres machines-outils",
+        "naf": "28.49Z"
+      },
+      {
+        "id": 267,
+        "activity": "Fabrication de machines pour la métallurgie",
+        "naf": "28.91Z"
+      },
+      {
+        "id": 268,
+        "activity": "Fabrication de machines pour l'extraction ou la construction",
+        "naf": "28.92Z"
+      },
+      {
+        "id": 269,
+        "activity": "Fabrication de machines pour l'industrie agro-alimentaire",
+        "naf": "28.93Z"
+      },
+      {
+        "id": 270,
+        "activity": "Fabrication de machines pour les industries textiles",
+        "naf": "28.94Z"
+      },
+      {
+        "id": 271,
+        "activity": "Fabrication de machines pour les industries du papier et du carton",
+        "naf": "28.95Z"
+      },
+      {
+        "id": 272,
+        "activity": "Fabrication de machines pour le travail du caoutchouc ou des plastiques",
+        "naf": "28.96Z"
+      },
+      {
+        "id": 273,
+        "activity": "Fabrication de machines d'imprimerie",
+        "naf": "28.99A"
+      },
+      {
+        "id": 274,
+        "activity": "Fabrication d'autres machines spécialisées",
+        "naf": "28.99B"
+      }
+    ],
+    "Industrie automobile": [
+      {
+        "id": 275,
+        "activity": "Construction de véhicules automobiles",
+        "naf": "29.10Z"
+      },
+      {
+        "id": 276,
+        "activity": "Fabrication de carrosseries et remorques",
+        "naf": "29.20Z"
+      },
+      {
+        "id": 277,
+        "activity": "Fabrication d'équipements électriques et électroniques automobiles",
+        "naf": "29.31Z"
+      },
+      {
+        "id": 278,
+        "activity": "Fabrication d'autres équipements automobiles",
+        "naf": "29.32Z"
+      }
+    ],
+    "Fabrication d'autres matériels de transport": [
+      {
+        "id": 279,
+        "activity": "Construction de navires et de structures flottantes",
+        "naf": "30.11Z"
+      },
+      {
+        "id": 280,
+        "activity": "Construction de bateaux de plaisance",
+        "naf": "30.12Z"
+      },
+      {
+        "id": 281,
+        "activity": "Construction de locomotives et d'autre matériel ferroviaire roulant",
+        "naf": "30.20Z"
+      },
+      {
+        "id": 282,
+        "activity": "Construction aéronautique et spatiale",
+        "naf": "30.30Z"
+      },
+      {
+        "id": 283,
+        "activity": "Construction de véhicules militaires de combat",
+        "naf": "30.40Z"
+      },
+      {
+        "id": 284,
+        "activity": "Fabrication de motocycles",
+        "naf": "30.91Z"
+      },
+      {
+        "id": 285,
+        "activity": "Fabrication de bicyclettes et de véhicules pour invalides",
+        "naf": "30.92Z"
+      },
+      {
+        "id": 286,
+        "activity": "Fabrication d’autres équipements de transport n.c.a.",
+        "naf": "30.99Z"
+      }
+    ],
+    "Fabrication de meubles": [
+      {
+        "id": 287,
+        "activity": "Fabrication de meubles de bureau et de magasin",
+        "naf": "31.01Z"
+      },
+      {
+        "id": 288,
+        "activity": "Fabrication de meubles de cuisine",
+        "naf": "31.02Z"
+      },
+      {
+        "id": 289,
+        "activity": "Fabrication de matelas",
+        "naf": "31.03Z"
+      },
+      {
+        "id": 290,
+        "activity": "Fabrication de sièges d'ameublement d'intérieur",
+        "naf": "31.09A"
+      },
+      {
+        "id": 291,
+        "activity": "Fabrication d’autres meubles et industries connexes de l’ameublement",
+        "naf": "31.09B"
+      }
+    ],
+    "Autres industries manufacturières": [
+      {
+        "id": 292,
+        "activity": "Frappe de monnaie",
+        "naf": "32.11Z"
+      },
+      {
+        "id": 293,
+        "activity": "Fabrication d’articles de joaillerie et bijouterie",
+        "naf": "32.12Z"
+      },
+      {
+        "id": 294,
+        "activity": "Fabrication d’articles de bijouterie fantaisie et articles similaires",
+        "naf": "32.13Z"
+      },
+      {
+        "id": 295,
+        "activity": "Fabrication d'instruments de musique",
+        "naf": "32.20Z"
+      },
+      {
+        "id": 296,
+        "activity": "Fabrication d'articles de sport",
+        "naf": "32.30Z"
+      },
+      {
+        "id": 297,
+        "activity": "Fabrication de jeux et jouets",
+        "naf": "32.40Z"
+      },
+      {
+        "id": 298,
+        "activity": "Fabrication de matériel médico-chirurgical et dentaire",
+        "naf": "32.50A"
+      },
+      {
+        "id": 299,
+        "activity": "Fabrication de lunettes",
+        "naf": "32.50B"
+      },
+      {
+        "id": 300,
+        "activity": "Fabrication d’articles de brosserie",
+        "naf": "32.91Z"
+      },
+      {
+        "id": 301,
+        "activity": "Autres activités manufacturières n.c.a.",
+        "naf": "32.99Z"
+      }
+    ],
+    "Réparation et installation de machines et d'équipements": [
+      {
+        "id": 302,
+        "activity": "Réparation d'ouvrages en métaux",
+        "naf": "33.11Z"
+      },
+      {
+        "id": 303,
+        "activity": "Réparation de machines et équipements mécaniques",
+        "naf": "33.12Z"
+      },
+      {
+        "id": 304,
+        "activity": "Réparation de matériels électroniques et optiques",
+        "naf": "33.13Z"
+      },
+      {
+        "id": 305,
+        "activity": "Réparation d'équipements électriques",
+        "naf": "33.14Z"
+      },
+      {
+        "id": 306,
+        "activity": "Réparation et maintenance navale",
+        "naf": "33.15Z"
+      },
+      {
+        "id": 307,
+        "activity": "Réparation et maintenance d'aéronefs et d'engins spatiaux",
+        "naf": "33.16Z"
+      },
+      {
+        "id": 308,
+        "activity": "Réparation et maintenance d'autres équipements de transport",
+        "naf": "33.17Z"
+      },
+      {
+        "id": 309,
+        "activity": "Réparation d'autres équipements",
+        "naf": "33.19Z"
+      },
+      {
+        "id": 310,
+        "activity": "Installation de structures métalliques, chaudronnées et de tuyauterie",
+        "naf": "33.20A"
+      },
+      {
+        "id": 311,
+        "activity": "Installation de machines et équipements mécaniques",
+        "naf": "33.20B"
+      },
+      {
+        "id": 312,
+        "activity": "Conception d'ensemble et assemblage sur site industriel d'équipements de contrôle des processus industriels",
+        "naf": "33.20C"
+      },
+      {
+        "id": 313,
+        "activity": "Installation d'équipements électriques, de matériels électroniques et optiques ou d'autres matériels",
+        "naf": "33.20D"
+      }
+    ]
+  },
+  "Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné": {
+    "Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné": [
+      {
+        "id": 314,
+        "activity": "Production d'électricité",
+        "naf": "35.11Z"
+      },
+      {
+        "id": 315,
+        "activity": "Transport d'électricité",
+        "naf": "35.12Z"
+      },
+      {
+        "id": 316,
+        "activity": "Distribution d'électricité",
+        "naf": "35.13Z"
+      },
+      {
+        "id": 317,
+        "activity": "Commerce d'électricité",
+        "naf": "35.14Z"
+      },
+      {
+        "id": 318,
+        "activity": "Production de combustibles gazeux",
+        "naf": "35.21Z"
+      },
+      {
+        "id": 319,
+        "activity": "Distribution de combustibles gazeux par conduites",
+        "naf": "35.22Z"
+      },
+      {
+        "id": 320,
+        "activity": "Commerce de combustibles gazeux par conduites",
+        "naf": "35.23Z"
+      },
+      {
+        "id": 321,
+        "activity": "Production et distribution de vapeur et d'air conditionné",
+        "naf": "35.30Z"
+      }
+    ]
+  },
+  "Production et distribution d'eau / Assainissement, gestion des déchets et dépollution": {
+    "Captage, traitement, et distribution d'eau": [
+      {
+        "id": 322,
+        "activity": "Captage, traitement et distribution d'eau",
+        "naf": "36.00Z"
+      }
+    ],
+    "Collecte et traitement des eaux usées": [
+      {
+        "id": 323,
+        "activity": "Collecte et traitement des eaux usées",
+        "naf": "37.00Z"
+      }
+    ],
+    "Collecte, traitement et élimination des déchets / Récupération": [
+      {
+        "id": 324,
+        "activity": "Collecte des déchets non dangereux",
+        "naf": "38.11Z"
+      },
+      {
+        "id": 325,
+        "activity": "Collecte des déchets dangereux",
+        "naf": "38.12Z"
+      },
+      {
+        "id": 326,
+        "activity": "Traitement et élimination des déchets non dangereux",
+        "naf": "38.21Z"
+      },
+      {
+        "id": 327,
+        "activity": "Traitement et élimination des déchets dangereux",
+        "naf": "38.22Z"
+      },
+      {
+        "id": 328,
+        "activity": "Démantèlement d'épaves",
+        "naf": "38.31Z"
+      },
+      {
+        "id": 329,
+        "activity": "Récupération de déchets triés",
+        "naf": "38.32Z"
+      }
+    ],
+    "Dépollution et autres services de gestion des déchets": [
+      {
+        "id": 330,
+        "activity": "Dépollution et autres services de gestion des déchets",
+        "naf": "39.00Z"
+      }
+    ]
+  },
+  "Construction": {
+    "Construction de bâtiments": [
+      {
+        "id": 331,
+        "activity": "Promotion immobilière de logements",
+        "naf": "41.10A"
+      },
+      {
+        "id": 332,
+        "activity": "Promotion immobilière de bureaux",
+        "naf": "41.10B"
+      },
+      {
+        "id": 333,
+        "activity": "Promotion immobilière d'autres bâtiments",
+        "naf": "41.10C"
+      },
+      {
+        "id": 334,
+        "activity": "Supports juridiques de programmes",
+        "naf": "41.10D"
+      },
+      {
+        "id": 335,
+        "activity": "Construction de maisons individuelles",
+        "naf": "41.20A"
+      },
+      {
+        "id": 336,
+        "activity": "Construction d'autres bâtiments",
+        "naf": "41.20B"
+      }
+    ],
+    "Génie civil": [
+      {
+        "id": 337,
+        "activity": "Construction de routes et autoroutes",
+        "naf": "42.11Z"
+      },
+      {
+        "id": 338,
+        "activity": "Construction de voies ferrées de surface et souterraines",
+        "naf": "42.12Z"
+      },
+      {
+        "id": 339,
+        "activity": "Construction d'ouvrages d'art",
+        "naf": "42.13A"
+      },
+      {
+        "id": 340,
+        "activity": "Construction et entretien de tunnels",
+        "naf": "42.13B"
+      },
+      {
+        "id": 341,
+        "activity": "Construction de réseaux pour fluides",
+        "naf": "42.21Z"
+      },
+      {
+        "id": 342,
+        "activity": "Construction de réseaux électriques et de télécommunications",
+        "naf": "42.22Z"
+      },
+      {
+        "id": 343,
+        "activity": "Construction d'ouvrages maritimes et fluviaux",
+        "naf": "42.91Z"
+      },
+      {
+        "id": 344,
+        "activity": "Construction d'autres ouvrages de génie civil n.c.a.",
+        "naf": "42.99Z"
+      }
+    ],
+    "Travaux de construction spécialisés": [
+      {
+        "id": 345,
+        "activity": "Travaux de démolition",
+        "naf": "43.11Z"
+      },
+      {
+        "id": 346,
+        "activity": "Travaux de terrassement courants et travaux préparatoires",
+        "naf": "43.12A"
+      },
+      {
+        "id": 347,
+        "activity": "Travaux de terrassement spécialisés ou de grande masse",
+        "naf": "43.12B"
+      },
+      {
+        "id": 348,
+        "activity": "Forages et sondages",
+        "naf": "43.13Z"
+      },
+      {
+        "id": 349,
+        "activity": "Travaux d'installation électrique dans tous locaux",
+        "naf": "43.21A"
+      },
+      {
+        "id": 350,
+        "activity": "Travaux d'installation électrique sur la voie publique",
+        "naf": "43.21B"
+      },
+      {
+        "id": 351,
+        "activity": "Travaux d'installation d'eau et de gaz en tous locaux",
+        "naf": "43.22A"
+      },
+      {
+        "id": 352,
+        "activity": "Travaux d'installation d'équipements thermiques et de climatisation",
+        "naf": "43.22B"
+      },
+      {
+        "id": 353,
+        "activity": "Travaux d'isolation",
+        "naf": "43.29A"
+      },
+      {
+        "id": 354,
+        "activity": "Autres travaux d'installation n.c.a.",
+        "naf": "43.29B"
+      },
+      {
+        "id": 355,
+        "activity": "Travaux de plâtrerie",
+        "naf": "43.31Z"
+      },
+      {
+        "id": 356,
+        "activity": "Travaux de menuiserie bois et PVC",
+        "naf": "43.32A"
+      },
+      {
+        "id": 357,
+        "activity": "Travaux de menuiserie métallique et serrurerie",
+        "naf": "43.32B"
+      },
+      {
+        "id": 358,
+        "activity": "Agencement de lieux de vente",
+        "naf": "43.32C"
+      },
+      {
+        "id": 359,
+        "activity": "Travaux de revêtement des sols et des murs",
+        "naf": "43.33Z"
+      },
+      {
+        "id": 360,
+        "activity": "Travaux de peinture et vitrerie",
+        "naf": "43.34Z"
+      },
+      {
+        "id": 361,
+        "activity": "Autres travaux de finition",
+        "naf": "43.39Z"
+      },
+      {
+        "id": 362,
+        "activity": "Travaux de charpente",
+        "naf": "43.91A"
+      },
+      {
+        "id": 363,
+        "activity": "Travaux de couverture par éléments",
+        "naf": "43.91B"
+      },
+      {
+        "id": 364,
+        "activity": "Travaux d'étanchéification",
+        "naf": "43.99A"
+      },
+      {
+        "id": 365,
+        "activity": "Travaux de montage de structures métalliques",
+        "naf": "43.99B"
+      },
+      {
+        "id": 366,
+        "activity": "Travaux de maçonnerie générale et gros œuvre de bâtiment",
+        "naf": "43.99C"
+      },
+      {
+        "id": 367,
+        "activity": "Autres travaux spécialisés de construction",
+        "naf": "43.99D"
+      },
+      {
+        "id": 368,
+        "activity": "Location avec opérateur de matériel de construction",
+        "naf": "43.99E"
+      }
+    ]
+  },
+  "Commerce / Réparation d'automobiles et de motocycles": {
+    "Commerce et réparation d'automobiles et de motocycles": [
+      {
+        "id": 369,
+        "activity": "Commerce de voitures et de véhicules automobiles légers",
+        "naf": "45.11Z"
+      },
+      {
+        "id": 370,
+        "activity": "Commerce d'autres véhicules automobiles",
+        "naf": "45.19Z"
+      },
+      {
+        "id": 371,
+        "activity": "Entretien et réparation de véhicules automobiles légers",
+        "naf": "45.20A"
+      },
+      {
+        "id": 372,
+        "activity": "Entretien et réparation d'autres véhicules automobiles",
+        "naf": "45.20B"
+      },
+      {
+        "id": 373,
+        "activity": "Commerce de gros d'équipements automobiles",
+        "naf": "45.31Z"
+      },
+      {
+        "id": 374,
+        "activity": "Commerce de détail d'équipements automobiles",
+        "naf": "45.32Z"
+      },
+      {
+        "id": 375,
+        "activity": "Commerce et réparation de motocycles",
+        "naf": "45.40Z"
+      }
+    ],
+    "Commerce de gros, à l'exclusion des automobiles et des motocycles": [
+      {
+        "id": 376,
+        "activity": "Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis",
+        "naf": "46.11Z"
+      },
+      {
+        "id": 377,
+        "activity": "Centrales d'achat de carburant",
+        "naf": "46.12A"
+      },
+      {
+        "id": 378,
+        "activity": "Autres intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques",
+        "naf": "46.12B"
+      },
+      {
+        "id": 379,
+        "activity": "Intermédiaires du commerce en bois et matériaux de construction",
+        "naf": "46.13Z"
+      },
+      {
+        "id": 380,
+        "activity": "Intermédiaires du commerce en machines, équipements industriels, navires et avions",
+        "naf": "46.14Z"
+      },
+      {
+        "id": 381,
+        "activity": "Intermédiaires du commerce en meubles, articles de ménage et quincaillerie",
+        "naf": "46.15Z"
+      },
+      {
+        "id": 382,
+        "activity": "Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir",
+        "naf": "46.16Z"
+      },
+      {
+        "id": 383,
+        "activity": "Centrales d'achat alimentaires",
+        "naf": "46.17A"
+      },
+      {
+        "id": 384,
+        "activity": "Autres intermédiaires du commerce en denrées, boissons et tabac",
+        "naf": "46.17B"
+      },
+      {
+        "id": 385,
+        "activity": "Intermédiaires spécialisés dans le commerce d'autres produits spécifiques",
+        "naf": "46.18Z"
+      },
+      {
+        "id": 386,
+        "activity": "Centrales d'achat non alimentaires",
+        "naf": "46.19A"
+      },
+      {
+        "id": 387,
+        "activity": "Autres intermédiaires du commerce en produits divers",
+        "naf": "46.19B"
+      },
+      {
+        "id": 388,
+        "activity": "Commerce de gros (commerce interentreprises) de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail",
+        "naf": "46.21Z"
+      },
+      {
+        "id": 389,
+        "activity": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
+        "naf": "46.22Z"
+      },
+      {
+        "id": 390,
+        "activity": "Commerce de gros (commerce interentreprises) d'animaux vivants",
+        "naf": "46.23Z"
+      },
+      {
+        "id": 391,
+        "activity": "Commerce de gros (commerce interentreprises) de cuirs et peaux",
+        "naf": "46.24Z"
+      },
+      {
+        "id": 392,
+        "activity": "Commerce de gros (commerce interentreprises) de fruits et légumes",
+        "naf": "46.31Z"
+      },
+      {
+        "id": 393,
+        "activity": "Commerce de gros (commerce interentreprises) de viandes de boucherie",
+        "naf": "46.32A"
+      },
+      {
+        "id": 394,
+        "activity": "Commerce de gros (commerce interentreprises) de produits à base de viande",
+        "naf": "46.32B"
+      },
+      {
+        "id": 395,
+        "activity": "Commerce de gros (commerce interentreprises) de volailles et gibier",
+        "naf": "46.32C"
+      },
+      {
+        "id": 396,
+        "activity": "Commerce de gros (commerce interentreprises) de produits laitiers, œufs, huiles et matières grasses comestibles",
+        "naf": "46.33Z"
+      },
+      {
+        "id": 397,
+        "activity": "Commerce de gros (commerce interentreprises) de boissons",
+        "naf": "46.34Z"
+      },
+      {
+        "id": 398,
+        "activity": "Commerce de gros (commerce interentreprises) de produits à base de tabac",
+        "naf": "46.35Z"
+      },
+      {
+        "id": 399,
+        "activity": "Commerce de gros (commerce interentreprises) de sucre, chocolat et confiserie",
+        "naf": "46.36Z"
+      },
+      {
+        "id": 400,
+        "activity": "Commerce de gros (commerce interentreprises) de café, thé, cacao et épices",
+        "naf": "46.37Z"
+      },
+      {
+        "id": 401,
+        "activity": "Commerce de gros (commerce interentreprises) de poissons, crustacés et mollusques",
+        "naf": "46.38A"
+      },
+      {
+        "id": 402,
+        "activity": "Commerce de gros (commerce interentreprises) alimentaire spécialisé divers",
+        "naf": "46.38B"
+      },
+      {
+        "id": 403,
+        "activity": "Commerce de gros (commerce interentreprises) de produits surgelés",
+        "naf": "46.39A"
+      },
+      {
+        "id": 404,
+        "activity": "Commerce de gros (commerce interentreprises) alimentaire non spécialisé",
+        "naf": "46.39B"
+      },
+      {
+        "id": 405,
+        "activity": "Commerce de gros (commerce interentreprises) de textiles",
+        "naf": "46.41Z"
+      },
+      {
+        "id": 406,
+        "activity": "Commerce de gros (commerce interentreprises) d'habillement et de chaussures",
+        "naf": "46.42Z"
+      },
+      {
+        "id": 407,
+        "activity": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
+        "naf": "46.43Z"
+      },
+      {
+        "id": 408,
+        "activity": "Commerce de gros (commerce interentreprises) de vaisselle, verrerie et produits d'entretien",
+        "naf": "46.44Z"
+      },
+      {
+        "id": 409,
+        "activity": "Commerce de gros (commerce interentreprises) de parfumerie et de produits de beauté",
+        "naf": "46.45Z"
+      },
+      {
+        "id": 410,
+        "activity": "Commerce de gros (commerce interentreprises) de produits pharmaceutiques",
+        "naf": "46.46Z"
+      },
+      {
+        "id": 411,
+        "activity": "Commerce de gros (commerce interentreprises) de meubles, de tapis et d'appareils d'éclairage",
+        "naf": "46.47Z"
+      },
+      {
+        "id": 412,
+        "activity": "Commerce de gros (commerce interentreprises) d'articles d'horlogerie et de bijouterie",
+        "naf": "46.48Z"
+      },
+      {
+        "id": 413,
+        "activity": "Commerce de gros (commerce interentreprises) d'autres biens domestiques",
+        "naf": "46.49Z"
+      },
+      {
+        "id": 414,
+        "activity": "Commerce de gros (commerce interentreprises) d'ordinateurs, d'équipements informatiques périphériques et de logiciels",
+        "naf": "46.51Z"
+      },
+      {
+        "id": 415,
+        "activity": "Commerce de gros (commerce interentreprises) de composants et d'équipements électroniques et de télécommunication",
+        "naf": "46.52Z"
+      },
+      {
+        "id": 416,
+        "activity": "Commerce de gros (commerce interentreprises) de matériel agricole",
+        "naf": "46.61Z"
+      },
+      {
+        "id": 417,
+        "activity": "Commerce de gros (commerce interentreprises) de machines-outils",
+        "naf": "46.62Z"
+      },
+      {
+        "id": 418,
+        "activity": "Commerce de gros (commerce interentreprises) de machines pour l'extraction, la construction et le génie civil",
+        "naf": "46.63Z"
+      },
+      {
+        "id": 419,
+        "activity": "Commerce de gros (commerce interentreprises) de machines pour l'industrie textile et l'habillement",
+        "naf": "46.64Z"
+      },
+      {
+        "id": 420,
+        "activity": "Commerce de gros (commerce interentreprises) de mobilier de bureau",
+        "naf": "46.65Z"
+      },
+      {
+        "id": 421,
+        "activity": "Commerce de gros (commerce interentreprises) d'autres machines et équipements de bureau",
+        "naf": "46.66Z"
+      },
+      {
+        "id": 422,
+        "activity": "Commerce de gros (commerce interentreprises) de matériel électrique",
+        "naf": "46.69A"
+      },
+      {
+        "id": 423,
+        "activity": "Commerce de gros (commerce interentreprises) de fournitures et équipements industriels divers",
+        "naf": "46.69B"
+      },
+      {
+        "id": 424,
+        "activity": "Commerce de gros (commerce interentreprises) de fournitures et équipements divers pour le commerce et les services",
+        "naf": "46.69C"
+      },
+      {
+        "id": 425,
+        "activity": "Commerce de gros (commerce interentreprises) de combustibles et de produits annexes",
+        "naf": "46.71Z"
+      },
+      {
+        "id": 426,
+        "activity": "Commerce de gros (commerce interentreprises) de minerais et métaux",
+        "naf": "46.72Z"
+      },
+      {
+        "id": 427,
+        "activity": "Commerce de gros (commerce interentreprises) de bois et de matériaux de construction",
+        "naf": "46.73A"
+      },
+      {
+        "id": 428,
+        "activity": "Commerce de gros (commerce interentreprises) d'appareils sanitaires et de produits de décoration",
+        "naf": "46.73B"
+      },
+      {
+        "id": 429,
+        "activity": "Commerce de gros (commerce interentreprises) de quincaillerie",
+        "naf": "46.74A"
+      },
+      {
+        "id": 430,
+        "activity": "Commerce de gros (commerce interentreprises) de fournitures pour la plomberie et le chauffage",
+        "naf": "46.74B"
+      },
+      {
+        "id": 431,
+        "activity": "Commerce de gros (commerce interentreprises) de produits chimiques",
+        "naf": "46.75Z"
+      },
+      {
+        "id": 432,
+        "activity": "Commerce de gros (commerce interentreprises) d'autres produits intermédiaires",
+        "naf": "46.76Z"
+      },
+      {
+        "id": 433,
+        "activity": "Commerce de gros (commerce interentreprises) de déchets et débris",
+        "naf": "46.77Z"
+      },
+      {
+        "id": 434,
+        "activity": "Commerce de gros (commerce interentreprises) non spécialisé",
+        "naf": "46.90Z"
+      }
+    ],
+    "Commerce de détail, à l'exception des automobiles et des motocyles": [
+      {
+        "id": 435,
+        "activity": "Commerce de détail de produits surgelés",
+        "naf": "47.11A"
+      },
+      {
+        "id": 436,
+        "activity": "Commerce d'alimentation générale",
+        "naf": "47.11B"
+      },
+      {
+        "id": 437,
+        "activity": "Supérettes",
+        "naf": "47.11C"
+      },
+      {
+        "id": 438,
+        "activity": "Supermarchés",
+        "naf": "47.11D"
+      },
+      {
+        "id": 439,
+        "activity": "Magasins multi-commerces",
+        "naf": "47.11E"
+      },
+      {
+        "id": 440,
+        "activity": "Hypermarchés",
+        "naf": "47.11F"
+      },
+      {
+        "id": 441,
+        "activity": "Grands magasins",
+        "naf": "47.19A"
+      },
+      {
+        "id": 442,
+        "activity": "Autres commerces de détail en magasin non spécialisé",
+        "naf": "47.19B"
+      },
+      {
+        "id": 443,
+        "activity": "Commerce de détail de fruits et légumes en magasin spécialisé",
+        "naf": "47.21Z"
+      },
+      {
+        "id": 444,
+        "activity": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé",
+        "naf": "47.22Z"
+      },
+      {
+        "id": 445,
+        "activity": "Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé",
+        "naf": "47.23Z"
+      },
+      {
+        "id": 446,
+        "activity": "Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé",
+        "naf": "47.24Z"
+      },
+      {
+        "id": 447,
+        "activity": "Commerce de détail de boissons en magasin spécialisé",
+        "naf": "47.25Z"
+      },
+      {
+        "id": 448,
+        "activity": "Commerce de détail de produits à base de tabac en magasin spécialisé",
+        "naf": "47.26Z"
+      },
+      {
+        "id": 449,
+        "activity": "Autres commerces de détail alimentaires en magasin spécialisé",
+        "naf": "47.29Z"
+      },
+      {
+        "id": 450,
+        "activity": "Commerce de détail de carburants en magasin spécialisé",
+        "naf": "47.30Z"
+      },
+      {
+        "id": 451,
+        "activity": "Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé",
+        "naf": "47.41Z"
+      },
+      {
+        "id": 452,
+        "activity": "Commerce de détail de matériels de télécommunication en magasin spécialisé",
+        "naf": "47.42Z"
+      },
+      {
+        "id": 453,
+        "activity": "Commerce de détail de matériels audio et vidéo en magasin spécialisé",
+        "naf": "47.43Z"
+      },
+      {
+        "id": 454,
+        "activity": "Commerce de détail de textiles en magasin spécialisé",
+        "naf": "47.51Z"
+      },
+      {
+        "id": 455,
+        "activity": "Commerce de détail de quincaillerie, peintures et verres en petites surfaces (moins de 400 m2)",
+        "naf": "47.52A"
+      },
+      {
+        "id": 456,
+        "activity": "Commerce de détail de quincaillerie, peintures et verres en grandes surfaces (400 m2et plus)",
+        "naf": "47.52B"
+      },
+      {
+        "id": 457,
+        "activity": "Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé",
+        "naf": "47.53Z"
+      },
+      {
+        "id": 458,
+        "activity": "Commerce de détail d'appareils électroménagers en magasin spécialisé",
+        "naf": "47.54Z"
+      },
+      {
+        "id": 459,
+        "activity": "Commerce de détail de meubles",
+        "naf": "47.59A"
+      },
+      {
+        "id": 460,
+        "activity": "Commerce de détail d'autres équipements du foyer",
+        "naf": "47.59B"
+      },
+      {
+        "id": 461,
+        "activity": "Commerce de détail de livres en magasin spécialisé",
+        "naf": "47.61Z"
+      },
+      {
+        "id": 462,
+        "activity": "Commerce de détail de journaux et papeterie en magasin spécialisé",
+        "naf": "47.62Z"
+      },
+      {
+        "id": 463,
+        "activity": "Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé",
+        "naf": "47.63Z"
+      },
+      {
+        "id": 464,
+        "activity": "Commerce de détail d'articles de sport en magasin spécialisé",
+        "naf": "47.64Z"
+      },
+      {
+        "id": 465,
+        "activity": "Commerce de détail de jeux et jouets en magasin spécialisé",
+        "naf": "47.65Z"
+      },
+      {
+        "id": 466,
+        "activity": "Commerce de détail d'habillement en magasin spécialisé",
+        "naf": "47.71Z"
+      },
+      {
+        "id": 467,
+        "activity": "Commerce de détail de la chaussure",
+        "naf": "47.72A"
+      },
+      {
+        "id": 468,
+        "activity": "Commerce de détail de maroquinerie et d'articles de voyage",
+        "naf": "47.72B"
+      },
+      {
+        "id": 469,
+        "activity": "Commerce de détail de produits pharmaceutiques en magasin spécialisé",
+        "naf": "47.73Z"
+      },
+      {
+        "id": 470,
+        "activity": "Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé",
+        "naf": "47.74Z"
+      },
+      {
+        "id": 471,
+        "activity": "Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé",
+        "naf": "47.75Z"
+      },
+      {
+        "id": 472,
+        "activity": "Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé",
+        "naf": "47.76Z"
+      },
+      {
+        "id": 473,
+        "activity": "Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé",
+        "naf": "47.77Z"
+      },
+      {
+        "id": 474,
+        "activity": "Commerces de détail d'optique",
+        "naf": "47.78A"
+      },
+      {
+        "id": 475,
+        "activity": "Commerces de détail de charbons et combustibles",
+        "naf": "47.78B"
+      },
+      {
+        "id": 476,
+        "activity": "Autres commerces de détail spécialisés divers",
+        "naf": "47.78C"
+      },
+      {
+        "id": 477,
+        "activity": "Commerce de détail de biens d'occasion en magasin",
+        "naf": "47.79Z"
+      },
+      {
+        "id": 478,
+        "activity": "Commerce de détail alimentaire sur éventaires et marchés",
+        "naf": "47.81Z"
+      },
+      {
+        "id": 479,
+        "activity": "Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés",
+        "naf": "47.82Z"
+      },
+      {
+        "id": 480,
+        "activity": "Autres commerces de détail sur éventaires et marchés",
+        "naf": "47.89Z"
+      },
+      {
+        "id": 481,
+        "activity": "Vente à distance sur catalogue général",
+        "naf": "47.91A"
+      },
+      {
+        "id": 482,
+        "activity": "Vente à distance sur catalogue spécialisé",
+        "naf": "47.91B"
+      },
+      {
+        "id": 483,
+        "activity": "Vente à domicile",
+        "naf": "47.99A"
+      },
+      {
+        "id": 484,
+        "activity": "Vente par automates et autres commerces de détail hors magasin, éventaires ou marchés n.c.a.",
+        "naf": "47.99B"
+      }
+    ]
+  },
+  "Services de transport et d'entreposage": {
+    "Transports terrestres et transports par conduite": [
+      {
+        "id": 485,
+        "activity": "Transport ferroviaire interurbain de voyageurs",
+        "naf": "49.10Z"
+      },
+      {
+        "id": 486,
+        "activity": "Transports ferroviaires de fret",
+        "naf": "49.20Z"
+      },
+      {
+        "id": 487,
+        "activity": "Transports urbains et suburbains de voyageurs",
+        "naf": "49.31Z"
+      },
+      {
+        "id": 488,
+        "activity": "Transports de voyageurs par taxis",
+        "naf": "49.32Z"
+      },
+      {
+        "id": 489,
+        "activity": "Transports routiers réguliers de voyageurs",
+        "naf": "49.39A"
+      },
+      {
+        "id": 490,
+        "activity": "Autres transports routiers de voyageurs",
+        "naf": "49.39B"
+      },
+      {
+        "id": 491,
+        "activity": "Téléphériques et remontées mécaniques",
+        "naf": "49.39C"
+      },
+      {
+        "id": 492,
+        "activity": "Transports routiers de fret interurbains",
+        "naf": "49.41A"
+      },
+      {
+        "id": 493,
+        "activity": "Transports routiers de fret de proximité",
+        "naf": "49.41B"
+      },
+      {
+        "id": 494,
+        "activity": "Location de camions avec chauffeur",
+        "naf": "49.41C"
+      },
+      {
+        "id": 495,
+        "activity": "Services de déménagement",
+        "naf": "49.42Z"
+      },
+      {
+        "id": 496,
+        "activity": "Transports par conduites",
+        "naf": "49.50Z"
+      }
+    ],
+    "Transports par eau": [
+      {
+        "id": 497,
+        "activity": "Transports maritimes et côtiers de passagers",
+        "naf": "50.10Z"
+      },
+      {
+        "id": 498,
+        "activity": "Transports maritimes et côtiers de fret",
+        "naf": "50.20Z"
+      },
+      {
+        "id": 499,
+        "activity": "Transports fluviaux de passagers",
+        "naf": "50.30Z"
+      },
+      {
+        "id": 500,
+        "activity": "Transports fluviaux de fret",
+        "naf": "50.40Z"
+      }
+    ],
+    "Transports aériens": [
+      {
+        "id": 501,
+        "activity": "Transports aériens de passagers",
+        "naf": "51.10Z"
+      },
+      {
+        "id": 502,
+        "activity": "Transports aériens de fret",
+        "naf": "51.21Z"
+      },
+      {
+        "id": 503,
+        "activity": "Transports spatiaux",
+        "naf": "51.22Z"
+      }
+    ],
+    "Entreposage et service auxiliaires des transports": [
+      {
+        "id": 504,
+        "activity": "Entreposage et stockage frigorifique",
+        "naf": "52.10A"
+      },
+      {
+        "id": 505,
+        "activity": "Entreposage et stockage non frigorifique",
+        "naf": "52.10B"
+      },
+      {
+        "id": 506,
+        "activity": "Services auxiliaires des transports terrestres",
+        "naf": "52.21Z"
+      },
+      {
+        "id": 507,
+        "activity": "Services auxiliaires des transports par eau",
+        "naf": "52.22Z"
+      },
+      {
+        "id": 508,
+        "activity": "Services auxiliaires des transports aériens",
+        "naf": "52.23Z"
+      },
+      {
+        "id": 509,
+        "activity": "Manutention portuaire",
+        "naf": "52.24A"
+      },
+      {
+        "id": 510,
+        "activity": "Manutention non portuaire",
+        "naf": "52.24B"
+      },
+      {
+        "id": 511,
+        "activity": "Messagerie, fret express",
+        "naf": "52.29A"
+      },
+      {
+        "id": 512,
+        "activity": "Affrètement et organisation des transports",
+        "naf": "52.29B"
+      }
+    ],
+    "Activités de poste et de courrier": [
+      {
+        "id": 513,
+        "activity": "Activités de poste dans le cadre d'une obligation de service universel",
+        "naf": "53.10Z"
+      },
+      {
+        "id": 514,
+        "activity": "Autres activités de poste et de courrier",
+        "naf": "53.20Z"
+      }
+    ]
+  },
+  "Services d'hébergement et de restauration": {
+    "Services d'hébergement": [
+      {
+        "id": 515,
+        "activity": "Hôtels et hébergement similaire",
+        "naf": "55.10Z"
+      },
+      {
+        "id": 516,
+        "activity": "Hébergement touristique et autre hébergement de courte durée",
+        "naf": "55.20Z"
+      },
+      {
+        "id": 517,
+        "activity": "Terrains de camping et parcs pour caravanes ou véhicules de loisirs",
+        "naf": "55.30Z"
+      },
+      {
+        "id": 518,
+        "activity": "Autres hébergements",
+        "naf": "55.90Z"
+      }
+    ],
+    "Restauration": [
+      {
+        "id": 519,
+        "activity": "Restauration traditionnelle",
+        "naf": "56.10A"
+      },
+      {
+        "id": 520,
+        "activity": "Cafétérias et autres libres-services",
+        "naf": "56.10B"
+      },
+      {
+        "id": 521,
+        "activity": "Restauration de type rapide",
+        "naf": "56.10C"
+      },
+      {
+        "id": 522,
+        "activity": "Services des traiteurs",
+        "naf": "56.21Z"
+      },
+      {
+        "id": 523,
+        "activity": "Restauration collective sous contrat",
+        "naf": "56.29A"
+      },
+      {
+        "id": 524,
+        "activity": "Autres services de restauration n.c.a.",
+        "naf": "56.29B"
+      },
+      {
+        "id": 525,
+        "activity": "Débits de boissons",
+        "naf": "56.30Z"
+      }
+    ]
+  },
+  "Services d'information et de communication": {
+    "Edition": [
+      {
+        "id": 526,
+        "activity": "Édition de livres",
+        "naf": "58.11Z"
+      },
+      {
+        "id": 527,
+        "activity": "Édition de répertoires et de fichiers d'adresses",
+        "naf": "58.12Z"
+      },
+      {
+        "id": 528,
+        "activity": "Édition de journaux",
+        "naf": "58.13Z"
+      },
+      {
+        "id": 529,
+        "activity": "Édition de revues et périodiques",
+        "naf": "58.14Z"
+      },
+      {
+        "id": 530,
+        "activity": "Autres activités d'édition",
+        "naf": "58.19Z"
+      },
+      {
+        "id": 531,
+        "activity": "Édition de jeux électroniques",
+        "naf": "58.21Z"
+      },
+      {
+        "id": 532,
+        "activity": "Édition de logiciels système et de réseau",
+        "naf": "58.29A"
+      },
+      {
+        "id": 533,
+        "activity": "Edition de logiciels outils de développement et de langages",
+        "naf": "58.29B"
+      },
+      {
+        "id": 534,
+        "activity": "Edition de logiciels applicatifs",
+        "naf": "58.29C"
+      }
+    ],
+    "Production de film cinématrographiques, de vidéo et de programmes de télévision / Enregistrement sonore et édition musicale": [
+      {
+        "id": 535,
+        "activity": "Production de films et de programmes pour la télévision",
+        "naf": "59.11A"
+      },
+      {
+        "id": 536,
+        "activity": "Production de films institutionnels et publicitaires",
+        "naf": "59.11B"
+      },
+      {
+        "id": 537,
+        "activity": "Production de films pour le cinéma",
+        "naf": "59.11C"
+      },
+      {
+        "id": 538,
+        "activity": "Post-production de films cinématographiques, de vidéo et de programmes de télévision",
+        "naf": "59.12Z"
+      },
+      {
+        "id": 539,
+        "activity": "Distribution de films cinématographiques",
+        "naf": "59.13A"
+      },
+      {
+        "id": 540,
+        "activity": "Edition et distribution vidéo",
+        "naf": "59.13B"
+      },
+      {
+        "id": 541,
+        "activity": "Projection de films cinématographiques",
+        "naf": "59.14Z"
+      },
+      {
+        "id": 542,
+        "activity": "Enregistrement sonore et édition musicale",
+        "naf": "59.20Z"
+      }
+    ],
+    "Programmation et diffusion": [
+      {
+        "id": 543,
+        "activity": "Édition et diffusion de programmes radio",
+        "naf": "60.10Z"
+      },
+      {
+        "id": 544,
+        "activity": "Edition de chaînes généralistes",
+        "naf": "60.20A"
+      },
+      {
+        "id": 545,
+        "activity": "Edition de chaînes thématiques",
+        "naf": "60.20B"
+      }
+    ],
+    "Télécommunications": [
+      {
+        "id": 546,
+        "activity": "Télécommunications filaires",
+        "naf": "61.10Z"
+      },
+      {
+        "id": 547,
+        "activity": "Télécommunications sans fil",
+        "naf": "61.20Z"
+      },
+      {
+        "id": 548,
+        "activity": "Télécommunications par satellite",
+        "naf": "61.30Z"
+      },
+      {
+        "id": 549,
+        "activity": "Autres activités de télécommunication",
+        "naf": "61.90Z"
+      }
+    ],
+    "Programmation, conseil et autres activités informatiques": [
+      {
+        "id": 550,
+        "activity": "Programmation informatique",
+        "naf": "62.01Z"
+      },
+      {
+        "id": 551,
+        "activity": "Conseil en systèmes et logiciels informatiques",
+        "naf": "62.02A"
+      },
+      {
+        "id": 552,
+        "activity": "Tierce maintenance de systèmes et d’applications informatiques",
+        "naf": "62.02B"
+      },
+      {
+        "id": 553,
+        "activity": "Gestion d'installations informatiques",
+        "naf": "62.03Z"
+      },
+      {
+        "id": 554,
+        "activity": "Autres activités informatiques",
+        "naf": "62.09Z"
+      }
+    ],
+    "Services d'information": [
+      {
+        "id": 555,
+        "activity": "Traitement de données, hébergement et activités connexes",
+        "naf": "63.11Z"
+      },
+      {
+        "id": 556,
+        "activity": "Portails Internet",
+        "naf": "63.12Z"
+      },
+      {
+        "id": 557,
+        "activity": "Activités des agences de presse",
+        "naf": "63.91Z"
+      },
+      {
+        "id": 558,
+        "activity": "Autres services d'information n.c.a.",
+        "naf": "63.99Z"
+      }
+    ]
+  },
+  "Activités financières et d'assurance": {
+    "Activités des services financiers, hors assurance et caisses de retraite": [
+      {
+        "id": 559,
+        "activity": "Activités de banque centrale",
+        "naf": "64.11Z"
+      },
+      {
+        "id": 560,
+        "activity": "Autres intermédiations monétaires",
+        "naf": "64.19Z"
+      },
+      {
+        "id": 561,
+        "activity": "Activités des sociétés holding",
+        "naf": "64.20Z"
+      },
+      {
+        "id": 562,
+        "activity": "Fonds de placement et entités financières similaires",
+        "naf": "64.30Z"
+      },
+      {
+        "id": 563,
+        "activity": "Crédit-bail",
+        "naf": "64.91Z"
+      },
+      {
+        "id": 564,
+        "activity": "Autre distribution de crédit",
+        "naf": "64.92Z"
+      },
+      {
+        "id": 565,
+        "activity": "Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.",
+        "naf": "64.99Z"
+      }
+    ],
+    "Assurance": [
+      {
+        "id": 566,
+        "activity": "Assurance vie",
+        "naf": "65.11Z"
+      },
+      {
+        "id": 567,
+        "activity": "Autres assurances",
+        "naf": "65.12Z"
+      },
+      {
+        "id": 568,
+        "activity": "Réassurance",
+        "naf": "65.20Z"
+      },
+      {
+        "id": 569,
+        "activity": "Caisses de retraite",
+        "naf": "65.30Z"
+      }
+    ],
+    "Activités auxiliaires de services financiers et d'assurance": [
+      {
+        "id": 570,
+        "activity": "Administration de marchés financiers",
+        "naf": "66.11Z"
+      },
+      {
+        "id": 571,
+        "activity": "Courtage de valeurs mobilières et de marchandises",
+        "naf": "66.12Z"
+      },
+      {
+        "id": 572,
+        "activity": "Supports juridiques de gestion de patrimoine mobilier",
+        "naf": "66.19A"
+      },
+      {
+        "id": 573,
+        "activity": "Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite, n.c.a.",
+        "naf": "66.19B"
+      },
+      {
+        "id": 574,
+        "activity": "Évaluation des risques et dommages",
+        "naf": "66.21Z"
+      },
+      {
+        "id": 575,
+        "activity": "Activités des agents et courtiers d'assurances",
+        "naf": "66.22Z"
+      },
+      {
+        "id": 576,
+        "activity": "Autres activités auxiliaires d'assurance et de caisses de retraite",
+        "naf": "66.29Z"
+      },
+      {
+        "id": 577,
+        "activity": "Gestion de fonds",
+        "naf": "66.30Z"
+      }
+    ]
+  },
+  "Activités immobilières": {
+    "Activités immobilières": [
+      {
+        "id": 578,
+        "activity": "Activités des marchands de biens immobiliers",
+        "naf": "68.10Z"
+      },
+      {
+        "id": 579,
+        "activity": "Location de logements",
+        "naf": "68.20A"
+      },
+      {
+        "id": 580,
+        "activity": "Location de terrains et d'autres biens immobiliers",
+        "naf": "68.20B"
+      },
+      {
+        "id": 581,
+        "activity": "Agences immobilières",
+        "naf": "68.31Z"
+      },
+      {
+        "id": 582,
+        "activity": "Administration d'immeubles et autres biens immobiliers",
+        "naf": "68.32A"
+      },
+      {
+        "id": 583,
+        "activity": "Supports juridiques de gestion de patrimoine immobilier",
+        "naf": "68.32B"
+      }
+    ]
+  },
+  "Activités spécialisées, scientifiques et techniques": {
+    "Activités juridiques et comptables": [
+      {
+        "id": 584,
+        "activity": "Activités juridiques",
+        "naf": "69.10Z"
+      },
+      {
+        "id": 585,
+        "activity": "Activités comptables",
+        "naf": "69.20Z"
+      }
+    ],
+    "Activités des sièges sociaux / Conseil de gestion": [
+      {
+        "id": 586,
+        "activity": "Activités des sièges sociaux",
+        "naf": "70.10Z"
+      },
+      {
+        "id": 587,
+        "activity": "Conseil en relations publiques et communication",
+        "naf": "70.21Z"
+      },
+      {
+        "id": 588,
+        "activity": "Conseil pour les affaires et autres conseils de gestion",
+        "naf": "70.22Z"
+      }
+    ],
+    "Activités d'architecture et d'ingénierie / Activités de contrôles et analyses techniques": [
+      {
+        "id": 589,
+        "activity": "Activités d'architecture",
+        "naf": "71.11Z"
+      },
+      {
+        "id": 590,
+        "activity": "Activité des géomètres",
+        "naf": "71.12A"
+      },
+      {
+        "id": 591,
+        "activity": "Ingénierie, études techniques",
+        "naf": "71.12B"
+      },
+      {
+        "id": 592,
+        "activity": "Contrôle technique automobile",
+        "naf": "71.20A"
+      },
+      {
+        "id": 593,
+        "activity": "Analyses, essais et inspections techniques",
+        "naf": "71.20B"
+      }
+    ],
+    "Recherche-développement scientifique": [
+      {
+        "id": 594,
+        "activity": "Recherche-développement en biotechnologie",
+        "naf": "72.11Z"
+      },
+      {
+        "id": 595,
+        "activity": "Recherche-développement en autres sciences physiques et naturelles",
+        "naf": "72.19Z"
+      },
+      {
+        "id": 596,
+        "activity": "Recherche-développement en sciences humaines et sociales",
+        "naf": "72.20Z"
+      }
+    ],
+    "Publicité et études de marché": [
+      {
+        "id": 597,
+        "activity": "Activités des agences de publicité",
+        "naf": "73.11Z"
+      },
+      {
+        "id": 598,
+        "activity": "Régie publicitaire de médias",
+        "naf": "73.12Z"
+      },
+      {
+        "id": 599,
+        "activity": "Études de marché et sondages",
+        "naf": "73.20Z"
+      }
+    ],
+    "Autres activités scpécialisées, scientifiques et techniques": [
+      {
+        "id": 600,
+        "activity": "Activités spécialisées de design",
+        "naf": "74.10Z"
+      },
+      {
+        "id": 601,
+        "activity": "Activités photographiques",
+        "naf": "74.20Z"
+      },
+      {
+        "id": 602,
+        "activity": "Traduction et interprétation",
+        "naf": "74.30Z"
+      },
+      {
+        "id": 603,
+        "activity": "Activité des économistes de la construction",
+        "naf": "74.90A"
+      },
+      {
+        "id": 604,
+        "activity": "Activités spécialisées, scientifiques et techniques diverses",
+        "naf": "74.90B"
+      }
+    ],
+    "Activités vétérinaires": [
+      {
+        "id": 605,
+        "activity": "Activités vétérinaires",
+        "naf": "75.00Z"
+      }
+    ]
+  },
+  "Activités de services administratifs et de soutien": {
+    "Activités de location et de location-bail": [
+      {
+        "id": 606,
+        "activity": "Location de courte durée de voitures et de véhicules automobiles légers",
+        "naf": "77.11A"
+      },
+      {
+        "id": 607,
+        "activity": "Location de longue durée de voitures et de véhicules automobiles légers",
+        "naf": "77.11B"
+      },
+      {
+        "id": 608,
+        "activity": "Location et location-bail de camions",
+        "naf": "77.12Z"
+      },
+      {
+        "id": 609,
+        "activity": "Location et location-bail d'articles de loisirs et de sport",
+        "naf": "77.21Z"
+      },
+      {
+        "id": 610,
+        "activity": "Location de vidéocassettes et disques vidéo",
+        "naf": "77.22Z"
+      },
+      {
+        "id": 611,
+        "activity": "Location et location-bail d'autres biens personnels et domestiques",
+        "naf": "77.29Z"
+      },
+      {
+        "id": 612,
+        "activity": "Location et location-bail de machines et équipements agricoles",
+        "naf": "77.31Z"
+      },
+      {
+        "id": 613,
+        "activity": "Location et location-bail de machines et équipements pour la construction",
+        "naf": "77.32Z"
+      },
+      {
+        "id": 614,
+        "activity": "Location et location-bail de machines de bureau et de matériel informatique",
+        "naf": "77.33Z"
+      },
+      {
+        "id": 615,
+        "activity": "Location et location-bail de matériels de transport par eau",
+        "naf": "77.34Z"
+      },
+      {
+        "id": 616,
+        "activity": "Location et location-bail de matériels de transport aérien",
+        "naf": "77.35Z"
+      },
+      {
+        "id": 617,
+        "activity": "Location et location-bail d'autres machines, équipements et biens matériels n.c.a.",
+        "naf": "77.39Z"
+      },
+      {
+        "id": 618,
+        "activity": "Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright",
+        "naf": "77.40Z"
+      }
+    ],
+    "Activitées liées à l'emploi": [
+      {
+        "id": 619,
+        "activity": "Activités des agences de placement de main-d'œuvre",
+        "naf": "78.10Z"
+      },
+      {
+        "id": 620,
+        "activity": "Activités des agences de travail temporaire",
+        "naf": "78.20Z"
+      },
+      {
+        "id": 621,
+        "activity": "Autre mise à disposition de ressources humaines",
+        "naf": "78.30Z"
+      }
+    ],
+    "Activités des agences de voyage, voyagistes, services de reservation et activités connexes": [
+      {
+        "id": 622,
+        "activity": "Activités des agences de voyage",
+        "naf": "79.11Z"
+      },
+      {
+        "id": 623,
+        "activity": "Activités des voyagistes",
+        "naf": "79.12Z"
+      },
+      {
+        "id": 624,
+        "activity": "Autres services de réservation et activités connexes",
+        "naf": "79.90Z"
+      }
+    ],
+    "Enquêtes et sécurité": [
+      {
+        "id": 625,
+        "activity": "Activités de sécurité privée",
+        "naf": "80.10Z"
+      },
+      {
+        "id": 626,
+        "activity": "Activités liées aux systèmes de sécurité",
+        "naf": "80.20Z"
+      },
+      {
+        "id": 627,
+        "activity": "Activités d'enquête",
+        "naf": "80.30Z"
+      }
+    ],
+    "Services relatifs aux bâtiments et aménagement paysager": [
+      {
+        "id": 628,
+        "activity": "Activités combinées de soutien lié aux bâtiments",
+        "naf": "81.10Z"
+      },
+      {
+        "id": 629,
+        "activity": "Nettoyage courant des bâtiments",
+        "naf": "81.21Z"
+      },
+      {
+        "id": 630,
+        "activity": "Autres activités de nettoyage des bâtiments et nettoyage industriel",
+        "naf": "81.22Z"
+      },
+      {
+        "id": 631,
+        "activity": "Désinfection, désinsectisation, dératisation",
+        "naf": "81.29A"
+      },
+      {
+        "id": 632,
+        "activity": "Autres activités de nettoyage n.c.a.",
+        "naf": "81.29B"
+      },
+      {
+        "id": 633,
+        "activity": "Services d'aménagement paysager",
+        "naf": "81.30Z"
+      }
+    ],
+    "Activités administratives et autres activités de soutien aux entreprises": [
+      {
+        "id": 634,
+        "activity": "Services administratifs combinés de bureau",
+        "naf": "82.11Z"
+      },
+      {
+        "id": 635,
+        "activity": "Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau",
+        "naf": "82.19Z"
+      },
+      {
+        "id": 636,
+        "activity": "Activités de centres d'appels",
+        "naf": "82.20Z"
+      },
+      {
+        "id": 637,
+        "activity": "Organisation de foires, salons professionnels et congrès",
+        "naf": "82.30Z"
+      },
+      {
+        "id": 638,
+        "activity": "Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle",
+        "naf": "82.91Z"
+      },
+      {
+        "id": 639,
+        "activity": "Activités de conditionnement",
+        "naf": "82.92Z"
+      },
+      {
+        "id": 640,
+        "activity": "Autres activités de soutien aux entreprises n.c.a.",
+        "naf": "82.99Z"
+      }
+    ]
+  },
+  "Administration publique": {
+    "Administration publique et défense / Sécurité sociale obligatoire": [
+      {
+        "id": 641,
+        "activity": "Administration publique générale",
+        "naf": "84.11Z"
+      },
+      {
+        "id": 642,
+        "activity": "Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale",
+        "naf": "84.12Z"
+      },
+      {
+        "id": 643,
+        "activity": "Administration publique (tutelle) des activités économiques",
+        "naf": "84.13Z"
+      },
+      {
+        "id": 644,
+        "activity": "Affaires étrangères",
+        "naf": "84.21Z"
+      },
+      {
+        "id": 645,
+        "activity": "Défense",
+        "naf": "84.22Z"
+      },
+      {
+        "id": 646,
+        "activity": "Justice",
+        "naf": "84.23Z"
+      },
+      {
+        "id": 647,
+        "activity": "Activités d’ordre public et de sécurité",
+        "naf": "84.24Z"
+      },
+      {
+        "id": 648,
+        "activity": "Services du feu et de secours",
+        "naf": "84.25Z"
+      },
+      {
+        "id": 649,
+        "activity": "Activités générales de sécurité sociale",
+        "naf": "84.30A"
+      },
+      {
+        "id": 650,
+        "activity": "Gestion des retraites complémentaires",
+        "naf": "84.30B"
+      },
+      {
+        "id": 651,
+        "activity": "Distribution sociale de revenus",
+        "naf": "84.30C"
+      }
+    ]
+  },
+  "Enseignement": {
+    "Enseignement": [
+      {
+        "id": 652,
+        "activity": "Enseignement pré-primaire",
+        "naf": "85.10Z"
+      },
+      {
+        "id": 653,
+        "activity": "Enseignement primaire",
+        "naf": "85.20Z"
+      },
+      {
+        "id": 654,
+        "activity": "Enseignement secondaire général",
+        "naf": "85.31Z"
+      },
+      {
+        "id": 655,
+        "activity": "Enseignement secondaire technique ou professionnel",
+        "naf": "85.32Z"
+      },
+      {
+        "id": 656,
+        "activity": "Enseignement post-secondaire non supérieur",
+        "naf": "85.41Z"
+      },
+      {
+        "id": 657,
+        "activity": "Enseignement supérieur",
+        "naf": "85.42Z"
+      },
+      {
+        "id": 658,
+        "activity": "Enseignement de disciplines sportives et d'activités de loisirs",
+        "naf": "85.51Z"
+      },
+      {
+        "id": 659,
+        "activity": "Enseignement culturel",
+        "naf": "85.52Z"
+      },
+      {
+        "id": 660,
+        "activity": "Enseignement de la conduite",
+        "naf": "85.53Z"
+      },
+      {
+        "id": 661,
+        "activity": "Formation continue d'adultes",
+        "naf": "85.59A"
+      },
+      {
+        "id": 662,
+        "activity": "Autres enseignements",
+        "naf": "85.59B"
+      },
+      {
+        "id": 663,
+        "activity": "Activités de soutien à l'enseignement",
+        "naf": "85.60Z"
+      }
+    ]
+  },
+  "Santé humaine et action sociale": {
+    "Activités pour la santés humaine": [
+      {
+        "id": 664,
+        "activity": "Activités hospitalières",
+        "naf": "86.10Z"
+      },
+      {
+        "id": 665,
+        "activity": "Activité des médecins généralistes",
+        "naf": "86.21Z"
+      },
+      {
+        "id": 666,
+        "activity": "Activités de radiodiagnostic et de radiothérapie",
+        "naf": "86.22A"
+      },
+      {
+        "id": 667,
+        "activity": "Activités chirurgicales",
+        "naf": "86.22B"
+      },
+      {
+        "id": 668,
+        "activity": "Autres activités des médecins spécialistes",
+        "naf": "86.22C"
+      },
+      {
+        "id": 669,
+        "activity": "Pratique dentaire",
+        "naf": "86.23Z"
+      },
+      {
+        "id": 670,
+        "activity": "Ambulances",
+        "naf": "86.90A"
+      },
+      {
+        "id": 671,
+        "activity": "Laboratoires d'analyses médicales",
+        "naf": "86.90B"
+      },
+      {
+        "id": 672,
+        "activity": "Centres de collecte et banques d'organes",
+        "naf": "86.90C"
+      },
+      {
+        "id": 673,
+        "activity": "Activités des infirmiers et des sages-femmes",
+        "naf": "86.90D"
+      },
+      {
+        "id": 674,
+        "activity": "Activités des professionnels de la rééducation, de l’appareillage et des pédicures-podologues",
+        "naf": "86.90E"
+      },
+      {
+        "id": 675,
+        "activity": "Activités de santé humaine non classées ailleurs",
+        "naf": "86.90F"
+      }
+    ],
+    "Hébergement médico-social et social": [
+      {
+        "id": 676,
+        "activity": "Hébergement médicalisé pour personnes âgées",
+        "naf": "87.10A"
+      },
+      {
+        "id": 677,
+        "activity": "Hébergement médicalisé pour enfants handicapés",
+        "naf": "87.10B"
+      },
+      {
+        "id": 678,
+        "activity": "Hébergement médicalisé pour adultes handicapés et autre hébergement médicalisé",
+        "naf": "87.10C"
+      },
+      {
+        "id": 679,
+        "activity": "Hébergement social pour handicapés mentaux et malades mentaux",
+        "naf": "87.20A"
+      },
+      {
+        "id": 680,
+        "activity": "Hébergement social pour toxicomanes",
+        "naf": "87.20B"
+      },
+      {
+        "id": 681,
+        "activity": "Hébergement social pour personnes âgées",
+        "naf": "87.30A"
+      },
+      {
+        "id": 682,
+        "activity": "Hébergement social pour handicapés  physiques",
+        "naf": "87.30B"
+      },
+      {
+        "id": 683,
+        "activity": "Hébergement social pour enfants en difficultés",
+        "naf": "87.90A"
+      },
+      {
+        "id": 684,
+        "activity": "Hébergement social pour adultes et familles en difficultés et autre hébergement social",
+        "naf": "87.90B"
+      }
+    ],
+    "Action sociale sans hébergement": [
+      {
+        "id": 685,
+        "activity": "Aide à domicile",
+        "naf": "88.10A"
+      },
+      {
+        "id": 686,
+        "activity": "Accueil ou accompagnement sans hébergement d’adultes handicapés ou de  personnes âgées",
+        "naf": "88.10B"
+      },
+      {
+        "id": 687,
+        "activity": "Aide par le travail",
+        "naf": "88.10C"
+      },
+      {
+        "id": 688,
+        "activity": "Accueil de jeunes enfants",
+        "naf": "88.91A"
+      },
+      {
+        "id": 689,
+        "activity": "Accueil ou accompagnement sans hébergement d’enfants handicapés",
+        "naf": "88.91B"
+      },
+      {
+        "id": 690,
+        "activity": "Autre accueil ou accompagnement sans hébergement d’enfants  et d’adolescents",
+        "naf": "88.99A"
+      },
+      {
+        "id": 691,
+        "activity": "Action sociale sans hébergement n.c.a.",
+        "naf": "88.99B"
+      }
+    ]
+  },
+  "Arts, spectacles et activité récréatives": {
+    "Activités créatives, artistiques et de spectacle": [
+      {
+        "id": 692,
+        "activity": "Arts du spectacle vivant",
+        "naf": "90.01Z"
+      },
+      {
+        "id": 693,
+        "activity": "Activités de soutien au spectacle vivant",
+        "naf": "90.02Z"
+      },
+      {
+        "id": 694,
+        "activity": "Création artistique relevant des arts plastiques",
+        "naf": "90.03A"
+      },
+      {
+        "id": 695,
+        "activity": "Autre création artistique",
+        "naf": "90.03B"
+      },
+      {
+        "id": 696,
+        "activity": "Gestion de salles de spectacles",
+        "naf": "90.04Z"
+      }
+    ],
+    "bibliothèques, archives, musées et autres activités culturelles": [
+      {
+        "id": 697,
+        "activity": "Gestion des bibliothèques et des archives",
+        "naf": "91.01Z"
+      },
+      {
+        "id": 698,
+        "activity": "Gestion des musées",
+        "naf": "91.02Z"
+      },
+      {
+        "id": 699,
+        "activity": "Gestion des sites et monuments historiques et des attractions touristiques similaires",
+        "naf": "91.03Z"
+      },
+      {
+        "id": 700,
+        "activity": "Gestion des jardins botaniques et zoologiques et des réserves naturelles",
+        "naf": "91.04Z"
+      }
+    ],
+    "Organisation de jeux de hasard et d'argent": [
+      {
+        "id": 701,
+        "activity": "Organisation de jeux de hasard et d'argent",
+        "naf": "92.00Z"
+      }
+    ],
+    "Activiés sportives, récrcéatives et de loisirs": [
+      {
+        "id": 702,
+        "activity": "Gestion d'installations sportives",
+        "naf": "93.11Z"
+      },
+      {
+        "id": 703,
+        "activity": "Activités de clubs de sports",
+        "naf": "93.12Z"
+      },
+      {
+        "id": 704,
+        "activity": "Activités des centres de culture physique",
+        "naf": "93.13Z"
+      },
+      {
+        "id": 705,
+        "activity": "Autres activités liées au sport",
+        "naf": "93.19Z"
+      },
+      {
+        "id": 706,
+        "activity": "Activités des parcs d'attractions et parcs à thèmes",
+        "naf": "93.21Z"
+      },
+      {
+        "id": 707,
+        "activity": "Autres activités récréatives et de loisirs",
+        "naf": "93.29Z"
+      }
+    ]
+  },
+  "Autres activités de services": {
+    "Activités des organisations associatives": [
+      {
+        "id": 708,
+        "activity": "Activités des organisations patronales et consulaires",
+        "naf": "94.11Z"
+      },
+      {
+        "id": 709,
+        "activity": "Activités des organisations professionnelles",
+        "naf": "94.12Z"
+      },
+      {
+        "id": 710,
+        "activity": "Activités des syndicats de salariés",
+        "naf": "94.20Z"
+      },
+      {
+        "id": 711,
+        "activity": "Activités des organisations religieuses",
+        "naf": "94.91Z"
+      },
+      {
+        "id": 712,
+        "activity": "Activités des organisations politiques",
+        "naf": "94.92Z"
+      },
+      {
+        "id": 713,
+        "activity": "Autres organisations fonctionnant par adhésion volontaire",
+        "naf": "94.99Z"
+      }
+    ],
+    "Réparation d'ordinateurs et de biens personnels et domestiques": [
+      {
+        "id": 714,
+        "activity": "Réparation d'ordinateurs et d'équipements périphériques",
+        "naf": "95.11Z"
+      },
+      {
+        "id": 715,
+        "activity": "Réparation d'équipements de communication",
+        "naf": "95.12Z"
+      },
+      {
+        "id": 716,
+        "activity": "Réparation de produits électroniques grand public",
+        "naf": "95.21Z"
+      },
+      {
+        "id": 717,
+        "activity": "Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin",
+        "naf": "95.22Z"
+      },
+      {
+        "id": 718,
+        "activity": "Réparation de chaussures et d'articles en cuir",
+        "naf": "95.23Z"
+      },
+      {
+        "id": 719,
+        "activity": "Réparation de meubles et d'équipements du foyer",
+        "naf": "95.24Z"
+      },
+      {
+        "id": 720,
+        "activity": "Réparation d'articles d'horlogerie et de bijouterie",
+        "naf": "95.25Z"
+      },
+      {
+        "id": 721,
+        "activity": "Réparation d'autres biens personnels et domestiques",
+        "naf": "95.29Z"
+      }
+    ],
+    "Autres services personnels": [
+      {
+        "id": 722,
+        "activity": "Blanchisserie-teinturerie de gros",
+        "naf": "96.01A"
+      },
+      {
+        "id": 723,
+        "activity": "Blanchisserie-teinturerie de détail",
+        "naf": "96.01B"
+      },
+      {
+        "id": 724,
+        "activity": "Coiffure",
+        "naf": "96.02A"
+      },
+      {
+        "id": 725,
+        "activity": "Soins de beauté",
+        "naf": "96.02B"
+      },
+      {
+        "id": 726,
+        "activity": "Services funéraires",
+        "naf": "96.03Z"
+      },
+      {
+        "id": 727,
+        "activity": "Entretien corporel",
+        "naf": "96.04Z"
+      },
+      {
+        "id": 728,
+        "activity": "Autres services personnels n.c.a.",
+        "naf": "96.09Z"
+      }
+    ]
+  },
+  "Activités des ménages en tant qu'employeurs / Activités indifférenciées des ménages en tant que producteurs de biens et services pour usages propre": {
+    "Activités des ménages en tant qu'employeurs de personnel domestique": [
+      {
+        "id": 729,
+        "activity": "Activités des ménages en tant qu'employeurs de personnel domestique",
+        "naf": "97.00Z"
+      }
+    ],
+    "Activités indifférenciées des ménages en tant que producteurs de biens et services pour usages propre": [
+      {
+        "id": 730,
+        "activity": "Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre",
+        "naf": "98.10Z"
+      },
+      {
+        "id": 731,
+        "activity": "Activités indifférenciées des ménages en tant que producteurs de services pour usage propre",
+        "naf": "98.20Z"
+      }
+    ]
+  },
+  "Activités extra-territoriales": {
+    "Activités des organisations et organismes extraterritoriaux": [
+      {
+        "id": 732,
+        "activity": "Activités des organisations et organismes extraterritoriaux",
+        "naf": "99.00Z"
+      }
+    ]
+  }
+}

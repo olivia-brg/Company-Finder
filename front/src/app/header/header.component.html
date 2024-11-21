@@ -1,6 +1,6 @@
 <input type="text" id="city_input" placeholder="Rechercher une ville" (input)="fetchCitySuggestionsOnInput()">
 
-<button type="button" id="search_button">Rechercher</button>
+<button type="button" id="search_button" (click)="searchCompanies()">Rechercher</button>
 
 @if (citiesSuggestedArray.length) {
 
