@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, map, mergeMap, Observable, of, range, reduce, tap } from "rxjs";
+import { catchError, concatMap, delay, map, mergeMap, Observable, of, range, reduce, tap } from "rxjs";
 
 const codeNAF = [
   "58.21Z",
@@ -61,9 +61,10 @@ export class FetchCompaniesDataService {
     this.cities = citiesCodes;
   
     return this.getAllCompanies().pipe(
-      tap((companiesData) => {
-        console.log("Tableau final :", companiesData);
-      }),
+      // In case of debug
+      // tap((companiesData) => {
+      //   console.log("Tableau final :", companiesData);
+      // }),
       catchError((err) => {
         console.error("Erreur :", err);
         return of(null);
@@ -73,13 +74,13 @@ export class FetchCompaniesDataService {
 
   private getAllCompanies(): Observable<any[]> {
   return this.fetchCompaniesDataByPageNumber(1).pipe(
-    mergeMap((firstPageData) => {
+    concatMap((firstPageData) => {
       if (!firstPageData) return of([]);
 
       const totalPages = firstPageData.total_pages;
 
       const remainingPages$ = range(2, totalPages).pipe(
-        mergeMap((page) => this.fetchCompaniesDataByPageNumber(page)),
+        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(10))),
         reduce((acc, pageData) => {
           if (pageData && pageData.results) {
             acc.push(...pageData.results);

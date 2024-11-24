@@ -54,7 +54,7 @@ export class HeaderComponent {
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {
         this.companies = companiesData;
-        console.log('Données récupérées :', companiesData);
+        console.log('Données récupérées :', this.companies);
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
