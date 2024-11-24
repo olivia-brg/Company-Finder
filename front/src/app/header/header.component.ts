@@ -1,7 +1,16 @@
-import { Component, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CityData, FetchCityService } from '../service/fetchCity.service';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 
+
+interface SingleCompanyData {
+  name: string;
+  adress: string;
+  activity: string;
+  staffSize: string;
+  latitude: number;
+  longitude: number;
+}
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -21,7 +30,7 @@ export class HeaderComponent {
   private searchDelay = 25; // ms
   selectedCities: CityData[] = [];
   citiesSuggestedArray: CityData[] = [];
-  companiesFetched: any[] = [];
+  companiesFetched: SingleCompanyData[] = [];
 
   fetchCitySuggestionsOnInput(inputValue: string) {
 
@@ -53,9 +62,9 @@ export class HeaderComponent {
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {
-        this.companiesFetched = companiesData;
-        console.log(this.fetchCompaniesDataService.parseEstablishments(this.companiesFetched));
-         
+        this.companiesFetched = this.fetchCompaniesDataService.parseEstablishments(companiesData);
+        console.log(this.companiesFetched);
+        // this.mapComponent.createMarkers(this.companiesFetched);
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });

@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, concatMap, delay, map, Observable, of, range, reduce, single, tap } from "rxjs";
+import { catchError, concatMap, delay, map, Observable, of, range, reduce } from "rxjs";
 
 const codeNAF = [
   "58.21Z",
@@ -58,13 +58,13 @@ export class FetchCompaniesDataService {
 
   parseEstablishments(data: any[]): any[] {
     return data.flatMap((entreprise) => 
-      entreprise.etablissements.map((etablissement: { Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
-        nom: entreprise.nom,
-        Adresse: etablissement.Adresse,
-        Activite: etablissement.Activite,
-        Effectif: etablissement.Effectif,
-        latitude: etablissement.latitude,
-        longitude: etablissement.longitude,
+      entreprise.etablissements.map((etablissement: {nom: string; Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
+        Name: entreprise.nom,
+        Adress: etablissement.Adresse,
+        Activity: etablissement.Activite,
+        StaffSize: etablissement.Effectif,
+        Latitude: etablissement.latitude,
+        Longitude: etablissement.longitude,
       }))
     );
   }
@@ -93,7 +93,7 @@ export class FetchCompaniesDataService {
       const totalPages = firstPageData.total_pages;
 
       const remainingPages$ = range(2, totalPages).pipe(
-        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(10))),
+        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(1))),
         reduce((acc, pageData) => {
           if (pageData && pageData.results) {
             acc.push(...pageData.results);

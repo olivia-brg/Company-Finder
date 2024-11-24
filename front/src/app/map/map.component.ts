@@ -1,6 +1,15 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 
+interface SingleCompanyData {
+  name: string;
+  adress: string;
+  activity: string;
+  staffSize: string;
+  latitude: number;
+  longitude: number;
+}
+
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -8,12 +17,17 @@ import * as L from 'leaflet';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss', '../../../node_modules/leaflet/dist/leaflet.css']
 })
+
 export class MapComponent implements OnInit, AfterViewInit {
+
 
   private map!: L.Map;
 
   ngOnInit(): void {
     this.configMap();
+  }
+
+  ngAfterViewInit(): void {
   }
 
   configMap() {
@@ -27,8 +41,17 @@ export class MapComponent implements OnInit, AfterViewInit {
     }).addTo(this.map);
   }
 
-  ngAfterViewInit(): void {
-    // this.configMap();
-    
+  createMarkers(companiesParsedArray: SingleCompanyData[]) {
+    // markers.clearLayers();
+    for (let establishment of companiesParsedArray) {
+      let marker = L.marker([establishment.latitude, establishment.longitude], {
+  
+      });
+      marker.bindPopup(
+        `<p>${establishment.name}<br>${establishment.adress}<br>Secteur d'activité : ${establishment.activity}<br>Effectif : ${establishment.staffSize}`
+      );
+      this.map.addLayer(marker);
+    }
   }
+
 }
