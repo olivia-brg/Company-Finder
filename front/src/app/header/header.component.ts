@@ -21,7 +21,7 @@ export class HeaderComponent {
   private searchDelay = 25; // ms
   selectedCities: CityData[] = [];
   citiesSuggestedArray: CityData[] = [];
-  companies: any[] = [];
+  companiesFetched: any[] = [];
 
   fetchCitySuggestionsOnInput(inputValue: string) {
 
@@ -53,12 +53,14 @@ export class HeaderComponent {
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {
-        this.companies = companiesData;
-        console.log('Données récupérées :', this.companies);
+        this.companiesFetched = companiesData;
+        console.log(this.fetchCompaniesDataService.parseEstablishments(this.companiesFetched));
+         
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
   }
+
 
   // TODO :
   // timeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs (demander a nico je sais plus))

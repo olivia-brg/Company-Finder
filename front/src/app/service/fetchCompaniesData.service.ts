@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, concatMap, delay, map, mergeMap, Observable, of, range, reduce, tap } from "rxjs";
+import { catchError, concatMap, delay, map, Observable, of, range, reduce, single, tap } from "rxjs";
 
 const codeNAF = [
   "58.21Z",
@@ -55,16 +55,29 @@ export class FetchCompaniesDataService {
   constructor(private http: HttpClient) { }
 
   cities: number[] = [];
-  allCompanies: any[] = [];
+
+  parseEstablishments(data: any[]): any[] {
+    return data.flatMap((entreprise) => 
+      entreprise.etablissements.map((etablissement: { Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
+        nom: entreprise.nom,
+        Adresse: etablissement.Adresse,
+        Activite: etablissement.Activite,
+        Effectif: etablissement.Effectif,
+        latitude: etablissement.latitude,
+        longitude: etablissement.longitude,
+      }))
+    );
+  }
 
   fetchCompaniesData(citiesCodes: number[]): Observable<any> {
     this.cities = citiesCodes;
   
     return this.getAllCompanies().pipe(
-      // In case of debug
+      // IN CASE OF DEBUG
       // tap((companiesData) => {
       //   console.log("Tableau final :", companiesData);
       // }),
+
       catchError((err) => {
         console.error("Erreur :", err);
         return of(null);
