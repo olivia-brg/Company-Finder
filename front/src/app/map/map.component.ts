@@ -5,8 +5,9 @@ import { MapService } from '../service/map.service';
   selector: 'app-map',
   standalone: true,
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss', '../../../node_modules/leaflet/dist/leaflet.css'],
+  styleUrls: ['./map.component.scss'],
 })
+
 export class MapComponent implements AfterViewInit {
   constructor(private mapService: MapService) {}
 
