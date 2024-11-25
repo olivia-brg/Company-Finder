@@ -59,12 +59,12 @@ export class FetchCompaniesDataService {
   parseEstablishments(data: any[]): any[] {
     return data.flatMap((entreprise) => 
       entreprise.etablissements.map((etablissement: {nom: string; Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
-        Name: entreprise.nom,
-        Adress: etablissement.Adresse,
-        Activity: etablissement.Activite,
-        StaffSize: etablissement.Effectif,
-        Latitude: etablissement.latitude,
-        Longitude: etablissement.longitude,
+        name: entreprise.nom,
+        adress: etablissement.Adresse,
+        activity: etablissement.Activite,
+        staffSize: etablissement.Effectif,
+        latitude: etablissement.latitude,
+        longitude: etablissement.longitude,
       }))
     );
   }
@@ -93,7 +93,7 @@ export class FetchCompaniesDataService {
       const totalPages = firstPageData.total_pages;
 
       const remainingPages$ = range(2, totalPages).pipe(
-        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(1))),
+        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(100))),
         reduce((acc, pageData) => {
           if (pageData && pageData.results) {
             acc.push(...pageData.results);
@@ -128,11 +128,11 @@ export class FetchCompaniesDataService {
             .filter((etablissement: { date_fermeture: any }) => etablissement.date_fermeture === null)
             .map(
               (etablissement: {
-                adresse: any;
+                adresse: string;
                 activite_principale: string;
                 tranche_effectif_salarie: string;
-                latitude: any;
-                longitude: any;
+                latitude: number;
+                longitude: number;
               }) => ({
                 Adresse: etablissement.adresse,
                 Activite: activiteMapping[etablissement.activite_principale] || "Activité inconnue",

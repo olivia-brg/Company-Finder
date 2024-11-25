@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CityData, FetchCityService } from '../service/fetchCity.service';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
+import { MapService } from '../service/map.service';
 
-
-interface SingleCompanyData {
+export interface SingleCompanyData {
   name: string;
   adress: string;
   activity: string;
@@ -21,16 +21,18 @@ interface SingleCompanyData {
 
 export class HeaderComponent {
 
-  constructor(
-    private fetchCityService: FetchCityService,
-    private fetchCompaniesDataService: FetchCompaniesDataService,
-  ) { }
-
   private debounceTimeout!: any;
   private searchDelay = 25; // ms
   selectedCities: CityData[] = [];
   citiesSuggestedArray: CityData[] = [];
   companiesFetched: SingleCompanyData[] = [];
+
+  constructor(
+    private fetchCityService: FetchCityService,
+    private fetchCompaniesDataService: FetchCompaniesDataService,
+    private mapService: MapService,
+  ) { }
+
 
   fetchCitySuggestionsOnInput(inputValue: string) {
 
@@ -63,15 +65,12 @@ export class HeaderComponent {
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {
         this.companiesFetched = this.fetchCompaniesDataService.parseEstablishments(companiesData);
-        console.log(this.companiesFetched);
-        // this.mapComponent.createMarkers(this.companiesFetched);
+        this.mapService.addMarkers(this.companiesFetched);
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
   }
 
-
   // TODO :
   // timeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs (demander a nico je sais plus))
 }
-
