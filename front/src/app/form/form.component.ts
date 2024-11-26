@@ -20,7 +20,9 @@ import {
 })
 
 export class Service {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   opts = [];
 
@@ -43,7 +45,6 @@ export class Service {
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
-    FormsModule,
     ReactiveFormsModule,
     AsyncPipe,
   ],
@@ -61,16 +62,19 @@ export class Form {
       debounceTime(400),
       distinctUntilChanged(),
       switchMap((val) => {
+        
         return this.filter(val || '');
       })
     );
   }
-
+  
   filter(val: string): Observable<any[]> {
     // call the service which makes the http-request
     return this.service.getData().pipe(
       map((response) =>
         response.filter((option: any) => {
+          console.log(option.name.toLowerCase().indexOf(val.toLowerCase()) === 0);
+          
           return option.name.toLowerCase().indexOf(val.toLowerCase()) === 0;
         })
       )
