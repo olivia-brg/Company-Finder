@@ -74,7 +74,6 @@ export class Form {
       debounceTime(100),
       distinctUntilChanged(),
       switchMap((inputValue) => {
-        console.log(this.service.opts);
         return this.service.formatCityData(inputValue || '');
       })
     );
