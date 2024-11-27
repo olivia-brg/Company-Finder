@@ -6,14 +6,14 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Observable, of } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  map,
-  startWith,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
+
+export interface CityData {
+  name: string;
+  code: number;
+  department: string;
+  departmentNumber: number;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -21,17 +21,28 @@ import {
 
 export class Service {
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
-  opts = [];
+  opts: CityData[] = [];
 
-  getData() {
-    return this.opts.length
-      ? of(this.opts)
-      : this.http
-          .get<any>('https://jsonplaceholder.typicode.com/users')
-          .pipe(tap((data) => (this.opts = data)));
+  formatCityData(cityName: string): Observable<CityData[]> {
+    return this.fetchCityDataByName(cityName).pipe(
+        map(rawData =>
+            rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
+                name: city.nom,
+                code: city.code,
+                department: city.departement.nom,
+                departmentNumber: city.departement.code,
+            }))
+        ),tap((data) => (this.opts = data))
+    );
+}
+
+fetchCityDataByName(val: string) {
+    const encodedCityName = encodeURIComponent(val);
+    return this.http
+          .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
   }
 }
 
@@ -51,33 +62,26 @@ export class Service {
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.scss'],
 })
+
 export class Form {
   myControl = new FormControl();
-  options = [];
   filteredOptions: Observable<any[]>;
+  selectedCities: CityData[] = [];
 
   constructor(private service: Service) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      debounceTime(400),
+      debounceTime(100),
       distinctUntilChanged(),
-      switchMap((val) => {
-        
-        return this.filter(val || '');
+      switchMap((inputValue) => {
+        console.log(this.service.opts);
+        return this.service.formatCityData(inputValue || '');
       })
     );
   }
+
   
-  filter(val: string): Observable<any[]> {
-    // call the service which makes the http-request
-    return this.service.getData().pipe(
-      map((response) =>
-        response.filter((option: any) => {
-          console.log(option.name.toLowerCase().indexOf(val.toLowerCase()) === 0);
-          
-          return option.name.toLowerCase().indexOf(val.toLowerCase()) === 0;
-        })
-      )
-    );
-  }
 }
+
+
+

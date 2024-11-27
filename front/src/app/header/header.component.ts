@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { CityData, FetchCityService } from '../service/fetchCity.service';
+import { CityData, Form } from '../form/form.component';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
-import { Form } from '../form/form.component';
 
 
 export interface SingleCompanyData {
@@ -31,42 +30,34 @@ export class HeaderComponent {
   companiesFetched: SingleCompanyData[] = [];
 
   constructor(
-    private fetchCityService: FetchCityService,
+    // private fetchCityService: FetchCityService,
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
     // private form: Form
   ) { }
 
 
-  fetchCitySuggestionsOnInput(inputValue: string) {
+  // fetchCitySuggestionsOnInput(inputValue: string) {
 
-    clearTimeout(this.debounceTimeout);
+  //   clearTimeout(this.debounceTimeout);
 
-    this.debounceTimeout = window.setTimeout(() => {
-      const searchInput = inputValue;
+  //   this.debounceTimeout = window.setTimeout(() => {
+  //     const searchInput = inputValue;
 
-      this.fetchCityService.fetchCities(searchInput).subscribe({
-        next: (cities: CityData[]) => {
-          this.citiesSuggestedArray = [...cities];
-          console.log(this.citiesSuggestedArray);
-        },
-        error: (err: Error) => console.error('Erreur :', err),
-      });
-    }, this.searchDelay);
+  //     this.fetchCityService.fetchCities(searchInput).subscribe({
+  //       next: (cities: CityData[]) => {
+  //         this.citiesSuggestedArray = [...cities];
+  //         console.log(this.citiesSuggestedArray);
+  //       },
+  //       error: (err: Error) => console.error('Erreur :', err),
+  //     });
+  //   }, this.searchDelay);
+  // }
 
-  }
 
-  selectCity(city: CityData) {
-    const cityAlreadySelected = this.selectedCities.some(selectedCity => selectedCity.code === city.code);
-
-    if (cityAlreadySelected) {
-      this.selectedCities = this.selectedCities.filter(selectedCity => selectedCity.code !== city.code);
-    } else {
-      this.selectedCities.push(city);
-    }
-  }
 
   searchCompanies() {
+    this.selectedCities;
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {

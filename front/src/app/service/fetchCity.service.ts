@@ -1,54 +1,49 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { catchError, map, Observable, throwError } from "rxjs";
+// import { HttpClient } from "@angular/common/http";
+// import { Injectable } from "@angular/core";
+// import { catchError, map, Observable, throwError } from "rxjs";
 
-export interface CityData {
-    name: string;
-    code: number;
-    department: string;
-    departmentNumber: number;
-}
 
-@Injectable({
-    providedIn: 'root',
-})
 
-export class FetchCityService {
+// @Injectable({
+//     providedIn: 'root',
+// })
 
-    constructor(private httpClient: HttpClient) {}
+// export class FetchCityService {
 
-    fetchCities(cityName: string): Observable<CityData[]>{
-        return this.formatCityData(cityName);
-    }
+//     constructor(private httpClient: HttpClient) {}
 
-    private formatCityData(cityName: string): Observable<CityData[]> {
-        return this.fetchCityDataByName(cityName).pipe(
-            map(rawData =>
-                rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
-                    name: city.nom,
-                    code: city.code,
-                    department: city.departement.nom,
-                    departmentNumber: city.departement.code,
-                }))
-            )
-        );
-    }
+//     fetchCities(cityName: string): Observable<CityData[]>{
+//         return this.formatCityData(cityName);
+//     }
 
-    private fetchCityDataByName(cityName: string): Observable<any> {
-        const url = this.buildApiUrl(cityName);
+//     private formatCityData(cityName: string): Observable<CityData[]> {
+//         return this.fetchCityDataByName(cityName).pipe(
+//             map(rawData =>
+//                 rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
+//                     name: city.nom,
+//                     code: city.code,
+//                     department: city.departement.nom,
+//                     departmentNumber: city.departement.code,
+//                 }))
+//             )
+//         );
+//     }
 
-        return this.httpClient.get<JSON>(url).pipe(
-            map(response => response),
-            catchError(error =>
-                throwError(() => new Error('Impossible de récupérer les données de la ville.'))
-            )
-        );
-    }
+//     private fetchCityDataByName(cityName: string): Observable<any> {
+//         const url = this.buildApiUrl(cityName);
 
-    private buildApiUrl(cityName: string): string {
-        const encodedCityName = encodeURIComponent(cityName);
+//         return this.httpClient.get<JSON>(url).pipe(
+//             map(response => response),
+//             catchError(error =>
+//                 throwError(() => new Error('Impossible de récupérer les données de la ville.'))
+//             )
+//         );
+//     }
 
-        return `https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=5`;
-    }
+//     private buildApiUrl(cityName: string): string {
+//         const encodedCityName = encodeURIComponent(cityName);
 
-}
+//         return `https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=5`;
+//     }
+
+// }
