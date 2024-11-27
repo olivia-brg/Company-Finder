@@ -1,12 +1,13 @@
 import { AsyncPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
+import { HeaderComponent } from '../header/header.component';
 
 export interface CityData {
   name: string;
@@ -50,25 +51,24 @@ fetchCityDataByName(val: string) {
  * @title Simple autocomplete
  */
 @Component({
-  selector: 'app-form',
+  selector: 'app-city-form',
   standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe,
+    AsyncPipe
   ],
-  templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
+  templateUrl: 'city-form.component.html',
+  styleUrls: ['city-form.component.scss'],
 })
 
-export class Form {
+export class CityForm {
   myControl = new FormControl();
-  filteredOptions: Observable<any[]>;
-  selectedCities: CityData[] = [];
+  filteredOptions: Observable<CityData[]> = new Observable<CityData[]>();
 
-  constructor(private service: Service) {
+  constructor(private service: Service, private headerComponent: HeaderComponent) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       debounceTime(100),
@@ -78,8 +78,16 @@ export class Form {
       })
     );
   }
-
   
+  selectCity(city: CityData) {
+    const cityAlreadySelected = this.headerComponent.selectedCities.some(selectedCity => selectedCity.code === city.code);
+
+    if (cityAlreadySelected) {
+      this.headerComponent.selectedCities = this.headerComponent.selectedCities.filter(selectedCity => selectedCity.code !== city.code);
+    } else {
+      this.headerComponent.selectedCities.push(city);
+    }
+  }
 }
 
 
