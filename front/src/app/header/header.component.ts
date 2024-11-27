@@ -30,7 +30,6 @@ export class HeaderComponent {
   companiesFetched: SingleCompanyData[] = [];
 
   constructor(
-    // private fetchCityService: FetchCityService,
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
     // private form: Form
