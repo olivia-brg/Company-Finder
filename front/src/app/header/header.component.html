@@ -1,23 +1,25 @@
 <div id="header">
-    <input type="text" #input placeholder="Rechercher une ville" (input)="fetchCitySuggestionsOnInput(input.value)"
-        (change)="input.value= ''; fetchCitySuggestionsOnInput(input.value)">
-
+<app-form />
+<!-- 
+    <input type="text" #input placeholder="Rechercher une ville" (input)="fetchCitySuggestionsOnInput(input.value)">
+    
+    
     <button type="button" id="search_button" (click)="searchCompanies()">Rechercher</button>
-
+    
     @if (citiesSuggestedArray.length) {
 
-    @for (city of citiesSuggestedArray; track $index) {
+        @for (city of citiesSuggestedArray; track $index) {
     <li (click)="selectCity(city); input.value= ''; fetchCitySuggestionsOnInput(input.value)">{{city.name}} |
         {{city.department}}, {{city.departmentNumber}}</li>
     }
 
     }
     @if (selectedCities.length) {
-
-    @for (city of selectedCities; track $index) {
-    <li>{{city.name}} | {{city.department}}, {{city.departmentNumber}}
-        <button type="button" (click)="selectedCities.splice($index, 1)">X</button>
-    </li>
-    }
-    }
+        
+        @for (city of selectedCities; track $index) {
+            <li>{{city.name}} | {{city.department}}, {{city.departmentNumber}}
+                <button type="button" (click)="selectedCities.splice($index, 1)">X</button>
+            </li>
+        }
+    } -->
 </div>

@@ -9,7 +9,7 @@ import { MapComponent } from './map/map.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    MapComponent,
+    MapComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
