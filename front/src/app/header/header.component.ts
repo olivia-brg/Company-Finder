@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CityData, Form } from '../form/form.component';
+import { CityData, CityForm } from '../city-form/city-form.component';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
 
@@ -16,7 +16,7 @@ export interface SingleCompanyData {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [Form],
+  imports: [CityForm],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -32,28 +32,7 @@ export class HeaderComponent {
   constructor(
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
-    // private form: Form
   ) { }
-
-
-  // fetchCitySuggestionsOnInput(inputValue: string) {
-
-  //   clearTimeout(this.debounceTimeout);
-
-  //   this.debounceTimeout = window.setTimeout(() => {
-  //     const searchInput = inputValue;
-
-  //     this.fetchCityService.fetchCities(searchInput).subscribe({
-  //       next: (cities: CityData[]) => {
-  //         this.citiesSuggestedArray = [...cities];
-  //         console.log(this.citiesSuggestedArray);
-  //       },
-  //       error: (err: Error) => console.error('Erreur :', err),
-  //     });
-  //   }, this.searchDelay);
-  // }
-
-
 
   searchCompanies() {
     this.selectedCities;

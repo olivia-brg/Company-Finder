@@ -1,11 +1,11 @@
 import { AsyncPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { HeaderComponent } from '../header/header.component';
 
@@ -51,7 +51,7 @@ fetchCityDataByName(val: string) {
  * @title Simple autocomplete
  */
 @Component({
-  selector: 'app-form',
+  selector: 'app-city-form',
   standalone: true,
   imports: [
     MatFormFieldModule,
@@ -60,13 +60,13 @@ fetchCityDataByName(val: string) {
     ReactiveFormsModule,
     AsyncPipe
   ],
-  templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
+  templateUrl: 'city-form.component.html',
+  styleUrls: ['city-form.component.scss'],
 })
 
-export class Form {
+export class CityForm {
   myControl = new FormControl();
-  filteredOptions: Observable<any[]>;
+  filteredOptions: Observable<CityData[]> = new Observable<CityData[]>();
 
   constructor(private service: Service, private headerComponent: HeaderComponent) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
