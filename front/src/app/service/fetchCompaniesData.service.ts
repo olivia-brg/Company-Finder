@@ -60,7 +60,7 @@ export class FetchCompaniesDataService {
     return data.flatMap((entreprise) => 
       entreprise.etablissements.map((etablissement: {nom: string; Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
         name: entreprise.nom,
-        adress: etablissement.Adresse,
+        address: etablissement.Adresse,
         activity: etablissement.Activite,
         staffSize: etablissement.Effectif,
         latitude: etablissement.latitude,
