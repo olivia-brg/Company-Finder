@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CityData, CityForm } from '../city-form/city-form.component';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
+import { MatButtonModule } from '@angular/material/button';
 
 
 export interface SingleCompanyData {
@@ -16,7 +17,10 @@ export interface SingleCompanyData {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CityForm],
+  imports: [
+    CityForm,
+    MatButtonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
