@@ -5,7 +5,7 @@ import { MapService } from '../service/map.service';
 
 export interface SingleCompanyData {
   name: string;
-  adress: string;
+  address: string;
   activity: string;
   staffSize: string;
   latitude: number;
