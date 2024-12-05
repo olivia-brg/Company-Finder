@@ -8,13 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class CodeNAFIntegrationTest {
+public class CodeNafIntegrationTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     void testGetAllCodes() {
-        ResponseEntity<String> response = restTemplate.getForEntity("/api/codeNAF", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("/api/codeNaf", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isNotEmpty();
     }

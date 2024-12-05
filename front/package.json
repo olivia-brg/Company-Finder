@@ -23,6 +23,7 @@
     "@asymmetrik/ngx-leaflet": "^17.0.0",
     "@asymmetrik/ngx-leaflet-markercluster": "^17.0.0",
     "company-finder": "file:",
+    "cors": "^2.8.5",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
     "primeicons": "^7.0.0",

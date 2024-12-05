@@ -3,6 +3,7 @@ import { CityData, CityForm } from '../city-form/city-form.component';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
 import { MatButtonModule } from '@angular/material/button';
+import { NafcodeFormComponent } from "../nafcode-form/nafcode-form.component";
 
 
 export interface SingleCompanyData {
@@ -20,7 +21,8 @@ export interface SingleCompanyData {
   imports: [
     CityForm,
     MatButtonModule,
-  ],
+    NafcodeFormComponent
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

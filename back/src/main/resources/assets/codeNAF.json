@@ -1,5 +1,5 @@
 {
-  "Agiculture, sylviculture et pêche": {
+  "Agriculture, sylviculture et pêche": {
     "Culture et production animale, chasse et services annexes": [
       {
         "id": 1,
@@ -632,7 +632,7 @@
         "naf": "15.20Z"
       }
     ],
-    "Travail du bois et fabrication d'articles en bois et en liège, à l'exeption des meubles / Fabrication d'articles en vannerie et sparterie": [
+    "Travail du bois et fabrication d'articles en bois et en liège, à l’exception des meubles / Fabrication d'articles en vannerie et sparterie": [
       {
         "id": 121,
         "activity": "Sciage et rabotage du bois, hors imprégnation",
@@ -2266,7 +2266,7 @@
         "naf": "46.90Z"
       }
     ],
-    "Commerce de détail, à l'exception des automobiles et des motocyles": [
+    "Commerce de détail, à l'exception des automobiles et des motocycles": [
       {
         "id": 435,
         "activity": "Commerce de détail de produits surgelés",
@@ -2790,7 +2790,7 @@
         "naf": "58.29C"
       }
     ],
-    "Production de film cinématrographiques, de vidéo et de programmes de télévision / Enregistrement sonore et édition musicale": [
+    "Production de film cinématographiques, de vidéo et de programmes de télévision / Enregistrement sonore et édition musicale": [
       {
         "id": 535,
         "activity": "Production de films et de programmes pour la télévision",
@@ -3149,7 +3149,7 @@
         "naf": "73.20Z"
       }
     ],
-    "Autres activités scpécialisées, scientifiques et techniques": [
+    "Autres activités spécialisées, scientifiques et techniques": [
       {
         "id": 600,
         "activity": "Activités spécialisées de design",
@@ -3252,7 +3252,7 @@
         "naf": "77.40Z"
       }
     ],
-    "Activitées liées à l'emploi": [
+    "Activités liées à l'emploi": [
       {
         "id": 619,
         "activity": "Activités des agences de placement de main-d'œuvre",
@@ -3701,7 +3701,7 @@
         "naf": "92.00Z"
       }
     ],
-    "Activiés sportives, récrcéatives et de loisirs": [
+    "Activités sportives, récréatives et de loisirs": [
       {
         "id": 702,
         "activity": "Gestion d'installations sportives",
