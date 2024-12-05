@@ -2,20 +2,20 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot-DemoApplication<demo>",
+            "name": "Spring Boot-CompanyFinderApplication<demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.company_finder.demo.DemoApplication",
+            "mainClass": "com.company_finder.demo.CompanyFinderApplication",
             "projectName": "demo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         },
         {
             "type": "java",
-            "name": "Spring Boot-DemoApplication<back>",
+            "name": "Spring Boot-CompanyFinderApplication<back>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.company_finder.demo.DemoApplication",
+            "mainClass": "com.company_finder.demo.CompanyFinderApplication",
             "projectName": "back",
             "args": "",
             "envFile": "${workspaceFolder}/.env"

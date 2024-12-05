@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "*")  
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/codeNAF")
-public class CodeNAF {
+
+public class CodeNafController {
 
     @GetMapping
-    public String getAllCodes() {
-        System.out.println("Received request for /api/codeNAF");
-        return Company_finderApplication.getAllCode();
+    public CodeNafResponse getAllCodes() {
+        return CompanyFinderApplication.getAllCodeAsObject();
     }
 }
