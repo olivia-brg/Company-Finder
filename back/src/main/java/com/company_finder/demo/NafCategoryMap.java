@@ -13,5 +13,4 @@ public class NafCategoryMap {
     public Map<String, Map<String, List<Activity>>> getCategories() {
         return categories;
     }
-    
 }
