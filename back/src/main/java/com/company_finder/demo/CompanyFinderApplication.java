@@ -22,7 +22,7 @@ public class CompanyFinderApplication {
     }
 
     
-    public static CodeNafResponse getAllCodeAsObject() {
+    public static NafCategoryMap getAllCodeAsObject() {
         try (Reader reader = new InputStreamReader(
                 CompanyFinderApplication.class.getClassLoader().getResourceAsStream("assets/CodeNAF.json"))) {
                     
@@ -55,7 +55,7 @@ public class CompanyFinderApplication {
                 categories.put(category, subCategoryMap);
             }
 
-            CodeNafResponse response = new CodeNafResponse();
+            NafCategoryMap response = new NafCategoryMap();
             response.setCategories(categories);
             return response;
         } catch (Exception e) {

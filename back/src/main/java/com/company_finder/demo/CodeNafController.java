@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CodeNafController {
 
     @GetMapping
-    public CodeNafResponse getAllCodes() {
+    public NafCategoryMap getAllCodes() {
         return CompanyFinderApplication.getAllCodeAsObject();
     }
 }
