@@ -16,9 +16,8 @@ export class NafcodeFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.codeNafService.getProducts().subscribe((data: CodeNaf[]) => {
-      console.log(data);
       this.nafCodes = data;
-      console.log('test :', this.nafCodes);
+      console.log('Data from naf code API :', this.nafCodes);
     });
   }
 
