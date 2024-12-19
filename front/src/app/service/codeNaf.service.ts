@@ -7,7 +7,7 @@ import { CodeNaf } from '../models/codeNaf';
     providedIn: 'root',
 })
 export class CodeNafService {
-    private apiUrl = 'http://localhost:8080/api/codeNaf';
+    private apiUrl = 'http://localhost:8080/api/activity';
 
     constructor(private http: HttpClient) { }
 

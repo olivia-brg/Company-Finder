@@ -1,4 +1,4 @@
-package com.company_finder.demo;
+package com.company_finder.back;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
