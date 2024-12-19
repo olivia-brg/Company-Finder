@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CityData, CityForm } from '../city-form/city-form.component';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
+import { MatButtonModule } from '@angular/material/button';
+import { NafcodeFormComponent } from "../nafcode-form/nafcode-form.component";
 
 
 export interface SingleCompanyData {
@@ -16,7 +18,11 @@ export interface SingleCompanyData {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CityForm],
+  imports: [
+    CityForm,
+    MatButtonModule,
+    NafcodeFormComponent
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -47,7 +53,4 @@ export class HeaderComponent {
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
   }
-
-  // TODO :
-  // timeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs (demander a nico je sais plus))
 }

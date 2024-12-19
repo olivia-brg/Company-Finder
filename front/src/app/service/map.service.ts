@@ -100,7 +100,7 @@ export class MapService {
                           Secteur d'activité : ${e.activity}<br>
                           Effectif : ${e.staffSize}
                         </p>
-                      `
+                        `
                         )
                         .join('<hr>'); // Ajoutez une séparation entre les établissements
                 }
@@ -127,9 +127,9 @@ export class MapService {
     updatePinpoint(): L.Icon {
         const newIcon = new L.Icon({
             iconUrl: "https://img.icons8.com/?size=256&id=uzeKRJIGwbBY&format=png",
-            iconSize: [40, 45], // Taille de l'icône
-            iconAnchor: [20, 45], // Point qui correspond à la position du marqueur
-            popupAnchor: [0, -45], // Décalage pour ouvrir le popup au-dessus de l'icône
+            iconSize: [40, 45], // icon size
+            iconAnchor: [20, 45], // marker's point of click
+            popupAnchor: [0, -45], // offset for popup
         });
 
         return newIcon;
