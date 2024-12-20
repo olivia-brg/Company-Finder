@@ -8,12 +8,12 @@ import com.company_finder.back.models.Subcategory;
 
 public interface SubcategoryRepository extends JpaRepository<Subcategory, Long> {
 
-    @Query("SELECT s FROM Subcategory s JOIN s.activities a WHERE a.subcatId = s.id")
-    public default List<Subcategory> findAllCategories() {
+    @Query("SELECT s FROM Subcategory s")
+    public default List<Subcategory> findAllSubcategories() {
         return findAll();
     }
 
-    // @Query("SELECT s FROM Subcategory s JOIN s.activities a WHERE a.subcat_id = :id")
-    // List<Subcategory> findAllCategoriesBySubcatId(@Param("id") Long id);
+    @Query("SELECT s FROM Subcategory s WHERE s.name LIKE CONCAT('%', :name, '%')")
+    List<Subcategory> findSubcategoryByName(@Param("name") String name);
 
 }

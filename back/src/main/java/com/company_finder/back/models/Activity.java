@@ -1,13 +1,10 @@
 package com.company_finder.back.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,14 +23,11 @@ public class Activity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "subcat_id")
-    private int subcat_id;
-
     @Column(name = "naf_code")
     private String naf_code;
 
     // @ManyToOne
-    // @JoinColumn(name = "subcategory_id")
+    // @JoinColumn(name = "subcat_id", referencedColumnName = "id")
     // private Subcategory subcategory;
 
     public String getName() {
@@ -42,14 +36,6 @@ public class Activity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getSubcat_id() {
-        return subcat_id;
-    }
-
-    public void setSubcat_id(int subcat_id) {
-        this.subcat_id = subcat_id;
     }
 
     public String getNaf_code() {
@@ -67,7 +53,4 @@ public class Activity {
     // public void setSubcategory(Subcategory subcategory) {
     //     this.subcategory = subcategory;
     // }
-
-    // @ManyToOne
-    // private Subcategory subcategory;
 }

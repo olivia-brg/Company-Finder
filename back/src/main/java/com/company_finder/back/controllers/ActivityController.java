@@ -17,7 +17,7 @@ public class ActivityController {
     private ActivityRepository activityRepository;
 
     @GetMapping("")
-    public List<Activity> getActivities() {
+    public List<Activity> getAllActivities() {
         return activityRepository.findAllActivities();
     }
 

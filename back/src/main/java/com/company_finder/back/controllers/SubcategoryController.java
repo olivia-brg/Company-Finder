@@ -17,13 +17,12 @@ public class SubcategoryController {
     private SubcategoryRepository subcategoryRepository;
 
     @GetMapping("")
-    public List<Subcategory> getActivities() {
-        return subcategoryRepository.findAllCategories();
+    public List<Subcategory> getAllSubategories() {
+        return subcategoryRepository.findAllSubcategories();
     }
 
-    // @GetMapping("/where-activityId={id}")
-    // public List<Subcategory> getSubcategoriesByActivityId(@PathVariable Long id) {
-    //     return subcategoryRepository.findAllCategoriesBySubcatId(id);
-    // }
-
+    @GetMapping("/name={subcategoryName}")
+    public List<Subcategory> getSubcategoriesByName(@PathVariable String subcategoryName) {
+        return subcategoryRepository.findSubcategoryByName(subcategoryName);
+    }
 }

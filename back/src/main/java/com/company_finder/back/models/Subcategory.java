@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -25,31 +26,9 @@ public class Subcategory {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "category_id")
-    private int category_id;
-    
-    // @OneToMany(mappedBy = "subcategory")
-    // private List<Activity> activities;
-    
-    // @ManyToOne
-    // @JoinColumn(name = "category_id")
-    // private Category category;
-
-    // public List<Activity> getActivities() {
-    //     return activities;
-    // }
-
-    // public void setActivities(List<Activity> activities) {
-    //     this.activities = activities;
-    // }
-
-    // public Category getCategory() {
-    //     return category;
-    // }
-
-    // public void setCategory(Category category) {
-    //     this.category = category;
-    // }
+    @OneToMany
+    @JoinColumn(name = "subcat_id", referencedColumnName = "id")
+    private List<Activity> activity;
 
     public String getName() {
         return name;
@@ -59,11 +38,12 @@ public class Subcategory {
         this.name = name;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public List<Activity> getActivity() {
+        return activity;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setActivity(List<Activity> activity) {
+        this.activity = activity;
     }
+    
 }
