@@ -23,27 +23,27 @@ export interface CityData {
 export class Service {
   constructor(
     private http: HttpClient,
-  ) {}
+  ) { }
 
   opts: CityData[] = [];
 
   formatCityData(cityName: string): Observable<CityData[]> {
     return this.fetchCityDataByName(cityName).pipe(
-        map(rawData =>
-            rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
-                name: city.nom,
-                code: city.code,
-                department: city.departement.nom,
-                departmentNumber: city.departement.code,
-            }))
-        ),tap((data) => (this.opts = data))
+      map(rawData =>
+        rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
+          name: city.nom,
+          code: city.code,
+          department: city.departement.nom,
+          departmentNumber: city.departement.code,
+        }))
+      ), tap((data) => (this.opts = data))
     );
-}
+  }
 
-fetchCityDataByName(val: string) {
+  fetchCityDataByName(val: string) {
     const encodedCityName = encodeURIComponent(val);
     return this.http
-          .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
+      .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
   }
 }
 
@@ -78,7 +78,7 @@ export class CityForm {
       })
     );
   }
-  
+
   selectCity(city: CityData) {
     const cityAlreadySelected = this.headerComponent.selectedCities.some(selectedCity => selectedCity.code === city.code);
 

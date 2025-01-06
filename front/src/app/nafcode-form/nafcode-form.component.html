@@ -1,1 +1,25 @@
-<p>nafcode-form works!</p>
+<form class="form">
+    <mat-form-field class="full-width">
+        <mat-label>Rechercher un domaine d'activité</mat-label>
+        <input type="text" placeholder="Ex : textile" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+
+            @for (category of (filteredOptions | async); track $index) {
+                <mat-option class="options" >
+                    <div class="categoryName">{{ category.name }}</div>
+
+                    @for (subcategory of category.subcategories; track $index) {
+                        <div class="subcategoryName">{{ subcategory.name }}</div>
+
+                        @for (activity of subcategory.activity; track $index) {
+                            <div class="activityName">{{ activity.name }} ({{ activity.nafCode }})</div>
+                        }
+                    }
+
+                </mat-option>
+                <hr>
+            }
+            
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
