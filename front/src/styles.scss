@@ -5,12 +5,16 @@ html, body {
     margin: 0;
 }
 
-
 body { 
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
 
 .mdc-list-item__primary-text {
-    width: 100%;
+  opacity: 1 !important;
+  width: 100%;
+}
+
+div.mat-mdc-autocomplete-panel {
+  max-height: 600px !important;
 }

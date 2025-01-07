@@ -1,6 +1,22 @@
-export class CodeNaf {
-    constructor(
-        public code: string,
-        public libelle: string
-    ) {}
+export interface ActivityData {
+    id: number;
+    name: string;
+    nafCode: string;
+    completed: boolean;
+}
+
+export interface SubcategoryData {
+    id: number;
+    name: string;
+    completed: boolean;
+    indeterminate: boolean;
+    activities: ActivityData[];
+}
+
+export interface CategoryData {
+    id: number;
+    name: string;
+    completed: boolean;
+    indeterminate: boolean;
+    subcategories: SubcategoryData[];
 }

@@ -53,7 +53,4 @@ export class HeaderComponent {
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
   }
-
-  // TODO :
-  // timeout -> remplacer par un truc (un gars qui s'appel lesh de rxjs (demander a nico je sais plus))
 }
