@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { NafCodeService } from '../service/NafCodeService';
 import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
+import { CheckboxStateService } from '../service/checkboxStateService';
+
 
 export interface Options {
   name: string[];
@@ -35,92 +37,113 @@ export class NafcodeFormComponent {
   myControl = new FormControl();
   filteredOptions: Observable<CategoryData[]>;
 
-  constructor(private nafCodeService: NafCodeService) {
+  constructor(
+    private nafCodeService: NafCodeService,
+    private checkboxStateService: CheckboxStateService,
+  ) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       debounceTime(100),
       distinctUntilChanged(),
-      switchMap((inputValue) => this.searchActivities(inputValue || ''))
-    );
-  }
-
-  private searchActivities(keyword: string): Observable<CategoryData[]> {
-    return this.nafCodeService.fetchActivityDataByKeyword(keyword).pipe(
-      map((categories: CategoryData[]) =>
-        categories.map((category) => ({
-          ...category,
-          completed: false,
-          indeterminate: false,
-          subcategories: category.subcategories.map((subcategory) => ({
-            ...subcategory,
-            completed: false,
-            indeterminate: false,
-            activities: subcategory.activities.map((activity) => ({
-              ...activity,
-              completed: false,
-            })),
-          })),
-        }))
+      switchMap((inputValue) =>
+        this.nafCodeService.fetchActivityDataByKeyword(inputValue || '').pipe(
+          map((categories) => {
+            this.restoreCheckboxStates(categories);
+            return categories;
+          })
+        )
       )
     );
   }
 
-    // Mise à jour de la catégorie
-    updateCategory(category: CategoryData, completed: boolean): void {
-      category.completed = completed;
-      category.indeterminate = false;
-      category.subcategories.forEach((subcategory) => {
-        subcategory.completed = completed;
-        subcategory.indeterminate = false;
-        subcategory.activities.forEach((activity) => {
-          activity.completed = completed;
-        });
-      });
-    }
 
-  // Mise à jour de la sous-catégorie
+  restoreCheckboxStates(categories: CategoryData[]): void {
+    categories.forEach((category) => {
+        const isCategoryCompleted = this.checkboxStateService.getCompletedState(`category-${category.id}`);
+        const isCategoryIndeterminate = this.checkboxStateService.getIndeterminateState(`category-${category.id}`);
+        category.completed = isCategoryCompleted;
+        category.indeterminate = isCategoryIndeterminate;
+
+        category.subcategories.forEach((subcategory) => {
+            const isSubcategoryCompleted = this.checkboxStateService.getCompletedState(`subcategory-${subcategory.id}`);
+            const isSubcategoryIndeterminate = this.checkboxStateService.getIndeterminateState(`subcategory-${subcategory.id}`);
+            subcategory.completed = isSubcategoryCompleted;
+            subcategory.indeterminate = isSubcategoryIndeterminate;
+
+            subcategory.activities.forEach((activity) => {
+                const isActivityCompleted = this.checkboxStateService.getCompletedState(`activity-${activity.id}`);
+                activity.completed = isActivityCompleted;
+            });
+
+            // Recalculer l'état de la sous-catégorie en cas d'incohérence
+            this.updateSubcategoryState(subcategory);
+        });
+
+        // Recalculer l'état de la catégorie en cas d'incohérence
+        this.updateCategoryState(category);
+    });
+}
+
+
+
+  updateCategory(category: CategoryData, completed: boolean): void {
+    this.checkboxStateService.saveCompletedState(`category-${category.id}`, completed);
+    category.completed = completed;
+    category.indeterminate = false;
+    category.subcategories.forEach((subcategory) => {
+      this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, completed);
+      subcategory.completed = completed;
+      subcategory.indeterminate = false;
+      subcategory.activities.forEach((activity) => {
+        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
+        activity.completed = completed;
+      });
+    });
+  }
+
+
   updateSubcategory(category: CategoryData, subcategory: SubcategoryData, completed: boolean): void {
+    this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, completed);
     subcategory.completed = completed;
     subcategory.indeterminate = false;
     subcategory.activities.forEach((activity) => {
+      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
       activity.completed = completed;
     });
 
     this.updateCategoryState(category);
   }
 
-  // Mise à jour de l'activité
-  updateActivity(
-    category: CategoryData,
-    subcategory: SubcategoryData,
-    activity: ActivityData,
-    completed: boolean
-  ): void {
+
+  updateActivity(category: CategoryData, subcategory: SubcategoryData, activity: ActivityData, completed: boolean): void {
+    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
     activity.completed = completed;
 
     this.updateSubcategoryState(subcategory);
     this.updateCategoryState(category);
   }
 
-  // Mise à jour de l'état d'une sous-catégorie
+
   private updateSubcategoryState(subcategory: SubcategoryData): void {
-    const allCompleted = subcategory.activities.every((activity) => activity.completed);
     const anyCompleted = subcategory.activities.some((activity) => activity.completed);
+    const allCompleted = subcategory.activities.every((activity) => activity.completed);
 
     subcategory.completed = allCompleted;
     subcategory.indeterminate = !allCompleted && anyCompleted;
+
+    this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, allCompleted);
+    this.checkboxStateService.saveIndeterminateState(`subcategory-${subcategory.id}`, subcategory.indeterminate);
   }
 
-  // Mise à jour de l'état d'une catégorie
+
   private updateCategoryState(category: CategoryData): void {
-    const allCompleted = category.subcategories.every(
-      (subcategory) => subcategory.completed && !subcategory.indeterminate
-    );
-    const anyCompleted = category.subcategories.some(
-      (subcategory) => subcategory.completed || subcategory.indeterminate
-    );
+    const allCompleted = category.subcategories.every((subcategory) => subcategory.completed && !subcategory.indeterminate);
+    const anyCompleted = category.subcategories.some((subcategory) => subcategory.completed || subcategory.indeterminate);
 
     category.completed = allCompleted;
     category.indeterminate = !allCompleted && anyCompleted;
+
+    this.checkboxStateService.saveCompletedState(`category-${category.id}`, allCompleted);
+    this.checkboxStateService.saveIndeterminateState(`category-${category.id}`, category.indeterminate);
   }
 }
