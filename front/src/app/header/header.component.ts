@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { CityData, CityForm } from '../city-form/city-form.component';
+import { MatButtonModule } from '@angular/material/button';
+import { CityForm } from '../city-form/city-form.component';
+import { CityData } from '../models/city';
+import { NafcodeFormComponent } from "../nafcode-form/nafcode-form.component";
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
-import { MatButtonModule } from '@angular/material/button';
-import { NafcodeFormComponent } from "../nafcode-form/nafcode-form.component";
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 export interface SingleCompanyData {
@@ -21,14 +25,15 @@ export interface SingleCompanyData {
   imports: [
     CityForm,
     MatButtonModule,
-    NafcodeFormComponent
+    NafcodeFormComponent,
+    MatChipsModule,
+    MatIconModule,
 ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 
 export class HeaderComponent {
-
   private debounceTimeout!: any;
   private searchDelay = 25; // ms
   selectedCities: CityData[] = [];
@@ -39,6 +44,10 @@ export class HeaderComponent {
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
   ) { }
+
+  remove(city: CityData, index: number): void {
+    this.selectedCities.splice(index, 1)
+  }
 
   searchCompanies() {
     this.selectedCities;

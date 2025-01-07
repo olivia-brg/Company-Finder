@@ -8,13 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { HeaderComponent } from '../header/header.component';
-
-export interface CityData {
-  name: string;
-  code: number;
-  department: string;
-  departmentNumber: number;
-}
+import { CityData } from '../models/city';
+import { FetchCityDataService } from '../service/fetchCityData.service';
 
 @Injectable({
   providedIn: 'root',
@@ -23,12 +18,13 @@ export interface CityData {
 export class Service {
   constructor(
     private http: HttpClient,
+    private fetchCityDataService: FetchCityDataService
   ) { }
 
   opts: CityData[] = [];
 
   formatCityData(cityName: string): Observable<CityData[]> {
-    return this.fetchCityDataByName(cityName).pipe(
+    return this.fetchCityDataService.fetchCityDataByName(cityName).pipe(
       map(rawData =>
         rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
           name: city.nom,
@@ -38,12 +34,6 @@ export class Service {
         }))
       ), tap((data) => (this.opts = data))
     );
-  }
-
-  fetchCityDataByName(val: string) {
-    const encodedCityName = encodeURIComponent(val);
-    return this.http
-      .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
   }
 }
 

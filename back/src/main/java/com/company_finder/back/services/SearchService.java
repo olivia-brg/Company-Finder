@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.company_finder.back.DTOs.ActivityDTO;
 import com.company_finder.back.DTOs.CategoryDTO;
 import com.company_finder.back.DTOs.SubcategoryDTO;
@@ -18,10 +20,9 @@ public class SearchService {
     private SearchRepository searchRepository;
 
     public List<CategoryDTO> search(String keyword) {
-        String formattedKeyword = "%" + keyword + "%";
+        String formattedKeyword = "%" +keyword + "%";
         List<Object[]> rawResults = searchRepository.searchGlobal(formattedKeyword);
 
-        // Map pour regrouper les catégories, sous-catégories et activités
         Map<Long, CategoryDTO> categoryMap = new LinkedHashMap<>();
 
         for (Object[] row : rawResults) {
