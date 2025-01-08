@@ -7,10 +7,15 @@
 
     @if (selectedCities.length) {
 
-    @for (city of selectedCities; track $index) {
-    <li>{{city.name}} | {{city.department}}, {{city.departmentNumber}}
-        <button type="button" (click)="selectedCities.splice($index, 1)">X</button>
-    </li>
-    }
+    <mat-chip-grid #chipGrid aria-label="Selected cities">
+        @for (city of selectedCities; track $index) {
+            <mat-chip-row (removed)="remove(city, $index)">
+            {{city.name}}, {{city.departmentNumber}}
+            <button matChipRemove [attr.aria-label]="'remove ' + city.name">
+                <mat-icon>cancel</mat-icon>
+            </button>
+            </mat-chip-row>
+        }
+    </mat-chip-grid>
     }
 </div>

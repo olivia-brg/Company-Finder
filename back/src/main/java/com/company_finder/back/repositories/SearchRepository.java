@@ -1,10 +1,12 @@
 package com.company_finder.back.repositories;
 
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
 import com.company_finder.back.models.Category;
 
 @Repository
@@ -57,6 +59,7 @@ public interface SearchRepository extends JpaRepository<Category, Long> {
         JOIN subcategory s ON a.subcat_id = s.id
         JOIN category c ON s.category_id = c.id
         WHERE a.name LIKE :keyword
+        OR a.naf_code LIKE :keyword
     )
     SELECT DISTINCT
         category_id,
