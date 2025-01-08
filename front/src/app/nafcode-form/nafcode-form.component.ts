@@ -59,17 +59,7 @@ export class NafcodeFormComponent {
 
   restoreCheckboxStates(categories: CategoryData[]): void {
     categories.forEach((category) => {
-      const isCategoryCompleted = this.checkboxStateService.getCompletedState(`category-${category.id}`);
-      const isCategoryIndeterminate = this.checkboxStateService.getIndeterminateState(`category-${category.id}`);
-      category.completed = isCategoryCompleted;
-      category.indeterminate = isCategoryIndeterminate;
-
       category.subcategories.forEach((subcategory) => {
-        const isSubcategoryCompleted = this.checkboxStateService.getCompletedState(`subcategory-${subcategory.id}`);
-        const isSubcategoryIndeterminate = this.checkboxStateService.getIndeterminateState(`subcategory-${subcategory.id}`);
-        subcategory.completed = isSubcategoryCompleted;
-        subcategory.indeterminate = isSubcategoryIndeterminate;
-
         subcategory.activities.forEach((activity) => {
           const isActivityCompleted = this.checkboxStateService.getCompletedState(`activity-${activity.id}`);
           activity.completed = isActivityCompleted;
@@ -85,7 +75,6 @@ export class NafcodeFormComponent {
   }
 
   updateCategory(category: CategoryData, completed: boolean): void {
-    this.checkboxStateService.saveCompletedState(`category-${category.id}`, completed);
     category.completed = completed;
     category.indeterminate = false;
     category.subcategories.forEach((subcategory) => {
@@ -93,6 +82,8 @@ export class NafcodeFormComponent {
       subcategory.indeterminate = false;
       subcategory.activities.forEach((activity) => {
         activity.completed = completed;
+        console.log(activity.id + " = " + activity.completed);
+        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
       });
     });
   }
@@ -103,6 +94,8 @@ export class NafcodeFormComponent {
     subcategory.indeterminate = false;
     subcategory.activities.forEach((activity) => {
       activity.completed = completed;
+      console.log(activity.id + " = " + activity.completed);
+      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
     });
 
     this.updateCategoryState(category);
@@ -110,8 +103,9 @@ export class NafcodeFormComponent {
 
 
   updateActivity(category: CategoryData, subcategory: SubcategoryData, activity: ActivityData, completed: boolean): void {
-    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
     activity.completed = completed;
+    console.log(activity.id + " = " + activity.completed);
+    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
 
     this.updateSubcategoryState(subcategory);
     this.updateCategoryState(category);
