@@ -82,8 +82,7 @@ export class NafcodeFormComponent {
       subcategory.indeterminate = false;
       subcategory.activities.forEach((activity) => {
         activity.completed = completed;
-        console.log(activity.id + " = " + activity.completed);
-        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
+        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
       });
     });
   }
@@ -94,8 +93,7 @@ export class NafcodeFormComponent {
     subcategory.indeterminate = false;
     subcategory.activities.forEach((activity) => {
       activity.completed = completed;
-      console.log(activity.id + " = " + activity.completed);
-      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
+      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
     });
 
     this.updateCategoryState(category);
@@ -104,8 +102,7 @@ export class NafcodeFormComponent {
 
   updateActivity(category: CategoryData, subcategory: SubcategoryData, activity: ActivityData, completed: boolean): void {
     activity.completed = completed;
-    console.log(activity.id + " = " + activity.completed);
-    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed)
+    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
 
     this.updateSubcategoryState(subcategory);
     this.updateCategoryState(category);

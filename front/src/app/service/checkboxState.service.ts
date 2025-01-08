@@ -5,37 +5,32 @@ import { Injectable } from '@angular/core';
 })
 export class CheckboxStateService {
     private readonly storageKey = 'checkboxStates';
-    private isCompleted: Record<string, boolean> = {};
+    private isCompleted: Record<string, string> = {};
 
     constructor() {
         this.loadFromLocalStorage();
     }
-
+    
     private loadFromLocalStorage(): void {
         const stored = localStorage.getItem(this.storageKey);
         if (stored) {
             const parsed = JSON.parse(stored);
-            this.isCompleted = parsed.isCompleted || {};
+            this.isCompleted = parsed.isCompleted || {};            
         }
     }
-
-    private saveToLocalStorage(): void {
-        const state = {
-            isCompleted: this.isCompleted,
-        };
-        localStorage.setItem(this.storageKey, JSON.stringify(state));
-    }
-
-    getCompletedState(id: string): boolean {
+    
+    getCompletedState(id: string): any {
+        
         return this.isCompleted[id] || false;
     }
-
-    saveCompletedState(id: string, checked: boolean): void {
+    
+    saveCompletedState(id: string, nafcode: string, checked: boolean): void {
         if (checked) {
-            this.isCompleted[id] = true;
+            this.isCompleted[id] = nafcode;
         } else {
             delete this.isCompleted[id];
         }
+        console.log( "after : " + this.isCompleted[id]);
     
         const state = {
             isCompleted: this.isCompleted,
