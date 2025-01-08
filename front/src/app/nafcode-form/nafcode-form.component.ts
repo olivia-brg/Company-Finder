@@ -7,9 +7,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
-import { NafCodeService } from '../service/NafCodeService';
 import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 import { CheckboxStateService } from '../service/checkboxState.service';
+import { NafCodeService } from '../service/nafCodeService';
 
 
 export interface Options {
@@ -75,11 +75,11 @@ export class NafcodeFormComponent {
           activity.completed = isActivityCompleted;
         });
 
-        // Recalculer l'état de la sous-catégorie en cas d'incohérence
+        //* Update subcategory state in case of incoherence
         this.updateSubcategoryState(subcategory);
       });
 
-      // Recalculer l'état de la catégorie en cas d'incohérence
+      //* Same for category
       this.updateCategoryState(category);
     });
   }
@@ -89,11 +89,9 @@ export class NafcodeFormComponent {
     category.completed = completed;
     category.indeterminate = false;
     category.subcategories.forEach((subcategory) => {
-      this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, completed);
       subcategory.completed = completed;
       subcategory.indeterminate = false;
       subcategory.activities.forEach((activity) => {
-        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
         activity.completed = completed;
       });
     });
@@ -101,11 +99,9 @@ export class NafcodeFormComponent {
 
 
   updateSubcategory(category: CategoryData, subcategory: SubcategoryData, completed: boolean): void {
-    this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, completed);
     subcategory.completed = completed;
     subcategory.indeterminate = false;
     subcategory.activities.forEach((activity) => {
-      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, completed);
       activity.completed = completed;
     });
 
@@ -128,9 +124,6 @@ export class NafcodeFormComponent {
 
     subcategory.completed = allCompleted;
     subcategory.indeterminate = !allCompleted && anyCompleted;
-
-    this.checkboxStateService.saveCompletedState(`subcategory-${subcategory.id}`, allCompleted);
-    this.checkboxStateService.saveIndeterminateState(`subcategory-${subcategory.id}`, subcategory.indeterminate);
   }
 
 
@@ -140,8 +133,5 @@ export class NafcodeFormComponent {
 
     category.completed = allCompleted;
     category.indeterminate = !allCompleted && anyCompleted;
-
-    this.checkboxStateService.saveCompletedState(`category-${category.id}`, allCompleted);
-    this.checkboxStateService.saveIndeterminateState(`category-${category.id}`, category.indeterminate);
   }
 }
