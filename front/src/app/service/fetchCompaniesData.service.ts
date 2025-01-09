@@ -1,19 +1,9 @@
+import { CheckboxStateService } from './checkboxState.service';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, concatMap, delay, map, Observable, of, range, reduce } from "rxjs";
 
-const codeNAF = [
-  "58.21Z",
-  "58.29A",
-  "58.29C",
-  "62.01Z",
-  "62.02A",
-  "62.02B",
-  "62.03Z",
-  "62.09Z",
-  "63.11Z",
-  "63.12Z"
-];
+
 const staffSizeCode = ["52", "51", "42", "41", "31", "22", "21", "12", "11"];
 
 const activiteMapping: any = {
@@ -52,8 +42,13 @@ const effectifMapping: any = {
 
 export class FetchCompaniesDataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private checkboxStateService: CheckboxStateService,
+  ) {
+  }
 
+  codeNAF: string[] = [];
   cities: number[] = [];
 
   parseEstablishments(data: any[]): any[] {
@@ -73,10 +68,10 @@ export class FetchCompaniesDataService {
     this.cities = citiesCodes;
   
     return this.getAllCompanies().pipe(
-      // IN CASE OF DEBUG
-      // tap((companiesData) => {
-      //   console.log("Tableau final :", companiesData);
-      // }),
+      //* IN CASE OF DEBUG
+      //* tap((companiesData) => {
+      //*   console.log("Tableau final :", companiesData);
+      //* }),
 
       catchError((err) => {
         console.error("Erreur :", err);
@@ -152,12 +147,19 @@ export class FetchCompaniesDataService {
   }
 
   private buildURL(page: number): string {
-    const activity = this.createParamString("activite_principale", codeNAF);
-    const allCities = this.createParamString("code_commune", this.cities);
-    const allEffectif = this.createParamString("tranche_effectif_salarie", staffSizeCode);
+    this.codeNAF = this.checkboxStateService.getNafCodeStored();
+    const activity = this.createParamString("activite_principale", this.codeNAF);
+    const allCities = this.createParamString("&code_commune", this.cities);
+    //! const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
-    return `https://recherche-entreprises.api.gouv.fr/search?${activity}&${allCities}&${allEffectif}&page=${page}&per_page=25`;
+    let params = [activity];
+    if (this.cities.length > 0) params.push(allCities);
+    //! if (staffSizeCode.length > 0) params.push(allEffectif);
+    console.log(`https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`);
+    
+    return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
+
 
   private createParamString(paramName: string, values: any[]): string {
     return `${paramName}=${values.join(",")}`;
