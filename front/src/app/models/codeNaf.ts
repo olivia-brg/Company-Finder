@@ -8,6 +8,7 @@ export interface ActivityData {
 export interface SubcategoryData {
     id: number;
     name: string;
+    isCollapsed: boolean;
     completed: boolean;
     indeterminate: boolean;
     activities: ActivityData[];
@@ -16,6 +17,7 @@ export interface SubcategoryData {
 export interface CategoryData {
     id: number;
     name: string;
+    isCollapsed: boolean;
     completed: boolean;
     indeterminate: boolean;
     subcategories: SubcategoryData[];

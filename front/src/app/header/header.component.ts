@@ -1,3 +1,4 @@
+import { CheckboxStateService } from './../service/checkboxState.service';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
@@ -44,6 +45,7 @@ export class HeaderComponent {
   constructor(
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
+    private checkboxStateService: CheckboxStateService
   ) {}
   
 
@@ -64,5 +66,10 @@ export class HeaderComponent {
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
+  }
+
+  
+  updateActivitiesCount(): number {
+    return this.checkboxStateService.getActivitiesCount();
   }
 }

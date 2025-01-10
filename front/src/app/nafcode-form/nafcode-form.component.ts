@@ -10,6 +10,7 @@ import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'r
 import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 import { CheckboxStateService } from '../service/checkboxState.service';
 import { NafCodeService } from '../service/nafCode.service';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 export interface Options {
@@ -28,6 +29,7 @@ export interface Options {
     ReactiveFormsModule,
     AsyncPipe,
     MatCheckboxModule,
+    MatDividerModule
   ],
   templateUrl: './nafcode-form.component.html',
   styleUrl: './nafcode-form.component.scss'
@@ -132,6 +134,10 @@ export class NafcodeFormComponent {
 
   updateActivityCount(): number {
     return this.checkboxStateService.getActivitiesCount();
+  }
+
+  collapseDiv(div: SubcategoryData | CategoryData): void {
+    div.isCollapsed = !div.isCollapsed;
   }
 
 }
