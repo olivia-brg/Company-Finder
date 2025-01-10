@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { CityForm } from '../city-form/city-form.component';
-import { CityData } from '../models/city';
-import { NafcodeFormComponent } from "../nafcode-form/nafcode-form.component";
-import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
-import { MapService } from '../service/map.service';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { CityForm } from '../city-form/city-form.component';
+import { CityData } from '../models/city';
+import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
+import { MapService } from '../service/map.service';
+import { NafcodeFormComponent } from './../nafcode-form/nafcode-form.component';
 
 
 
@@ -28,7 +28,8 @@ export interface SingleCompanyData {
     NafcodeFormComponent,
     MatChipsModule,
     MatIconModule,
-],
+    NafcodeFormComponent
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -43,7 +44,9 @@ export class HeaderComponent {
   constructor(
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
-  ) { }
+  ) {}
+  
+
 
   remove(city: CityData, index: number): void {
     this.selectedCities.splice(index, 1)
@@ -55,7 +58,7 @@ export class HeaderComponent {
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
       next: (companiesData) => {
         this.companiesFetched = this.fetchCompaniesDataService.parseEstablishments(companiesData);
-        console.log(this.companiesFetched);
+        //! console.log(this.companiesFetched);
 
         this.mapService.addMarkers(this.companiesFetched);
       },

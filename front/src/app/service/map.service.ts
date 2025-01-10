@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as L from 'leaflet';
 import { SingleCompanyData } from '../header/header.component';
-// import 'leaflet.markercluster';
+import 'leaflet.markercluster';
 
 
 @Injectable({
@@ -49,8 +49,8 @@ export class MapService {
                     </p>
                 `);
 
-                // const clusterGroup = L.markerClusterGroup();
-                // clusterGroup.addLayer(marker);
+                const clusterGroup = L.markerClusterGroup();
+                clusterGroup.addLayer(marker);
                 this.markersLayer.addLayer(marker);
 
             }

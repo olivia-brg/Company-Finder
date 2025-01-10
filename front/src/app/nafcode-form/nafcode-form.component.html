@@ -12,7 +12,7 @@
                         class="category-checkbox"
                         [checked]="category.completed"
                         [indeterminate]="category.indeterminate"
-                        (change)="updateCategory(category, $event.checked)"
+                        (change)="updateCategory(category, $event.checked); updateActivityCount()"
             >
 
                 <mat-option class="category-option" disabled="true">
@@ -27,7 +27,7 @@
                 <mat-checkbox class="subcategory-checkbox"
                             [checked]="subcategory.completed"
                             [indeterminate]="subcategory.indeterminate"
-                            (change)="updateSubcategory(category, subcategory, $event.checked)"
+                            (change)="updateSubcategory(category, subcategory, $event.checked); updateActivityCount()"
                 >
                 
                     <mat-option class="subcategory-option" disabled="true">
@@ -42,7 +42,7 @@
                         
                         <mat-checkbox class="activity-checkbox"
                                     [checked]="activity.completed"
-                                    (change)="updateActivity(category, subcategory, activity, $event.checked)"
+                                    (change)="updateActivity(category, subcategory, activity, $event.checked); updateActivityCount()"
                         >
                         <mat-option class="activity-option" disabled="true">
                             <div class="activityName">
@@ -55,4 +55,5 @@
             }
         </mat-autocomplete>
     </mat-form-field>
+    {{ this.updateActivityCount() }} activités sélectionnées
 </form>

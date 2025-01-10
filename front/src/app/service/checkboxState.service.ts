@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 export class CheckboxStateService {
     private readonly storageKey = 'checkboxStates';
     private isCompleted: Record<string,string> = {};
+    public selectedActivitiesCount: number = 0;
 
     constructor() {
         this.loadFromLocalStorage();
     }
     
-    private loadFromLocalStorage(): void {
+    loadFromLocalStorage(): void {
         const stored = localStorage.getItem(this.storageKey);
         if (stored) {
             const parsed = JSON.parse(stored);
@@ -31,5 +32,9 @@ export class CheckboxStateService {
 
     getNafCodeStored(): any {
         return Object.values(this.isCompleted); 
+    }
+
+    getActivitiesCount(): number {
+        return Object.keys(this.isCompleted).length;
     }
 }

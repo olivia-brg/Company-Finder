@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 import { CheckboxStateService } from '../service/checkboxState.service';
-import { NafCodeService } from '../service/nafCodeService';
+import { NafCodeService } from '../service/nafCode.service';
 
 
 export interface Options {
@@ -106,6 +106,7 @@ export class NafcodeFormComponent {
 
     this.updateSubcategoryState(subcategory);
     this.updateCategoryState(category);
+
   }
 
 
@@ -124,5 +125,13 @@ export class NafcodeFormComponent {
 
     category.completed = allCompleted;
     category.indeterminate = !allCompleted && anyCompleted;
+
+    console.log(this.checkboxStateService.getActivitiesCount());
+
   }
+
+  updateActivityCount(): number {
+    return this.checkboxStateService.getActivitiesCount();
+  }
+
 }

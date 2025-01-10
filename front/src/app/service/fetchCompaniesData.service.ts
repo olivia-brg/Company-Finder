@@ -1,7 +1,9 @@
 import { CheckboxStateService } from './checkboxState.service';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, concatMap, delay, map, Observable, of, range, reduce } from "rxjs";
+import { catchError, concatMap, delay, map, Observable, of, range, reduce, tap } from "rxjs";
+import { retry, timer } from "rxjs";
+
 
 
 const staffSizeCode = ["52", "51", "42", "41", "31", "22", "21", "12", "11"];
@@ -52,8 +54,8 @@ export class FetchCompaniesDataService {
   cities: number[] = [];
 
   parseEstablishments(data: any[]): any[] {
-    return data.flatMap((entreprise) => 
-      entreprise.etablissements.map((etablissement: {nom: string; Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
+    return data.flatMap((entreprise) =>
+      entreprise.etablissements.map((etablissement: { nom: string; Adresse: string; Activite: string; Effectif: string; latitude: number; longitude: number; }) => ({
         name: entreprise.nom,
         address: etablissement.Adresse,
         activity: etablissement.Activite,
@@ -65,51 +67,63 @@ export class FetchCompaniesDataService {
   }
 
   fetchCompaniesData(citiesCodes: number[]): Observable<any> {
+
+    // update global variable here so I don't need to pass citiesCodes in parameters
     this.cities = citiesCodes;
-  
+
     return this.getAllCompanies().pipe(
       //* IN CASE OF DEBUG
-      //* tap((companiesData) => {
-      //*   console.log("Tableau final :", companiesData);
-      //* }),
+      tap((companiesData) => {
+        console.log("Tableau final : ", companiesData);
+      }),
 
       catchError((err) => {
-        console.error("Erreur :", err);
+        console.error("Erreur : ", err);
         return of(null);
       })
     );
   }
 
   private getAllCompanies(): Observable<any[]> {
-  return this.fetchCompaniesDataByPageNumber(1).pipe(
-    concatMap((firstPageData) => {
-      if (!firstPageData) return of([]);
+    return this.fetchCompaniesDataByPageNumber(1).pipe(
+      concatMap((firstPageData) => {
+        if (!firstPageData) return of([]);
 
-      const totalPages = firstPageData.total_pages;
+        const totalPages = firstPageData.total_pages;
 
-      const remainingPages$ = range(2, totalPages).pipe(
-        concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(100))),
-        reduce((acc, pageData) => {
-          if (pageData && pageData.results) {
-            acc.push(...pageData.results);
-          }
-          return acc;
-        }, firstPageData.results)
-      );
+        const remainingPages$ = range(2, totalPages).pipe(
+          concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(250))),
+          reduce((acc, pageData) => {
+            if (pageData && pageData.results) {
+              //! DEBUG
+              console.log("pageData.results : ", pageData.results);
+              acc.push(...pageData.results);
+              console.log("acc : ", acc);
+            }
+            return acc;
+          }, firstPageData.results)
+        );
 
-      return remainingPages$;
-    }),
-    map((allResults) => this.formatData(allResults))
-  );
-}
+        return remainingPages$;
+      }),
+      map((allResults) => this.formatData(allResults))
+    );
+  }
 
 
   private fetchCompaniesDataByPageNumber(page: number): Observable<any> {
     const url = this.buildURL(page);
 
     return this.http.get<any>(url).pipe(
+      retry({
+        count: 3,
+        delay: (error, retryCount) => {
+          console.warn(`Tentative ${retryCount} pour la page ${page} après une erreur :`, error);
+          return timer(500 * retryCount * retryCount);
+        },
+      }),
       catchError((error) => {
-        console.error(`Erreur lors de la récupération de la page ${page} :`, error);
+        console.error(`Erreur finale après plusieurs tentatives pour la page ${page} :`, error);
         return of(null);
       })
     );
@@ -150,13 +164,12 @@ export class FetchCompaniesDataService {
     this.codeNAF = this.checkboxStateService.getNafCodeStored();
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
+    //TODO : selection dynamique des effectifs
     //! const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
-    //! if (staffSizeCode.length > 0) params.push(allEffectif);
-    console.log(`https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`);
-    
+    //! if (staffSizeCode.length > 0) params.push(allEffectif);    
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
 

@@ -1,21 +1,18 @@
 <div id="header">
     <div class="mat-app-background basic-container">
-        <app-city-form>Loading...</app-city-form>
-        <app-nafcode-form>Loading...</app-nafcode-form>
+        <app-city-form class="input">Loading...</app-city-form>
+        <app-nafcode-form class="input">Loading...</app-nafcode-form>
     </div>
-    <button mat-flat-button id="search_button" (click)="searchCompanies()">Rechercher</button>
 
     @if (selectedCities.length) {
-
-    <mat-chip-grid #chipGrid aria-label="Selected cities">
         @for (city of selectedCities; track $index) {
             <mat-chip-row (removed)="remove(city, $index)">
-            {{city.name}}, {{city.departmentNumber}}
-            <button matChipRemove [attr.aria-label]="'remove ' + city.name">
-                <mat-icon>cancel</mat-icon>
-            </button>
+                {{city.name}}, {{city.departmentNumber}}
+                <button matChipRemove [attr.aria-label]="'remove ' + city.name">
+                    <mat-icon>cancel</mat-icon>
+                </button>
             </mat-chip-row>
         }
-    </mat-chip-grid>
     }
+    <button mat-flat-button id="search_button" (click)="searchCompanies()">Rechercher</button>
 </div>
