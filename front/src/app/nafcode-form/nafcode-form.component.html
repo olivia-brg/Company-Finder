@@ -5,7 +5,7 @@
 
         <mat-autocomplete #auto="matAutocomplete">
 
-            @for (category of filteredOptions | async; track $index) {
+            @for (category of (filteredOptions | async); track $index) {
                 
                 <mat-divider [inset]="false" />
                 <span>
