@@ -4,8 +4,11 @@ import { MapService } from '../service/map.service';
 @Component({
   selector: 'app-map',
   standalone: true,
+  imports : [ ],
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss', '../../../node_modules/leaflet/dist/leaflet.css'],
+  styleUrls: [
+    './map.component.scss'
+  ],
 })
 
 export class MapComponent implements AfterViewInit {
@@ -14,4 +17,6 @@ export class MapComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.mapService.initializeMap('map');
   }
+
+  
 }

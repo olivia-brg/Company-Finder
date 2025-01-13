@@ -165,11 +165,11 @@ export class FetchCompaniesDataService {
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
     //TODO : selection dynamique des effectifs
-    const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
+    // const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
-    if (staffSizeCode.length > 0) params.push(allEffectif);
+    // if (staffSizeCode.length > 0) params.push(allEffectif);
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
 
