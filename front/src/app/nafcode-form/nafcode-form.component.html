@@ -6,8 +6,11 @@
         <mat-autocomplete #auto="matAutocomplete">
 
             @for (category of (filteredOptions | async); track $index) {
-
-                <mat-divider [inset]="true" />
+                
+                <mat-divider [inset]="false" />
+                <span>
+                    <button (click)="this.collapseDiv(category)">X</button>
+                </span>
                 <mat-checkbox class="category-checkbox"
                             class="category-checkbox"
                             [checked]="category.completed"
@@ -17,13 +20,10 @@
                 >
 
                     <mat-option class="category-option" disabled="true">
-                        <div class="categoryName">
+                        <span class="categoryName">
                             {{ category.name }}
-                        </div>
+                        </span>
                     </mat-option>
-                    <div>
-                        <button (click)="this.collapseDiv(category)">X</button>
-                    </div>
                 </mat-checkbox>
                 <mat-divider [inset]="true" />
 
@@ -31,6 +31,9 @@
                     
                     
                     @for (subcategory of category.subcategories; track $index) {
+                        <span>
+                        <button (click)="this.collapseDiv(subcategory)">X</button>
+                        </span>
                     <mat-checkbox class="subcategory-checkbox"
                                 [checked]="subcategory.completed"
                                 [indeterminate]="subcategory.indeterminate"
@@ -39,13 +42,10 @@
                     >
                     
                     <mat-option class="subcategory-option" disabled="true">
-                        <div class="subcategoryName">
+                        <span class="subcategoryName">
                             {{ subcategory.name }}
-                        </div>
+                        </span>
                     </mat-option>
-                    <div>
-                    <button (click)="this.collapseDiv(subcategory)">X</button>
-                    </div>
                     </mat-checkbox>
                     <mat-divider [inset]="true" />
 

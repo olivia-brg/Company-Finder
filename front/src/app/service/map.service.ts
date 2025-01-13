@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as L from 'leaflet';
-import { SingleCompanyData } from '../header/header.component';
 import 'leaflet.markercluster';
+import { SingleCompanyData } from '../header/header.component';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import 'leaflet.markercluster';
 
 export class MapService {
     private map!: L.Map;
-    private markersLayer = L.layerGroup();
+    private markersClusterGroup = L.markerClusterGroup(); 
 
     initializeMap(mapElementId: string): void {
         this.map = L.map(mapElementId, {
@@ -20,7 +20,7 @@ export class MapService {
 
         this.loadTiles();
 
-        this.markersLayer.addTo(this.map);
+        this.markersClusterGroup.addTo(this.map);
     }
 
 
@@ -31,7 +31,7 @@ export class MapService {
     }
 
     addMarkers(companiesParsedArray: SingleCompanyData[]): void {
-        this.markersLayer.clearLayers();
+        this.markersClusterGroup.clearLayers();
 
         for (const establishment of companiesParsedArray) {
             if (establishment.latitude && establishment.longitude) {
@@ -49,10 +49,7 @@ export class MapService {
                     </p>
                 `);
 
-                const clusterGroup = L.markerClusterGroup();
-                clusterGroup.addLayer(marker);
-                this.markersLayer.addLayer(marker);
-
+                this.markersClusterGroup.addLayer(marker);
             }
         }
     }

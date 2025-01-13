@@ -35,7 +35,7 @@ const effectifMapping: any = {
   "42": "1000 à 1999 salariés",
   "51": "2000 à 4999 salariés",
   "52": "5000 salariés ou plus",
-  "NN": "Effectif inconnu"
+  // "NN": "Tranche inconnu"
 };
 
 @Injectable({
@@ -72,10 +72,10 @@ export class FetchCompaniesDataService {
     this.cities = citiesCodes;
 
     return this.getAllCompanies().pipe(
-      //* IN CASE OF DEBUG
-      tap((companiesData) => {
-        console.log("Tableau final : ", companiesData);
-      }),
+      //! DEBUG
+      //! tap((companiesData) => {
+      //!  console.log("Final array : ", companiesData);
+      //! }),
 
       catchError((err) => {
         console.error("Erreur : ", err);
@@ -92,13 +92,13 @@ export class FetchCompaniesDataService {
         const totalPages = firstPageData.total_pages;
 
         const remainingPages$ = range(2, totalPages).pipe(
-          concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(250))),
+          concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(150))),
           reduce((acc, pageData) => {
             if (pageData && pageData.results) {
-              //! DEBUG
-              console.log("pageData.results : ", pageData.results);
               acc.push(...pageData.results);
-              console.log("acc : ", acc);
+              //! DEBUG
+              //! console.log("pageData.results : ", pageData.results);
+              //! console.log("acc : ", acc);
             }
             return acc;
           }, firstPageData.results)
@@ -165,11 +165,11 @@ export class FetchCompaniesDataService {
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
     //TODO : selection dynamique des effectifs
-    //! const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
+    const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
-    //! if (staffSizeCode.length > 0) params.push(allEffectif);    
+    if (staffSizeCode.length > 0) params.push(allEffectif);
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
 
