@@ -5,7 +5,7 @@
 
         <mat-autocomplete #auto="matAutocomplete">
 
-            @for (category of (filteredOptions | async); track $index) {
+            @for (category of filteredOptions | async; track $index) {
                 
                 <mat-divider [inset]="false" />
                 <span>
@@ -28,7 +28,6 @@
                 <mat-divider [inset]="true" />
 
                 @if (!category.isCollapsed) {
-                    
                     
                     @for (subcategory of category.subcategories; track $index) {
                         <span>

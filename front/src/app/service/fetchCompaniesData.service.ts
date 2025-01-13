@@ -77,7 +77,7 @@ export class FetchCompaniesDataService {
       //!  console.log("Final array : ", companiesData);
       //! }),
 
-      catchError((err) => {
+      catchError((err: Error) => {
         console.error("Erreur : ", err);
         return of(null);
       })
@@ -86,14 +86,14 @@ export class FetchCompaniesDataService {
 
   private getAllCompanies(): Observable<any[]> {
     return this.fetchCompaniesDataByPageNumber(1).pipe(
-      concatMap((firstPageData) => {
+      concatMap((firstPageData: any) => {
         if (!firstPageData) return of([]);
 
         const totalPages = firstPageData.total_pages;
 
         const remainingPages$ = range(2, totalPages).pipe(
-          concatMap((page) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(150))),
-          reduce((acc, pageData) => {
+          concatMap((page: number) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(150))),
+          reduce((acc: any[], pageData: any) => {
             if (pageData && pageData.results) {
               acc.push(...pageData.results);
               //! DEBUG
@@ -106,7 +106,7 @@ export class FetchCompaniesDataService {
 
         return remainingPages$;
       }),
-      map((allResults) => this.formatData(allResults))
+      map((allResults: any[]) => this.formatData(allResults))
     );
   }
 
@@ -117,12 +117,12 @@ export class FetchCompaniesDataService {
     return this.http.get<any>(url).pipe(
       retry({
         count: 3,
-        delay: (error, retryCount) => {
+        delay: (error: Error, retryCount: number) => {
           console.warn(`Tentative ${retryCount} pour la page ${page} après une erreur :`, error);
           return timer(500 * retryCount * retryCount);
         },
       }),
-      catchError((error) => {
+      catchError((error: Error) => {
         console.error(`Erreur finale après plusieurs tentatives pour la page ${page} :`, error);
         return of(null);
       })
@@ -134,7 +134,7 @@ export class FetchCompaniesDataService {
       .map((entreprise: { matching_etablissements: any[] | null; nom_complet: string }) => {
         if (entreprise.matching_etablissements) {
           const etablissementsActifs = entreprise.matching_etablissements
-            .filter((etablissement: { date_fermeture: any }) => etablissement.date_fermeture === null)
+            .filter((etablissement: { date_fermeture: string }) => etablissement.date_fermeture === null)
             .map(
               (etablissement: {
                 adresse: string;
@@ -165,11 +165,11 @@ export class FetchCompaniesDataService {
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
     //TODO : selection dynamique des effectifs
-    // const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
+    const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
-    // if (staffSizeCode.length > 0) params.push(allEffectif);
+    if (staffSizeCode.length > 0) params.push(allEffectif);
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
 

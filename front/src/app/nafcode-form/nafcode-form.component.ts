@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
-import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 import { CheckboxStateService } from '../service/checkboxState.service';
 import { NafCodeService } from '../service/nafCode.service';
-import {MatDividerModule} from '@angular/material/divider';
+import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 
 
 export interface Options {
@@ -47,9 +47,9 @@ export class NafcodeFormComponent {
       startWith(''),
       debounceTime(100),
       distinctUntilChanged(),
-      switchMap((inputValue) =>
+      switchMap((inputValue: string) =>
         this.nafCodeService.fetchActivityDataByKeyword(inputValue || '').pipe(
-          map((categories) => {
+          map((categories: CategoryData[]) => {
             this.restoreCheckboxStates(categories);
             return categories;
           })
