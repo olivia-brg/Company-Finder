@@ -1,9 +1,10 @@
 import { AsyncPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
@@ -29,13 +30,17 @@ export interface Options {
     ReactiveFormsModule,
     AsyncPipe,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './nafcode-form.component.html',
   styleUrl: './nafcode-form.component.scss'
 })
 
 export class NafcodeFormComponent {
+
+  readonly panelOpenState = signal(false);
   myControl = new FormControl();
   filteredOptions: Observable<CategoryData[]>;
 
@@ -136,8 +141,6 @@ export class NafcodeFormComponent {
     return this.checkboxStateService.getActivitiesCount();
   }
 
-  collapseDiv(div: SubcategoryData | CategoryData): void {
-    div.isCollapsed = !div.isCollapsed;
-  }
+
 
 }

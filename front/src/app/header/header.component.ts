@@ -1,4 +1,3 @@
-import { CheckboxStateService } from './../service/checkboxState.service';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
@@ -8,8 +7,8 @@ import { CityData } from '../models/city';
 import { FetchCompaniesDataService } from '../service/fetchCompaniesData.service';
 import { MapService } from '../service/map.service';
 import { NafcodeFormComponent } from './../nafcode-form/nafcode-form.component';
-
-
+import { CheckboxStateService } from './../service/checkboxState.service';
+import { StaffSizeSelectionComponent } from '../staff-size-selection/staff-size-selection.component';
 
 export interface SingleCompanyData {
   name: string;
@@ -29,7 +28,8 @@ export interface SingleCompanyData {
     NafcodeFormComponent,
     MatChipsModule,
     MatIconModule,
-    NafcodeFormComponent
+    NafcodeFormComponent,
+    StaffSizeSelectionComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

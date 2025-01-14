@@ -1,16 +1,22 @@
 #header {
-    height: 20vh;
-    margin: 0;
-    padding: 0;
+  height: 20vh;
+  margin: 0;
+  padding: 0;
 
 
-    .basic-container {
-        padding: 30px;
+  .basic-container {
+    padding: 30px;
 
-        display: flex;
-        .input {
-          width: fit-content;
-            position: relative;
-        }
-      }
+    display: flex;
+
+    .input {
+      width: fit-content;
+      position: relative;
+    }
+
+    .slider {
+      position: relative;
+      left: 500px;
+    }
+  }
 }

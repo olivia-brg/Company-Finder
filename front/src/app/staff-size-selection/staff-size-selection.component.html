@@ -1,0 +1,12 @@
+<div>
+    <mat-slider
+    [min]="0"
+    [max]="objectKeys.length - 1"
+    [step]="1"
+    tickInterval="1">
+
+        <input [value]="startThumbValue" matSliderStartThumb (input)="updateStartValue($event)">
+        <input [value]="endThumbValue" matSliderEndThumb (input)="updateEndValue($event)">
+    </mat-slider>
+    <p>Sélection : de {{ this.lowestEmployeeValues[startThumbValue] }} à {{ this.highestEmployeeValues[endThumbValue] }} salariés</p>
+</div>

@@ -1,12 +1,8 @@
-import { CheckboxStateService } from './checkboxState.service';
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { catchError, concatMap, delay, map, Observable, of, range, reduce, tap } from "rxjs";
-import { retry, timer } from "rxjs";
-
-
-
-const staffSizeCode = ["52", "51", "42", "41", "31", "22", "21", "12", "11"];
+import { Component, Injectable } from "@angular/core";
+import { catchError, concatMap, delay, map, Observable, of, range, reduce, retry, timer } from "rxjs";
+import { StaffSizeSelectionService } from './../staff-size-selection/staff-size-selection.component';
+import { CheckboxStateService } from './checkboxState.service';
 
 const activiteMapping: any = {
   "58.21Z": "Édition de jeux électroniques",
@@ -35,7 +31,7 @@ const effectifMapping: any = {
   "42": "1000 à 1999 salariés",
   "51": "2000 à 4999 salariés",
   "52": "5000 salariés ou plus",
-  // "NN": "Tranche inconnu"
+  "NN": "Tranche inconnu"
 };
 
 @Injectable({
@@ -47,11 +43,13 @@ export class FetchCompaniesDataService {
   constructor(
     private http: HttpClient,
     private checkboxStateService: CheckboxStateService,
+    private staffSizeSelectionService: StaffSizeSelectionService
   ) {
   }
 
   codeNAF: string[] = [];
   cities: number[] = [];
+  staffSizeData: string[] = [];
 
   parseEstablishments(data: any[]): any[] {
     return data.flatMap((entreprise) =>
@@ -161,15 +159,19 @@ export class FetchCompaniesDataService {
   }
 
   private buildURL(page: number): string {
+    this.staffSizeSelectionService.data$.subscribe((data) => {
+      this.staffSizeData = data;
+    });    
     this.codeNAF = this.checkboxStateService.getNafCodeStored();
+    
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
-    //TODO : selection dynamique des effectifs
-    const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
+    const staffSize = this.createParamString("&tranche_effectif_salarie", this.staffSizeData);
+    // const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
-    if (staffSizeCode.length > 0) params.push(allEffectif);
+    if (this.staffSizeData.length > 0) params.push(staffSize);
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
 

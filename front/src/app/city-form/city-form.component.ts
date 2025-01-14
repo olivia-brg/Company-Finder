@@ -1,5 +1,4 @@
 import { AsyncPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -17,8 +16,7 @@ import { FetchCityDataService } from '../service/fetchCityData.service';
 
 export class Service {
   constructor(
-    private http: HttpClient,
-    private fetchCityDataService: FetchCityDataService
+    private fetchCityDataService: FetchCityDataService,
   ) { }
 
   opts: CityData[] = [];

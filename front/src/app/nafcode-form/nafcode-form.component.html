@@ -1,72 +1,57 @@
 <form class="form">
     <mat-form-field class="full-width">
         <mat-label>Rechercher un domaine d'activité</mat-label>
-        <input type="text" placeholder="Ex : Textile" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <input type="text" placeholder="Ex : Textile" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" />
 
         <mat-autocomplete #auto="matAutocomplete">
 
             @for (category of (filteredOptions | async); track $index) {
                 
-                <mat-divider [inset]="false" />
-                <span>
-                    <button (click)="this.collapseDiv(category)">X</button>
-                </span>
-                <mat-checkbox class="category-checkbox"
-                            class="category-checkbox"
-                            [checked]="category.completed"
-                            [indeterminate]="category.indeterminate"
-                            (change)="updateCategory(category, $event.checked); updateActivityCount()"
-                            style="width: fit-content;"
-                >
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-checkbox class="category-checkbox"
+                                        [checked]="category.completed"
+                                        [indeterminate]="category.indeterminate"
+                                        (change)="updateCategory(category, $event.checked); updateActivityCount()"
+                                        style="width: fit-content;"
+                            />
+                            <mat-panel-title> {{ category.name }} </mat-panel-title>
+                        </mat-expansion-panel-header>
 
-                    <mat-option class="category-option" disabled="true">
-                        <span class="categoryName">
-                            {{ category.name }}
-                        </span>
-                    </mat-option>
-                </mat-checkbox>
-                <mat-divider [inset]="true" />
-
-                @if (!category.isCollapsed) {
-                    
-                    @for (subcategory of category.subcategories; track $index) {
-                        <span>
-                        <button (click)="this.collapseDiv(subcategory)">X</button>
-                        </span>
-                    <mat-checkbox class="subcategory-checkbox"
-                                [checked]="subcategory.completed"
-                                [indeterminate]="subcategory.indeterminate"
-                                (change)="updateSubcategory(category, subcategory, $event.checked); updateActivityCount()"
-                                style="width: fit-content;"
-                    >
-                    
-                    <mat-option class="subcategory-option" disabled="true">
-                        <span class="subcategoryName">
-                            {{ subcategory.name }}
-                        </span>
-                    </mat-option>
-                    </mat-checkbox>
-                    <mat-divider [inset]="true" />
-
-                        @if (!subcategory.isCollapsed) {
+                        @for (subcategory of category.subcategories; track $index) {
                             
-                            @for (activity of subcategory.activities; track $index) {
-                                
-                                <mat-checkbox class="activity-checkbox"
-                                [checked]="activity.completed"
-                                (change)="updateActivity(category, subcategory, activity, $event.checked); updateActivityCount()"
-                                >
-                                <mat-option class="activity-option" disabled="true">
-                                    <div class="activityName">
-                                            {{ activity.name }} ({{ activity.nafCode }})
-                                        </div>
-                                    </mat-option>
-                                </mat-checkbox>
-                                <mat-divider [inset]="true" />
-                            }
+                            <mat-accordion>
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header>
+                                        <mat-checkbox class="subcategory-checkbox"
+                                                    [checked]="subcategory.completed"
+                                                    [indeterminate]="subcategory.indeterminate"
+                                                    (change)="updateSubcategory(category, subcategory, $event.checked); updateActivityCount()"
+                                                    style="width: fit-content;"
+                                        />
+                                        <mat-panel-title>{{ subcategory.name }}</mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                            
+                                    @for (activity of subcategory.activities; track $index) {
+                                        
+                                        <mat-checkbox class="activity-checkbox"
+                                                    [checked]="activity.completed"
+                                                    (change)="updateActivity(category, subcategory, activity, $event.checked); updateActivityCount()"
+                                        >
+                                            <mat-option class="activity-option" disabled="true">
+                                                <p class="activityName">
+                                                    {{ activity.name }} ({{ activity.nafCode }})
+                                                </p>
+                                            </mat-option>
+                                        </mat-checkbox>
+                                        <mat-divider [inset]="false" />
+                                    }
+                                </mat-expansion-panel>
+                            </mat-accordion>
                         }
-                    }
-                }
+                    </mat-expansion-panel>
+                </mat-accordion>
             }
         </mat-autocomplete>
     </mat-form-field>
