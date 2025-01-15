@@ -7,7 +7,7 @@
 
     @if (selectedCities.length) {
         @for (city of selectedCities; track $index) {
-            <mat-chip-row (removed)="remove(city, $index)">
+            <mat-chip-row (removed)="remove($index)">
                 {{city.name}}, {{city.departmentNumber}}
                 <button matChipRemove [attr.aria-label]="'remove ' + city.name">
                     <mat-icon>cancel</mat-icon>

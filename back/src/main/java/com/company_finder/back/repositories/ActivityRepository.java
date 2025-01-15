@@ -17,6 +17,6 @@ public interface ActivityRepository extends JpaRepository<Activity, Long> {
     @Query("SELECT a FROM Activity a WHERE a.name LIKE CONCAT('%', :name, '%')")
     public List<Activity> findNafCodeByActivityName(String name);
 
-    @Query("SELECT a FROM Activity a WHERE a.naf_code LIKE CONCAT('%', :code, '%')")
-    public List<Activity> findActivityNameWithNafCode(String code);
+    @Query("SELECT a.name FROM Activity a WHERE a.naf_code LIKE :code ")
+    public String findActivityNameWithNafCode(String code);
 }

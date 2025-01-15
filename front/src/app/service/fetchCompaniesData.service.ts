@@ -1,21 +1,10 @@
 import { HttpClient } from "@angular/common/http";
-import { Component, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { catchError, concatMap, delay, map, Observable, of, range, reduce, retry, timer } from "rxjs";
+import { ActivityMapping } from './../activityMapping';
 import { StaffSizeSelectionService } from './../staff-size-selection/staff-size-selection.component';
 import { CheckboxStateService } from './checkboxState.service';
-
-const activiteMapping: any = {
-  "58.21Z": "Édition de jeux électroniques",
-  "58.29A": "Édition de logiciels système et de réseau (domaine pas totalement en lien mais intéressant de checker)",
-  "58.29C": "Édition de logiciels applicatifs",
-  "62.01Z": "Programmation informatique",
-  "62.02A": "Conseil en systèmes et logiciels informatiques",
-  "62.02B": "Tierce maintenance de systèmes et d'applications informatiques",
-  "62.03Z": "Gestion d'installations informatiques",
-  "62.09Z": "Autres activités informatiques",
-  "63.11Z": "Traitement de données, hébergement et activités connexes (domaine pas totalement en lien mais intéressant de checker)",
-  "63.12Z": "Portails Internet (domaine pas totalement en lien mais intéressant de checker)"
-};
+import { FetchActivityNameService } from "./fetchActivityName.service";
 
 const effectifMapping: any = {
   "00": "0 salarié",
@@ -39,13 +28,15 @@ const effectifMapping: any = {
 })
 
 export class FetchCompaniesDataService {
+  
 
   constructor(
     private http: HttpClient,
     private checkboxStateService: CheckboxStateService,
-    private staffSizeSelectionService: StaffSizeSelectionService
-  ) {
-  }
+    private staffSizeSelectionService: StaffSizeSelectionService,
+    private fetchActivityNameService: FetchActivityNameService,
+    private activityMapping: ActivityMapping
+  ) { }
 
   codeNAF: string[] = [];
   cities: number[] = [];
@@ -108,7 +99,6 @@ export class FetchCompaniesDataService {
     );
   }
 
-
   private fetchCompaniesDataByPageNumber(page: number): Observable<any> {
     const url = this.buildURL(page);
 
@@ -142,7 +132,7 @@ export class FetchCompaniesDataService {
                 longitude: number;
               }) => ({
                 Adresse: etablissement.adresse,
-                Activite: activiteMapping[etablissement.activite_principale] || "Activité inconnue",
+                Activite: this.activityMapping.activityMapping[etablissement.activite_principale],
                 Effectif: effectifMapping[etablissement.tranche_effectif_salarie] || "Tranche inconnue",
                 latitude: etablissement.latitude,
                 longitude: etablissement.longitude,
@@ -155,8 +145,24 @@ export class FetchCompaniesDataService {
         }
         return null;
       })
-      .filter((entreprise) => entreprise !== null);
+      .filter((entreprise) => entreprise !== null);      
   }
+
+  // activityName: string = '';
+
+  // getActivityName(nafCode: string) {
+  //   this.fetchActivityNameService.getActivityNameByNafCode(nafCode)
+  //               .subscribe({
+  //                 next: (data: string) => {
+  //                   console.log('Données récupérées:', data);
+  //                   this.activityName = data;
+  //                   return data
+  //                 },
+  //                 error: (error) => {
+  //                   console.error('Erreur de récupération des données', error);
+  //                 }
+  //               });
+  // }
 
   private buildURL(page: number): string {
     this.staffSizeSelectionService.data$.subscribe((data) => {
@@ -174,7 +180,6 @@ export class FetchCompaniesDataService {
     if (this.staffSizeData.length > 0) params.push(staffSize);
     return `https://recherche-entreprises.api.gouv.fr/search?${params.join("&")}&page=${page}&per_page=25`;
   }
-
 
   private createParamString(paramName: string, values: any[]): string {
     return `${paramName}=${values.join(",")}`;

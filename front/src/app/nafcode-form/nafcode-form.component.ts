@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { CheckboxStateService } from '../service/checkboxState.service';
-import { NafCodeService } from '../service/nafCode.service';
+import { FetchNafCodeService } from '../service/fetchNafCode.service';
 import { ActivityData, CategoryData, SubcategoryData } from './../models/codeNaf';
 
 
@@ -45,7 +45,7 @@ export class NafcodeFormComponent {
   filteredOptions: Observable<CategoryData[]>;
 
   constructor(
-    private nafCodeService: NafCodeService,
+    private fetchNafCodeService: FetchNafCodeService,
     private checkboxStateService: CheckboxStateService,
   ) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -53,7 +53,7 @@ export class NafcodeFormComponent {
       debounceTime(100),
       distinctUntilChanged(),
       switchMap((inputValue: string) =>
-        this.nafCodeService.fetchActivityDataByKeyword(inputValue || '').pipe(
+        this.fetchNafCodeService.fetchActivityDataByKeyword(inputValue || '').pipe(
           map((categories: CategoryData[]) => {
             this.restoreCheckboxStates(categories);
             return categories;
@@ -68,7 +68,7 @@ export class NafcodeFormComponent {
     categories.forEach((category) => {
       category.subcategories.forEach((subcategory) => {
         subcategory.activities.forEach((activity) => {
-          const isActivityCompleted = this.checkboxStateService.getCompletedState(`activity-${activity.id}`);
+          const isActivityCompleted = this.checkboxStateService.getCompletedState(`activity-${activity.id}`); 
           activity.completed = isActivityCompleted;
         });
 
@@ -89,7 +89,7 @@ export class NafcodeFormComponent {
       subcategory.indeterminate = false;
       subcategory.activities.forEach((activity) => {
         activity.completed = completed;
-        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
+        this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, activity.name)
       });
     });
   }
@@ -100,7 +100,7 @@ export class NafcodeFormComponent {
     subcategory.indeterminate = false;
     subcategory.activities.forEach((activity) => {
       activity.completed = completed;
-      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
+      this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, activity.name)
     });
 
     this.updateCategoryState(category);
@@ -109,7 +109,7 @@ export class NafcodeFormComponent {
 
   updateActivity(category: CategoryData, subcategory: SubcategoryData, activity: ActivityData, completed: boolean): void {
     activity.completed = completed;
-    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, completed)
+    this.checkboxStateService.saveCompletedState(`activity-${activity.id}`, activity.nafCode, activity.name)
 
     this.updateSubcategoryState(subcategory);
     this.updateCategoryState(category);
@@ -132,15 +132,9 @@ export class NafcodeFormComponent {
 
     category.completed = allCompleted;
     category.indeterminate = !allCompleted && anyCompleted;
-
-    console.log(this.checkboxStateService.getActivitiesCount());
-
   }
 
   updateActivityCount(): number {
     return this.checkboxStateService.getActivitiesCount();
   }
-
-
-
 }

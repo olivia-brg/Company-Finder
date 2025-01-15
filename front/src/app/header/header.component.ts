@@ -48,13 +48,11 @@ export class HeaderComponent {
     private checkboxStateService: CheckboxStateService
   ) {}
   
-
-
-  remove(city: CityData, index: number): void {
+  remove( index: number): void {
     this.selectedCities.splice(index, 1)
   }
 
-  searchCompanies() {
+  searchCompanies(): void {
     this.selectedCities;
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({
@@ -66,8 +64,8 @@ export class HeaderComponent {
       },
       error: (err) => console.error('Erreur lors de la récupération des données :', err),
     });
+    
   }
-
   
   updateActivitiesCount(): number {
     return this.checkboxStateService.getActivitiesCount();

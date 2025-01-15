@@ -7,12 +7,12 @@ import { CategoryData } from '../models/codeNaf';
     providedIn: 'root',
 })
 
-export class NafCodeService {
+export class FetchNafCodeService {
     private apiUrl = 'http://localhost:8080/search?keyword=';
 
     constructor(private http: HttpClient) { }
 
-    // Récupérer tous les produits
+
     fetchActivityDataByKeyword(val: string) : Observable<CategoryData[]> {
         const encodedKeyword = encodeURIComponent(val);
         return this.http.get<CategoryData[]>(this.apiUrl + encodedKeyword);
