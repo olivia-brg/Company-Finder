@@ -3,18 +3,18 @@
         <app-city-form class="input">Loading...</app-city-form>
         <app-nafcode-form class="input">Loading...</app-nafcode-form>
         <app-staff-size-selection class="slider"></app-staff-size-selection>
+        <button mat-flat-button id="search_button" (click)="searchCompanies()"><mat-icon>search</mat-icon></button>
     </div>
 
     @if (selectedCities.length) {
         @for (city of selectedCities; track $index) {
-            <mat-chip-row (removed)="remove($index)">
-                {{city.name}}, {{city.departmentNumber}}
-                <button matChipRemove [attr.aria-label]="'remove ' + city.name">
-                    <mat-icon>cancel</mat-icon>
-                </button>
-            </mat-chip-row>
+        <mat-chip-row (removed)="remove($index)">
+            {{city.name}}, {{city.departmentNumber}}
+            <button matChipRemove [attr.aria-label]="'remove ' + city.name">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-row>
         }
     }
-    <button mat-flat-button id="search_button" (click)="searchCompanies()">Rechercher</button>
     {{ updateActivitiesCount() }} activités sélectionnées
 </div>

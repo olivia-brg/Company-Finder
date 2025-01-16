@@ -148,22 +148,6 @@ export class FetchCompaniesDataService {
       .filter((entreprise) => entreprise !== null);      
   }
 
-  // activityName: string = '';
-
-  // getActivityName(nafCode: string) {
-  //   this.fetchActivityNameService.getActivityNameByNafCode(nafCode)
-  //               .subscribe({
-  //                 next: (data: string) => {
-  //                   console.log('Données récupérées:', data);
-  //                   this.activityName = data;
-  //                   return data
-  //                 },
-  //                 error: (error) => {
-  //                   console.error('Erreur de récupération des données', error);
-  //                 }
-  //               });
-  // }
-
   private buildURL(page: number): string {
     this.staffSizeSelectionService.data$.subscribe((data) => {
       this.staffSizeData = data;
@@ -173,7 +157,6 @@ export class FetchCompaniesDataService {
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
     const staffSize = this.createParamString("&tranche_effectif_salarie", this.staffSizeData);
-    // const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);

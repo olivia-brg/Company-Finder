@@ -8,7 +8,7 @@ import { CategoryData } from '../models/codeNaf';
 })
 
 export class FetchNafCodeService {
-    private apiUrl = 'http://localhost:8080/search?keyword=';
+    private apiUrl = 'http://localhost:8080/api/naf_list/search?keyword=';
 
     constructor(private http: HttpClient) { }
 

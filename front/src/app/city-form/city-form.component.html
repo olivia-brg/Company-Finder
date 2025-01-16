@@ -6,9 +6,11 @@
 
             @for ( cityOption of (filteredOptions | async); track $index) {
                 <mat-option class="options" (click)="selectCity(cityOption)">
-                    <div class="cityName">{{ cityOption.name }}</div><div class="department">{{ cityOption.department}} - {{ cityOption.departmentNumber }}</div>
+                    <mat-icon>search</mat-icon>
+                    <div class="cityName">{{ cityOption.name }}</div>
+                    <div class="department">{{ cityOption.department}} - {{ cityOption.departmentNumber }}</div>
                 </mat-option>
-                <hr>
+                <br>
             }
             
         </mat-autocomplete>
