@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.company_finder.back.models.Category;
 
 @Repository
-public interface SearchRepository extends JpaRepository<Category, Long> {
+public interface NafListRepository extends JpaRepository<Category, Long> {
 
     @Query(value = """
     

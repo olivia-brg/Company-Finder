@@ -69,8 +69,6 @@ export class NafcodeFormComponent {
       category.subcategories.forEach((subcategory) => {
         subcategory.activities.forEach((activity) => {
           const isActivityCompleted = this.checkboxStateService.getCompletedState(`activity-${activity.id}`);
-          console.log(`activity-${activity.id} = ${isActivityCompleted}`);
-          
           activity.completed = isActivityCompleted;
         });
 
