@@ -1,5 +1,6 @@
 # RECHERCHE
 - Codes de Paris, Lyon, Marseille codé en dur, ou refaire une api/db
+- Stopper la recherche en cours lors d'une nouvelle recherche
 
 
 # DEBUG
@@ -9,3 +10,6 @@
 
 # FRONT
 - Ajouter bar chargement
+
+# BACK
+- Recherche par département
