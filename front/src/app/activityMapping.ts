@@ -5,7 +5,6 @@ import { Injectable } from "@angular/core";
 })
 
 
-//TODO : transformer en appel api pour créer la list au lancement de l'appli
 export class ActivityMapping {
 
   public activityMapping: Record<string, string> = {

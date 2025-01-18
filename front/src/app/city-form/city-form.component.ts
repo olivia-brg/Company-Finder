@@ -36,9 +36,6 @@ export class Service {
   }
 }
 
-/**
- * @title Simple autocomplete
- */
 @Component({
   selector: 'app-city-form',
   standalone: true,

@@ -11,6 +11,7 @@
 - stopper la recherche en cours lors d'une nouvelle recherche
 - retry fetch companies data : + de retry et alerte lors d'erreur
 - retirer fetch activity name service???
+- stocker villes local storage
 
 
 # DEBUG

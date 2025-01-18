@@ -57,7 +57,7 @@ export class FetchCompaniesDataService {
 
   fetchCompaniesData(citiesCodes: number[]): Observable<any> {
 
-    // update global variable here so I don't need to pass citiesCodes in parameters
+    //* update global variable here so I don't need to pass citiesCodes in parameters
     this.cities = citiesCodes;
 
     return this.getAllCompanies().pipe(
