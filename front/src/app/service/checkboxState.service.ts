@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { ActivityData } from './../models/codeNaf';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CheckboxStateService {
     private readonly storageKey = 'checkboxStates';
-    private isCompleted: Record<string, { nafcode: string, activityName: string }> = {};
+    private isChecked: Record<string, { nafcode: string, activityName: string }> = {};
     public selectedActivitiesCount: number = 0;
 
     constructor() {
@@ -16,28 +17,28 @@ export class CheckboxStateService {
         const stored = localStorage.getItem(this.storageKey);
         if (stored) {
             const parsed = JSON.parse(stored);
-            this.isCompleted = parsed.isCompleted || {};
+            this.isChecked = parsed.isChecked || {};
         }
     }
 
     getCompletedState(id: string): boolean {
-        if (this.isCompleted[id]) return true
+        if (this.isChecked[id]) return true
         else return false;
     }
 
-    saveCompletedState(id: string, nafcode: string, activityName: string): void {
-        
-        if (this.isCompleted[id]) delete this.isCompleted[id];
-        else this.isCompleted[id] = { nafcode, activityName: activityName };
-        const state = { isCompleted: this.isCompleted };
+
+    saveCompletedState(id: string, activity: ActivityData, checked: boolean): void {
+        checked ? this.isChecked[id] = {nafcode: activity.nafCode, activityName: activity.name} : delete this.isChecked[id];
+        const state = { isChecked: this.isChecked};
         localStorage.setItem(this.storageKey, JSON.stringify(state));
     }
 
     getNafCodeStored(): any {
-        return Object.values(this.isCompleted);
+        const temp = Object.values(this.isChecked);
+        return temp.map((item) => item.nafcode);
     }
 
     getActivitiesCount(): number {
-        return Object.keys(this.isCompleted).length;
+        return Object.keys(this.isChecked).length;
     }
 }

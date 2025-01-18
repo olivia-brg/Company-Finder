@@ -9,6 +9,7 @@ import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } fr
 import { HeaderComponent } from '../header/header.component';
 import { CityData } from '../models/city';
 import { FetchCityDataService } from '../service/fetchCityData.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Injectable({
   providedIn: 'root',
@@ -46,7 +47,8 @@ export class Service {
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe
+    AsyncPipe,
+    MatIconModule
   ],
   templateUrl: 'city-form.component.html',
   styleUrls: ['city-form.component.scss'],

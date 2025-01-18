@@ -11,17 +11,17 @@ import org.springframework.stereotype.Service;
 import com.company_finder.back.DTOs.ActivityDTO;
 import com.company_finder.back.DTOs.CategoryDTO;
 import com.company_finder.back.DTOs.SubcategoryDTO;
-import com.company_finder.back.repositories.SearchRepository;
+import com.company_finder.back.repositories.NafListRepository;
 
 @Service
-public class SearchService {
+public class NafListService {
 
     @Autowired
-    private SearchRepository searchRepository;
+    private NafListRepository nafListRepository;
 
     public List<CategoryDTO> search(String keyword) {
         String formattedKeyword = "%" +keyword + "%";
-        List<Object[]> rawResults = searchRepository.searchGlobal(formattedKeyword);
+        List<Object[]> rawResults = nafListRepository.searchGlobal(formattedKeyword);
 
         Map<Long, CategoryDTO> categoryMap = new LinkedHashMap<>();
 

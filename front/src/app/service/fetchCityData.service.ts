@@ -9,8 +9,7 @@ export class FetchCityDataService {
     constructor(private http: HttpClient) { }
 
     fetchCityDataByName(val: string) {
-        const encodedCityName = encodeURIComponent(val);
-        return this.http
-            .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
+        const encodedCityName = encodeURIComponent(val.toLowerCase());
+        return this.http.get<any>(`http://localhost:8080/api/city_code?cityName=${encodedCityName}`);
     }
 }

@@ -9,6 +9,7 @@ import { MapService } from '../service/map.service';
 import { NafcodeFormComponent } from './../nafcode-form/nafcode-form.component';
 import { CheckboxStateService } from './../service/checkboxState.service';
 import { StaffSizeSelectionComponent } from '../staff-size-selection/staff-size-selection.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export interface SingleCompanyData {
   name: string;
@@ -29,7 +30,8 @@ export interface SingleCompanyData {
     MatChipsModule,
     MatIconModule,
     NafcodeFormComponent,
-    StaffSizeSelectionComponent
+    StaffSizeSelectionComponent,
+    MatProgressBarModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -45,14 +47,21 @@ export class HeaderComponent {
   constructor(
     private fetchCompaniesDataService: FetchCompaniesDataService,
     private mapService: MapService,
-    private checkboxStateService: CheckboxStateService
+    private checkboxStateService: CheckboxStateService,
   ) {}
+
+  load: number = 100;
   
   remove( index: number): void {
     this.selectedCities.splice(index, 1)
   }
 
   searchCompanies(): void {
+
+    this.fetchCompaniesDataService.load$.subscribe((value) => {
+      this.load = value;
+      // if (this.load === 100) this.load = 0;
+    });
     this.selectedCities;
     const citiesCodes = this.selectedCities.map(city => city.code);
     this.fetchCompaniesDataService.fetchCompaniesData(citiesCodes).subscribe({

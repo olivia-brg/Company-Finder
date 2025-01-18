@@ -1,10 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, concatMap, delay, map, Observable, of, range, reduce, retry, timer } from "rxjs";
+import { BehaviorSubject, catchError, concatMap, delay, map, Observable, of, range, reduce, retry, timer } from "rxjs";
 import { ActivityMapping } from './../activityMapping';
 import { StaffSizeSelectionService } from './../staff-size-selection/staff-size-selection.component';
 import { CheckboxStateService } from './checkboxState.service';
-import { FetchActivityNameService } from "./fetchActivityName.service";
 
 const effectifMapping: any = {
   "00": "0 salarié",
@@ -28,19 +27,20 @@ const effectifMapping: any = {
 })
 
 export class FetchCompaniesDataService {
-  
+
 
   constructor(
     private http: HttpClient,
     private checkboxStateService: CheckboxStateService,
     private staffSizeSelectionService: StaffSizeSelectionService,
-    private fetchActivityNameService: FetchActivityNameService,
     private activityMapping: ActivityMapping
   ) { }
 
   codeNAF: string[] = [];
   cities: number[] = [];
   staffSizeData: string[] = [];
+  private loadSubject = new BehaviorSubject<number>(0); 
+  load$ = this.loadSubject.asObservable(); 
 
   parseEstablishments(data: any[]): any[] {
     return data.flatMap((entreprise) =>
@@ -74,6 +74,7 @@ export class FetchCompaniesDataService {
   }
 
   private getAllCompanies(): Observable<any[]> {
+    let actualPage = 1;
     return this.fetchCompaniesDataByPageNumber(1).pipe(
       concatMap((firstPageData: any) => {
         if (!firstPageData) return of([]);
@@ -81,7 +82,13 @@ export class FetchCompaniesDataService {
         const totalPages = firstPageData.total_pages;
 
         const remainingPages$ = range(2, totalPages).pipe(
-          concatMap((page: number) => this.fetchCompaniesDataByPageNumber(page).pipe(delay(150))),
+          concatMap((page: number) => {
+            actualPage = page;
+            const load = (actualPage / (totalPages + 1)) * 100;
+            this.loadSubject.next(load);
+            
+            return this.fetchCompaniesDataByPageNumber(page).pipe(delay(150))
+          }),
           reduce((acc: any[], pageData: any) => {
             if (pageData && pageData.results) {
               acc.push(...pageData.results);
@@ -145,35 +152,18 @@ export class FetchCompaniesDataService {
         }
         return null;
       })
-      .filter((entreprise) => entreprise !== null);      
+      .filter((entreprise) => entreprise !== null);
   }
-
-  // activityName: string = '';
-
-  // getActivityName(nafCode: string) {
-  //   this.fetchActivityNameService.getActivityNameByNafCode(nafCode)
-  //               .subscribe({
-  //                 next: (data: string) => {
-  //                   console.log('Données récupérées:', data);
-  //                   this.activityName = data;
-  //                   return data
-  //                 },
-  //                 error: (error) => {
-  //                   console.error('Erreur de récupération des données', error);
-  //                 }
-  //               });
-  // }
 
   private buildURL(page: number): string {
     this.staffSizeSelectionService.data$.subscribe((data) => {
       this.staffSizeData = data;
-    });    
+    });
     this.codeNAF = this.checkboxStateService.getNafCodeStored();
-    
+
     const activity = this.createParamString("activite_principale", this.codeNAF);
     const allCities = this.createParamString("&code_commune", this.cities);
     const staffSize = this.createParamString("&tranche_effectif_salarie", this.staffSizeData);
-    // const allEffectif = this.createParamString("&tranche_effectif_salarie", staffSizeCode);
 
     let params = [activity];
     if (this.cities.length > 0) params.push(allCities);
