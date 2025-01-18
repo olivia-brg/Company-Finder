@@ -1,18 +1,35 @@
-# RECHERCHE
-- Codes de Paris, Lyon, Marseille codé en dur, ou refaire une api/db
-- Stopper la recherche en cours lors d'une nouvelle recherche
+# INPUT VILLE
+- recherche par département ?
+- n° arrondissement
+
+
+# INPUT ACTIVITE
+- afficher la liste des activités sélectionnées (si possible au format "Intermédiaires du commerc[...]uits semi-finis (46.11Z)" )
+
+
+# FETCH SERVICE
+- stopper la recherche en cours lors d'une nouvelle recherche
+- retry fetch companies data : + de retry et alerte lors d'erreur
+- retirer fetch activity name service???
 
 
 # DEBUG
-- Problème récupération data lors d'une recherche sans ville
-- Problème récupération data lors de +10k résultats
+- problème récupération data lors d'une recherche sans ville
+- problème récupération data lors de +10k résultats
+- couleur checkboxes
 
 
-# FRONT
+# RÉSULTATS
+- faire des pages de résultats
+- affichage list
 
 
-# BACK
-- Recherche par département
+# INFO
+- données provenant d'une bdd public officielle
+- recherche par rapport au nombre de salarié du groupe et nom de l'établissement
+- domaine d'activité = domaine principal enregistré
+- contacts
 
-# SECONDAIRE
-- retirer fetch activity name service???
+
+# PREZ
+- l'appel a la data se fait de toutes les façons possibles (bdd faite main / appel api / proxy / class)

@@ -3,7 +3,7 @@ package com.company_finder.back.DTOs;
 public class CityDTO {
     private String nom;
     private String code;
-    private int _score;
+    private double _score;
     private departementDTO departement;
 
     public String getNom() {
@@ -15,13 +15,14 @@ public class CityDTO {
     public String getCode() {
         return code;
     }
+
     public void setCode(String code) {
         this.code = code;
     }
-    public int get_score() {
+    public double get_score() {
         return _score;
     }
-    public void set_score(int _score) {
+    public void set_score(double _score) {
         this._score = _score;
     }
     public departementDTO getDepartement() {

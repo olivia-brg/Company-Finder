@@ -50,7 +50,7 @@ export class HeaderComponent {
     private checkboxStateService: CheckboxStateService,
   ) {}
 
-  load: number = 0;
+  load: number = 100;
   
   remove( index: number): void {
     this.selectedCities.splice(index, 1)
@@ -59,7 +59,8 @@ export class HeaderComponent {
   searchCompanies(): void {
 
     this.fetchCompaniesDataService.load$.subscribe((value) => {
-      this.load = value;  
+      this.load = value;
+      // if (this.load === 100) this.load = 0;
     });
     this.selectedCities;
     const citiesCodes = this.selectedCities.map(city => city.code);
