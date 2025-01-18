@@ -5,11 +5,14 @@
 
 # DEBUG
 - Problème récupération data lors d'une recherche sans ville
-- Problème récupération data lors de 10k résultats
+- Problème récupération data lors de +10k résultats
 
 
 # FRONT
-- Ajouter bar chargement
+
 
 # BACK
 - Recherche par département
+
+# SECONDAIRE
+- retirer fetch activity name service???

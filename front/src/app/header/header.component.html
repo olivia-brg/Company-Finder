@@ -5,6 +5,7 @@
         <app-staff-size-selection class="slider"></app-staff-size-selection>
         <button mat-icon-button  id="search_button" (click)="searchCompanies()"><mat-icon>search</mat-icon></button>
     </div>
+    <mat-progress-bar mode="determinate" value="{{ load }}"></mat-progress-bar>
 
     @if (selectedCities.length) {
         @for (city of selectedCities; track $index) {
