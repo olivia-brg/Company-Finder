@@ -11,6 +11,8 @@ import { CheckboxStateService } from './../service/checkboxState.service';
 import { StaffSizeSelectionComponent } from '../staff-size-selection/staff-size-selection.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
+import { DepartmentFormComponent } from '../department-form/department-form.component';
 
 export interface SingleCompanyData {
   name: string;
@@ -33,7 +35,9 @@ export interface SingleCompanyData {
     NafcodeFormComponent,
     StaffSizeSelectionComponent,
     MatProgressBarModule,
-    MatRadioModule
+    MatRadioModule,
+    FormsModule,
+    DepartmentFormComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -52,6 +56,7 @@ export class HeaderComponent {
     private checkboxStateService: CheckboxStateService,
   ) {}
 
+  searchArea: string = '';
   load: number = 100;
 
   remove( index: number): void {

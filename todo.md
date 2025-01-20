@@ -21,7 +21,7 @@
 
 
 # RÉSULTATS
-- faire des pages de résultats
+- faire des pages de résultats?
 - affichage list
 
 
@@ -30,6 +30,7 @@
 - recherche par rapport au nombre de salarié du groupe et nom de l'établissement
 - domaine d'activité = domaine principal enregistré
 - contacts
+- bloqué à 10k résultats
 
 
 # PREZ
