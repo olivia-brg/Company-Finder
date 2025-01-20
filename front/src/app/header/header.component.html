@@ -1,11 +1,15 @@
 <div id="header">
     <div class="mat-app-background basic-container">
+        <mat-radio-group class="radio-group">
+            <mat-radio-button>Ville</mat-radio-button>
+            <mat-radio-button>Département</mat-radio-button>
+        </mat-radio-group>
         <app-city-form class="input">Loading...</app-city-form>
         <app-nafcode-form class="input">Loading...</app-nafcode-form>
         <app-staff-size-selection class="slider"></app-staff-size-selection>
         <button mat-icon-button  id="search_button" (click)="searchCompanies()"><mat-icon>search</mat-icon></button>
     </div>
-    <mat-progress-bar mode="determinate" value="{{ load }}"></mat-progress-bar>
+    <mat-progress-bar mode="determinate" value="{{ load }}" bufferValue="0"></mat-progress-bar>
 
     @if (selectedCities.length) {
         @for (city of selectedCities; track $index) {

@@ -3,13 +3,13 @@ import { Component, Injectable } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { HeaderComponent } from '../header/header.component';
 import { CityData } from '../models/city';
 import { FetchCityDataService } from '../service/fetchCityData.service';
-import { MatIconModule } from '@angular/material/icon';
 
 @Injectable({
   providedIn: 'root',
@@ -36,9 +36,7 @@ export class Service {
   }
 }
 
-/**
- * @title Simple autocomplete
- */
+
 @Component({
   selector: 'app-city-form',
   standalone: true,
@@ -48,7 +46,7 @@ export class Service {
     MatAutocompleteModule,
     ReactiveFormsModule,
     AsyncPipe,
-    MatIconModule
+    MatIconModule,
   ],
   templateUrl: 'city-form.component.html',
   styleUrls: ['city-form.component.scss'],
