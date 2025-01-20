@@ -19,8 +19,8 @@ export interface SingleCompanyData {
   address: string;
   activity: string;
   staffSize: string;
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
 }
 
 @Component({
