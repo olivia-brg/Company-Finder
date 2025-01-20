@@ -1,0 +1,43 @@
+.form {
+    position: relative;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    z-index: 999;
+
+    .full-width {
+        min-width: 600px;
+        max-width: 1000px;
+        width: 15vw;
+
+
+
+        // input {
+        //     margin-left: auto;
+        //     margin-right: auto;
+
+        //     width: 300px;
+        //     height: 25px;
+        //     border-radius: 10px;
+        // }
+    }
+}
+
+// .category-option {}
+
+// .subcategory-checkbox {
+//     position: relative;
+//     left: 50px;
+//     width: calc(100% - 50px);
+
+// }
+
+// .activity-checkbox {
+//     position: relative;
+//     left: 100px;
+//     width: calc(100% - 100px);
+// }
+
+// .categoryName {
+//     opacity: 1;
+// }

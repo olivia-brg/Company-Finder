@@ -1,16 +1,33 @@
 <div id="header">
     <div class="mat-app-background basic-container">
-        <app-city-form>Loading...</app-city-form>
-        <app-nafcode-form>Loading...</app-nafcode-form>
+        <mat-radio-group
+        class="radio-group"
+        [(ngModel)]="searchArea"
+        >
+        
+            <mat-radio-button [value]="'city'">Ville</mat-radio-button>
+            <mat-radio-button [value]="'department'">Département</mat-radio-button>
+        </mat-radio-group>
+        @if (searchArea === 'city') {
+            <app-city-form class="input">Loading...</app-city-form>
+        } @else if (searchArea === 'department') {
+            <app-department-form class="input">Loading...</app-department-form>
+        }
+        <app-nafcode-form class="input">Loading...</app-nafcode-form>
+        <app-staff-size-selection class="slider"></app-staff-size-selection>
+        <button mat-icon-button  id="search_button" (click)="searchCompanies()"><mat-icon>search</mat-icon></button>
     </div>
-    <button mat-flat-button id="search_button" (click)="searchCompanies()">Rechercher</button>
+    <mat-progress-bar mode="determinate" value="{{ load }}" bufferValue="0"></mat-progress-bar>
 
     @if (selectedCities.length) {
-
-    @for (city of selectedCities; track $index) {
-    <li>{{city.name}} | {{city.department}}, {{city.departmentNumber}}
-        <button type="button" (click)="selectedCities.splice($index, 1)">X</button>
-    </li>
+        @for (city of selectedCities; track $index) {
+        <mat-chip-row (removed)="remove($index)">
+            {{city.name}}, {{city.departmentNumber}}
+            <button matChipRemove [attr.aria-label]="'remove ' + city.name">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-row>
+        }
     }
-    }
+    {{ updateActivitiesCount() }} activités sélectionnées
 </div>

@@ -1,5 +1,4 @@
 import { AsyncPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -8,13 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { HeaderComponent } from '../header/header.component';
-
-export interface CityData {
-  name: string;
-  code: number;
-  department: string;
-  departmentNumber: number;
-}
+import { CityData } from '../models/city';
+import { FetchCityDataService } from '../service/fetchCityData.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Injectable({
   providedIn: 'root',
@@ -22,34 +17,26 @@ export interface CityData {
 
 export class Service {
   constructor(
-    private http: HttpClient,
-  ) {}
+    private fetchCityDataService: FetchCityDataService,
+  ) { }
 
   opts: CityData[] = [];
 
   formatCityData(cityName: string): Observable<CityData[]> {
-    return this.fetchCityDataByName(cityName).pipe(
-        map(rawData =>
-            rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
-                name: city.nom,
-                code: city.code,
-                department: city.departement.nom,
-                departmentNumber: city.departement.code,
-            }))
-        ),tap((data) => (this.opts = data))
+    return this.fetchCityDataService.fetchCityDataByName(cityName).pipe(
+      map(rawData =>
+        rawData.map((city: { nom: string; departement: { nom: string; code: number; }; code: number; }) => ({
+          name: city.nom,
+          code: city.code,
+          department: city.departement.nom,
+          departmentNumber: city.departement.code,
+        }))
+      ), tap((data) => (this.opts = data))
     );
-}
-
-fetchCityDataByName(val: string) {
-    const encodedCityName = encodeURIComponent(val);
-    return this.http
-          .get<any>(`https://geo.api.gouv.fr/communes?nom=${encodedCityName}&fields=departement&boost=population&limit=20`);
   }
 }
 
-/**
- * @title Simple autocomplete
- */
+
 @Component({
   selector: 'app-city-form',
   standalone: true,
@@ -58,7 +45,8 @@ fetchCityDataByName(val: string) {
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe
+    AsyncPipe,
+    MatIconModule
   ],
   templateUrl: 'city-form.component.html',
   styleUrls: ['city-form.component.scss'],
@@ -78,7 +66,7 @@ export class CityForm {
       })
     );
   }
-  
+
   selectCity(city: CityData) {
     const cityAlreadySelected = this.headerComponent.selectedCities.some(selectedCity => selectedCity.code === city.code);
 

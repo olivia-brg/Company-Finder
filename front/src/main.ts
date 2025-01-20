@@ -1,12 +1,11 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import * as L from 'leaflet';
-import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import * as L from 'leaflet';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 import { DemoMaterialModule } from './material-module';
 
 @NgModule({
