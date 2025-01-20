@@ -1,6 +1,6 @@
 # INPUT VILLE
 - recherche par département ?
-- n° arrondissement
+- n° arrondissement a refaire
 
 
 # INPUT ACTIVITE
@@ -11,6 +11,7 @@
 - stopper la recherche en cours lors d'une nouvelle recherche
 - retry fetch companies data : + de retry et alerte lors d'erreur
 - retirer fetch activity name service???
+- stocker villes local storage
 
 
 # DEBUG
@@ -20,7 +21,7 @@
 
 
 # RÉSULTATS
-- faire des pages de résultats
+- faire des pages de résultats?
 - affichage list
 
 
@@ -29,6 +30,7 @@
 - recherche par rapport au nombre de salarié du groupe et nom de l'établissement
 - domaine d'activité = domaine principal enregistré
 - contacts
+- bloqué à 10k résultats
 
 
 # PREZ

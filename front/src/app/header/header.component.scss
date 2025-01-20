@@ -9,6 +9,13 @@
 
     display: flex;
 
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+      align-items: flex-start;
+    }
+
     .input {
       width: fit-content;
       position: relative;

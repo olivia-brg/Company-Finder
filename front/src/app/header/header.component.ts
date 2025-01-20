@@ -10,14 +10,17 @@ import { NafcodeFormComponent } from './../nafcode-form/nafcode-form.component';
 import { CheckboxStateService } from './../service/checkboxState.service';
 import { StaffSizeSelectionComponent } from '../staff-size-selection/staff-size-selection.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
+import { DepartmentFormComponent } from '../department-form/department-form.component';
 
 export interface SingleCompanyData {
   name: string;
   address: string;
   activity: string;
   staffSize: string;
-  latitude: number;
-  longitude: number;
+  latitude: string;
+  longitude: string;
 }
 
 @Component({
@@ -31,7 +34,10 @@ export interface SingleCompanyData {
     MatIconModule,
     NafcodeFormComponent,
     StaffSizeSelectionComponent,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatRadioModule,
+    FormsModule,
+    DepartmentFormComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -50,8 +56,9 @@ export class HeaderComponent {
     private checkboxStateService: CheckboxStateService,
   ) {}
 
+  searchArea: string = '';
   load: number = 100;
-  
+
   remove( index: number): void {
     this.selectedCities.splice(index, 1)
   }
@@ -60,7 +67,6 @@ export class HeaderComponent {
 
     this.fetchCompaniesDataService.load$.subscribe((value) => {
       this.load = value;
-      // if (this.load === 100) this.load = 0;
     });
     this.selectedCities;
     const citiesCodes = this.selectedCities.map(city => city.code);

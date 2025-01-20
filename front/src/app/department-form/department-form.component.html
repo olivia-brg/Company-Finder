@@ -1,0 +1,18 @@
+<form class="form">
+    <mat-form-field class="full-width">
+        <mat-label>Rechercher un département</mat-label>
+        <input type="text" placeholder="Ex : Nantes" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+
+            <!-- @for ( cityOption of (filteredOptions | async); track $index) {
+                <mat-option class="options" (click)="selectCity(cityOption)">
+                    <mat-icon>search</mat-icon>
+                    <div class="cityName">{{ cityOption.name }}</div>
+                    <div class="department">{{ cityOption.department}} - {{ cityOption.departmentNumber }}</div>
+                </mat-option>
+                <br>
+            } -->
+            
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
